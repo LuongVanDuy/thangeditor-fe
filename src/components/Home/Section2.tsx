@@ -16,7 +16,7 @@ import before2 from "@/assets/enhen-before.jpg";
 import styled from "styled-components";
 import { useMutation } from "@tanstack/react-query";
 import { generateOrderId } from "@/api/order.service";
-import { CompareSlider } from "@/components/Compare/CompareSlider";
+import { CompareSlider } from "@/components/Form/Compare/CompareSlider";
 import { useRouter } from "next/navigation";
 
 export const StyledSwiperSlide = styled(SwiperSlide)`

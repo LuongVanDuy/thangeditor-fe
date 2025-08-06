@@ -2,7 +2,7 @@
 import { useState, useEffect } from "react";
 import { usePathname } from "next/navigation";
 import { QueryClient, QueryClientProvider } from "@tanstack/react-query";
-import { InitGlobalData } from "@/modules/Home/Layout/InitGlobalData";
+import { InitGlobalData } from "@/components/Layout/InitGlobalData";
 import { PayPalScriptProvider } from "@paypal/react-paypal-js";
 import { RecoilRoot } from "recoil";
 

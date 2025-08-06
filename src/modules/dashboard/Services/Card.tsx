@@ -8,7 +8,7 @@ import { useMutation } from "@tanstack/react-query";
 import { generateOrderId } from "@/api/order.service";
 
 import bg from "@/assets/mediumBanner.png";
-import { CompareSlider } from "@/components/Compare/CompareSlider";
+import { CompareSlider } from "@/components/Form/Compare/CompareSlider";
 
 import after1 from "@/assets/virtual-after.jpg";
 import before1 from "@/assets/virtual-before.jpg";

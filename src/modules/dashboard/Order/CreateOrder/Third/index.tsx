@@ -1,8 +1,8 @@
 "use client";
 import React from "react";
 
-import { CustomCheckbox } from "@/components/CustomCheckbox";
-import { CustomTextarea } from "@/components/CustomInput";
+import { CustomCheckbox } from "@/components/Form/CustomCheckbox";
+import { CustomTextarea } from "@/components/Form/CustomInput";
 
 const Third = ({
   setData,

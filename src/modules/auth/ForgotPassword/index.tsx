@@ -3,8 +3,8 @@ import React from "react";
 import Image from "next/image";
 import { useRouter } from "next/navigation";
 
-import Label from "@/components/CustomLabel";
-import { CustomInput } from "@/components/CustomInput";
+import Label from "@/components/Form/CustomLabel";
+import { CustomInput } from "@/components/Form/CustomInput";
 import { message, Spin } from "antd";
 import { LoadingOutlined } from "@ant-design/icons";
 
@@ -13,7 +13,7 @@ import gg from "@/assets/google.svg";
 import { yupResolver } from "@hookform/resolvers/yup";
 import { useMutation } from "@tanstack/react-query";
 import { Controller, useForm } from "react-hook-form";
-import InputError from "@/components/InputError";
+import InputError from "@/components/Form/InputError";
 import schema from "./schema";
 import { forgetPassword } from "@/api/auth.service";
 import Link from "next/link";

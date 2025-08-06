@@ -1,5 +1,5 @@
 import React, { useState, useEffect } from "react";
-import { CustomInput } from "@/components/CustomInput";
+import { CustomInput } from "@/components/Form/CustomInput";
 import { LinkOutlined } from "@ant-design/icons";
 import { Radio } from "antd";
 
@@ -171,4 +171,3 @@ const First = ({
 };
 
 export default First;
-

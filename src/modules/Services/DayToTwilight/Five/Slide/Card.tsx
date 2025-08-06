@@ -3,7 +3,7 @@ import Image from "next/image";
 import eye from "@/assets/order-eye.svg";
 import after1 from "@/assets/virtual-after.jpg";
 import before1 from "@/assets/virtual-before.jpg";
-import { CompareSlider } from "@/components/Compare/CompareSlider";
+import { CompareSlider } from "@/components/Form/Compare/CompareSlider";
 
 const Card = ({ img, style }: { img: any; style: string }) => {
   return (

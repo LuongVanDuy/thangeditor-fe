@@ -1,8 +1,8 @@
 import Image from "next/image";
 import DeleteIcon from "@/assets/deleteRed.svg";
 
-import { CustomButton } from "@/components/CustomButton";
-import { CustomModal } from "@/components/CustomModal";
+import { CustomButton } from "@/components/Form/CustomButton";
+import { CustomModal } from "@/components/Form/CustomModal";
 
 const DeleteModal = ({
   isOpen,

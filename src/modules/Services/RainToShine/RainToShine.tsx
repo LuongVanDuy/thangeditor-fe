@@ -6,7 +6,7 @@ import Four from "./Four/Four";
 import Five from "./Five/Five";
 import Six from "./Six/Six";
 import Bottom from "../FirstService/Six/Six";
-import { CompareSlider } from "@/components/Compare/CompareSlider";
+import { CompareSlider } from "@/components/Form/Compare/CompareSlider";
 
 import beforeImg from "@/assets/before2.jpg";
 import afterImg from "@/assets/after2.jpg";

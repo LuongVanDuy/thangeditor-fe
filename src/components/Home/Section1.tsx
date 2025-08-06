@@ -5,7 +5,7 @@ import Link from "next/link";
 import { getToken } from "@/helper/storage";
 import beforeImg from "@/assets/before2.jpg";
 import afterImg from "@/assets/after2.jpg";
-import { CompareSlider } from "@/components/Compare/CompareSlider";
+import { CompareSlider } from "@/components/Form/Compare/CompareSlider";
 
 const HomeSection1 = () => {
   const router = useRouter();

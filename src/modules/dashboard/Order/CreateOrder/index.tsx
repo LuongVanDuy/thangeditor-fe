@@ -5,7 +5,7 @@ import Image from "next/image";
 import { useRouter } from "next/navigation";
 
 import { message, Divider, Drawer } from "antd";
-import CustomStep from "@/components/CustomSteps";
+import CustomStep from "@/components/Form/CustomSteps";
 import { formatCurrency } from "@/helper/utility";
 import First from "./First";
 import Second from "./Second";
@@ -22,7 +22,7 @@ import close from "@/assets/pinkClose.svg";
 
 import { useMutation, useQuery } from "@tanstack/react-query";
 import { createOrder, updateOrder, getOrderDetail } from "@/api/order.service";
-import { CustomInput } from "@/components/CustomInput";
+import { CustomInput } from "@/components/Form/CustomInput";
 import styled from "styled-components";
 import DeleteModal from "../DeleteModal";
 

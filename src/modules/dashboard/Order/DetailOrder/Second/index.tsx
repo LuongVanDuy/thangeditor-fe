@@ -2,7 +2,7 @@ import React, { useState } from "react";
 import Image from "next/image";
 import img from "@/assets/style-select.png";
 import eye from "@/assets/order-eye.svg";
-import { CustomTextarea } from "@/components/CustomInput";
+import { CustomTextarea } from "@/components/Form/CustomInput";
 
 const styles = ["Natural", "Bright white"];
 

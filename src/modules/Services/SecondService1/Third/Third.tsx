@@ -8,7 +8,7 @@ import { generateOrderId } from "@/api/order.service";
 import help from "@/assets/help-circle.svg";
 import star from "@/assets/star.svg";
 import checked from "@/assets/Checked .svg";
-import CompareImg from "@/components/Compare";
+import CompareImg from "@/components/Form/Compare";
 import before2 from "@/assets/imgenhan/before2.jpg";
 import after2 from "@/assets/imgenhan/after2.jpg";
 import before3 from "@/assets/imgenhan/before3.jpg";

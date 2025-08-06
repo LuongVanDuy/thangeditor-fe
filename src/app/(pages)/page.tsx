@@ -2,14 +2,14 @@
 import AOS from "aos";
 import "aos/dist/aos.css";
 import { useEffect } from "react";
-import HomeSection1 from "@/modules/Home/Section1";
-import HomeSection2 from "@/modules/Home/Section2";
-import HomeSection3 from "@/modules/Home/Section3";
-import HomeSection4 from "@/modules/Home/Section4";
-import HomeSection5 from "@/modules/Home/Section5";
-import HomeSection6 from "@/modules/Home/Section6";
-import HomeSection7 from "@/modules/Home/Section7";
-import HomeSection8 from "@/modules/Home/Section8";
+import HomeSection1 from "@/components/Home/Section1";
+import HomeSection2 from "@/components/Home/Section2";
+import HomeSection3 from "@/components/Home/Section3";
+import HomeSection4 from "@/components/Home/Section4";
+import HomeSection5 from "@/components/Home/Section5";
+import HomeSection6 from "@/components/Home/Section6";
+import HomeSection7 from "@/components/Home/Section7";
+import HomeSection8 from "@/components/Home/Section8";
 
 export default function Home() {
   // useEffect(() => {

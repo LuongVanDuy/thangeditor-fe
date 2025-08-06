@@ -1,8 +1,8 @@
 import React, { useState } from "react";
 import { formatCurrency, formatTwoDigit } from "@/helper/utility";
 import { Radio } from "antd";
-import { CustomCheckbox } from "@/components/CustomCheckbox";
-import CustomTag from "@/components/CustomTag";
+import { CustomCheckbox } from "@/components/Form/CustomCheckbox";
+import CustomTag from "@/components/Form/CustomTag";
 
 const Four = ({
   setData,
@@ -230,4 +230,3 @@ const Four = ({
 };
 
 export default Four;
-

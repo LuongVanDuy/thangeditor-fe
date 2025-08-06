@@ -3,8 +3,8 @@ import React, { useState } from "react";
 import { useRouter } from "next/navigation";
 import Image from "next/image";
 
-import CustomTag from "@/components/CustomTag";
-import SendFeedBack from "@/components/CustomModal/SendFeedBack";
+import CustomTag from "@/components/Form/CustomTag";
+import SendFeedBack from "@/components/Form/CustomModal/SendFeedBack";
 import { formatCurrency, formatTextDate } from "@/helper/utility";
 
 import trash from "@/assets/trash.svg";

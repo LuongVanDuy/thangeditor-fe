@@ -2,7 +2,7 @@
 import React, { useState } from "react";
 import Image from "next/image";
 
-import CustomTabs from "@/components/CustomTabs";
+import CustomTabs from "@/components/Form/CustomTabs";
 import plus from "@/assets/plus.svg";
 import Card from "./Card";
 import OrderBtn from "../OrderBtn";

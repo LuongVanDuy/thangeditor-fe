@@ -10,7 +10,7 @@ import after from "@/assets/virtual/after.jpg";
 import before from "@/assets/virtual/before.jpg";
 import left from "@/assets/white-chevron-left.svg";
 import right from "@/assets/white-chevron-right.svg";
-import CompareImg from "@/components/Compare";
+import CompareImg from "@/components/Form/Compare";
 
 const First = () => {
   const router = useRouter();

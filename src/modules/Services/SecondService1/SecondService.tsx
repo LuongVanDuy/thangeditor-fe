@@ -8,7 +8,7 @@ import Six from "./Six/Six";
 import Bottom from "../FirstService/Six/Six";
 import beforeImg from "@/assets/before2.jpg";
 import afterImg from "@/assets/after2.jpg";
-import { CompareSlider } from "@/components/Compare/CompareSlider";
+import { CompareSlider } from "@/components/Form/Compare/CompareSlider";
 
 const SecondService = () => {
   return (

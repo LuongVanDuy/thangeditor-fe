@@ -1,11 +1,11 @@
 "use client";
 import React, { useState } from "react";
 
-import { CustomSelect } from "@/components/CustomSelect";
-import CustomTabs from "@/components/CustomTabs";
+import { CustomSelect } from "@/components/Form/CustomSelect";
+import CustomTabs from "@/components/Form/CustomTabs";
 import Card from "./Card/Cards";
 import OrderBtn from "../OrderBtn";
-import CustomPagination from "@/components/CustomPagination";
+import CustomPagination from "@/components/Form/CustomPagination";
 
 import { useQuery } from "@tanstack/react-query";
 import { getOrderList } from "@/api/order.service";

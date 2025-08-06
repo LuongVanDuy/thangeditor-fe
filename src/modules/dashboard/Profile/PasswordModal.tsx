@@ -3,16 +3,16 @@ import React, { useState } from "react";
 import Image from "next/image";
 
 import { message, Modal } from "antd";
-import Label from "@/components/CustomLabel";
-import { CustomInput } from "@/components/CustomInput";
-import InputError from "@/components/InputError";
+import Label from "@/components/Form/CustomLabel";
+import { CustomInput } from "@/components/Form/CustomInput";
+import InputError from "@/components/Form/InputError";
 import { passwordSchema } from "./schema";
 
 import { useMutation } from "@tanstack/react-query";
 import { changePassword } from "@/api/auth.service";
 import { yupResolver } from "@hookform/resolvers/yup";
 import { useForm, Controller } from "react-hook-form";
-import { CustomButton } from "@/components/CustomButton";
+import { CustomButton } from "@/components/Form/CustomButton";
 
 import eye from "@/assets/eye.svg";
 

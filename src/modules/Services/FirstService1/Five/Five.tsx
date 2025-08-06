@@ -1,6 +1,6 @@
 "use client";
 import React from "react";
-import CompareImg from "@/components/Compare";
+import CompareImg from "@/components/Form/Compare";
 import after from "@/assets/daytodusk/after2.jpg";
 import before from "@/assets/daytodusk/before2.jpg";
 

@@ -2,12 +2,12 @@ import React from "react";
 import Image from "next/image";
 import { useRouter } from "next/navigation";
 
-import { CustomModal } from "@/components/CustomModal";
+import { CustomModal } from "@/components/Form/CustomModal";
 
 import { deleteOrder } from "@/api/order.service";
 import { useMutation } from "@tanstack/react-query";
 import { message } from "antd";
-import { CustomButton } from "@/components/CustomButton";
+import { CustomButton } from "@/components/Form/CustomButton";
 
 import DeleteIcon from "@/assets/deleteRed.svg";
 

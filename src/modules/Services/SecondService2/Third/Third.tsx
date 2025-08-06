@@ -10,7 +10,7 @@ import smallBanner from "@/assets/smallBanner.png";
 import help from "@/assets/help-circle.svg";
 import star from "@/assets/star.svg";
 import checked from "@/assets/Checked .svg";
-import CompareImg from "@/components/Compare";
+import CompareImg from "@/components/Form/Compare";
 
 const Third = () => {
   const router = useRouter();
