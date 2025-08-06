@@ -1,11 +1,11 @@
 "use client";
 
+import { message } from "antd";
+import { setCookie } from "nookies";
 import { useRouter, useSearchParams } from "next/navigation";
 import { useQuery, useMutation } from "@tanstack/react-query";
-import { googleLogin, LoginWithToken } from "@/api/auth.service";
-import { message } from "antd";
-import { setRefreshToken, setToken } from "@/helper/storage";
-import { setCookie } from "nookies";
+import { googleLogin, LoginWithToken } from "@/lib/api/auth.api";
+import { setRefreshToken, setToken } from "@/lib/helpers";
 
 const GoogleCallback = () => {
   const router = useRouter();

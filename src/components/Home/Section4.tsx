@@ -1,9 +1,9 @@
 "use client";
+
 import React from "react";
-import Link from "next/link";
-import { getToken } from "@/helper/storage";
 import Image from "next/image";
 import { useRouter } from "next/navigation";
+import { getToken } from "@/lib/helpers";
 
 import img1 from "@/assets/Widget.svg";
 import img2 from "@/assets/Widget2.svg";

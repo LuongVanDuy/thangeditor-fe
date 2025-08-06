@@ -2,10 +2,10 @@
 import React from "react";
 import { useRouter } from "next/navigation";
 import Link from "next/link";
-import { getToken } from "@/helper/storage";
 import beforeImg from "@/assets/before2.jpg";
 import afterImg from "@/assets/after2.jpg";
 import { CompareSlider } from "@/components/Form/Compare/CompareSlider";
+import { getToken } from "@/lib/helpers";
 
 const HomeSection1 = () => {
   const router = useRouter();

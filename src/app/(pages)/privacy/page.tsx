@@ -1,5 +1,4 @@
 import React from "react";
-import Services from "@/modules/Services";
 
 const page = () => {
   return (

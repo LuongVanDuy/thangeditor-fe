@@ -1,7 +1,8 @@
 "use client";
+
 import React from "react";
 import { useParams } from "next/navigation";
-import DetailOrder from "@/modules/dashboard/Order/DetailOrder";
+import DetailOrder from "@/components/Dashboard/Order/DetailOrder";
 
 const Detail = () => {
   const { oid } = useParams();

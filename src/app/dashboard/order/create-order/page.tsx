@@ -1,7 +1,8 @@
 "use client";
+
 import React from "react";
-import CreateOrder from "@/modules/dashboard/Order/CreateOrder";
 import { useSearchParams } from "next/navigation";
+import CreateOrder from "@/components/Dashboard/Order/CreateOrder";
 
 const Page = () => {
   const searchParams = useSearchParams();

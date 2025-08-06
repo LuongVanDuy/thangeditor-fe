@@ -8,12 +8,12 @@ import { CustomButton } from "../CustomButton";
 import Label from "../CustomLabel";
 
 import { useMutation, useQuery } from "@tanstack/react-query";
-import { sendFeedBack } from "@/api/send-mail.service";
+import { sendFeedBack } from "@/lib/api/send-mail.api";
 import { yupResolver } from "@hookform/resolvers/yup";
 import { Controller, useForm } from "react-hook-form";
 import schema from "./schema";
 import InputError from "../InputError";
-import { getOrderDetail, updateOrder } from "@/api/order.service";
+import { getOrderDetail, updateOrder } from "@/lib/api/order.api";
 
 const SendFeedBack = ({
   isOpen,

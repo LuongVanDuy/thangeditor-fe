@@ -1,12 +1,12 @@
 "use client";
+
 import React from "react";
 import { useRouter } from "next/navigation";
 import Image from "next/image";
 import Link from "next/link";
-import { getToken } from "@/helper/storage";
-
 import banner from "@/assets/banner2.png";
 import check from "@/assets/checkIcon.svg";
+import { getToken } from "@/lib/helpers";
 
 const HomeSection6 = () => {
   const router = useRouter();

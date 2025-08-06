@@ -15,7 +15,7 @@ import after2 from "@/assets/enhen-after.jpg";
 import before2 from "@/assets/enhen-before.jpg";
 import styled from "styled-components";
 import { useMutation } from "@tanstack/react-query";
-import { generateOrderId } from "@/api/order.service";
+import { generateOrderId } from "@/lib/api/order.api";
 import { CompareSlider } from "@/components/Form/Compare/CompareSlider";
 import { useRouter } from "next/navigation";
 
@@ -170,13 +170,23 @@ const HomeSection2 = () => {
 
         <div className="gap-4 hidden xs:flex">
           <div className="w-[44px] h-[44px] rounded-full flex justify-center items-center bg-[#FBFBFB] cursor-pointer shadow-sm">
-            <button className={`w-full h-full flex justify-center items-center `} onClick={handlePrev}>
+            <button
+              type="button"
+              aria-label="Previous slide"
+              className={`w-full h-full flex justify-center items-center `}
+              onClick={handlePrev}
+            >
               <Image src={left} alt="Previous" width={24} height={24} />
             </button>
           </div>
 
           <div className="w-[44px] h-[44px] rounded-full flex justify-center items-center bg-[#FBFBFB] cursor-pointer shadow-sm">
-            <button className={`w-full h-full flex justify-center items-center `} onClick={handleNext}>
+            <button
+              type="button"
+              aria-label="Next slide"
+              className={`w-full h-full flex justify-center items-center `}
+              onClick={handleNext}
+            >
               <Image src={right} alt="Next" width={24} height={24} />
             </button>
           </div>

@@ -1,7 +1,5 @@
 "use client";
-import AOS from "aos";
-import "aos/dist/aos.css";
-import { useEffect } from "react";
+
 import HomeSection1 from "@/components/Home/Section1";
 import HomeSection2 from "@/components/Home/Section2";
 import HomeSection3 from "@/components/Home/Section3";
@@ -12,14 +10,6 @@ import HomeSection7 from "@/components/Home/Section7";
 import HomeSection8 from "@/components/Home/Section8";
 
 export default function Home() {
-  // useEffect(() => {
-  //   AOS.init({
-  //     duration: 1100,
-  //     easing: "ease",
-  //     once: true,
-  //   });
-  // }, []);
-
   return (
     <>
       <HomeSection1 />

@@ -4,7 +4,7 @@ import Link from "next/link";
 import Image from "next/image";
 
 import { useQuery } from "@tanstack/react-query";
-import { getBlogList } from "@/api/blog.service";
+import { getBlogList } from "@/lib/api/blog.api";
 
 import icon from "@/assets/Link.svg";
 import blog from "@/assets/blog.png";

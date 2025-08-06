@@ -16,9 +16,9 @@ import down from "@/assets/chevron-down.svg";
 import close from "@/assets/x.svg";
 
 import { useRecoilState } from "recoil";
-import { profileState } from "@/recoil/state";
-import { clearToken, getToken, setRefreshToken, setToken } from "@/helper/storage";
 import { destroyCookie } from "nookies";
+import { clearToken, getToken, setRefreshToken, setToken } from "@/lib/helpers";
+import { profileState } from "@/lib/store/state";
 
 const Header = () => {
   const router = useRouter();
