@@ -78,11 +78,12 @@ const Profile = () => {
     }
   }, [profile, reset]);
 
-  const { mutate: updateMution, isLoading: isUpdating } = useMutation((data: any) => updateProfile(data), {
+  const { mutate: updateMution, isPending: isUpdating } = useMutation({
+    mutationFn: (data: any) => updateProfile(data),
     onSuccess: () => {
-      message.success("Sucess!");
+      message.success("Success!");
     },
-    onError(err: any) {
+    onError: (err: any) => {
       message.error(err.response?.data?.message);
     },
   });

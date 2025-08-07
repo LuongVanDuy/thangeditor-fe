@@ -11,7 +11,8 @@ import DeleteIcon from "@/assets/deleteRed.svg";
 const DeleteModal = ({ isOpen, onCancel, oid }: { isOpen: boolean; onCancel: () => void; oid: any }) => {
   const router = useRouter();
 
-  const { mutate: deleteMutation, isLoading } = useMutation((id: any) => deleteOrder(id, true), {
+  const { mutate: deleteMutation, isPending: isLoading } = useMutation({
+    mutationFn: (id: any) => deleteOrder(id, true),
     onSuccess: () => {
       message.success("Success!");
       router.push("/dashboard/order");

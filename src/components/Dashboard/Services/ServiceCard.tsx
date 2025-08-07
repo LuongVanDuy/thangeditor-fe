@@ -23,7 +23,8 @@ interface CardProps {
 const ServiceCard: React.FC<CardProps> = ({ title, img = bg, categories, slug, desc }) => {
   const router = useRouter();
 
-  const { mutate: genOIDMutation } = useMutation(["OID"], (title: any) => generateOrderId(), {
+  const { mutate: genOIDMutation } = useMutation({
+    mutationFn: (title: any) => generateOrderId(),
     onSuccess: (data: any, variables) => {
       const oid = data?.id;
       const title = variables;

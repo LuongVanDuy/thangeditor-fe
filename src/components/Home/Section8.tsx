@@ -1,11 +1,10 @@
 "use client";
+
 import React from "react";
 import Link from "next/link";
 import Image from "next/image";
-
 import { useQuery } from "@tanstack/react-query";
 import { getBlogList } from "@/lib/api/blog.api";
-
 import icon from "@/assets/Link.svg";
 import blog from "@/assets/blog.png";
 
@@ -15,10 +14,11 @@ const HomeSection8 = () => {
     itemsPerPage: 3,
   };
 
-  const { data } = useQuery(["BLOG", formFilter], () => getBlogList(formFilter));
-
+  const { data } = useQuery({
+    queryKey: ["BLOG", formFilter],
+    queryFn: () => getBlogList(formFilter),
+  });
   const blogList = data?.data?.list || [];
-
   if (blogList.length === 0) return null;
 
   return (

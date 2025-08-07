@@ -6,8 +6,9 @@ import afterImg from "@/assets/after2.jpg";
 import Second from "@/components/Services/SecondService/Second/Second";
 import Third from "@/components/Services/SecondService/Third/Third";
 import Four from "@/components/Services/SecondService/Four/Four";
-import Five from "@/components/Services/ThirdService/Five";
 import Six from "@/components/Services/SecondService/Six/Six";
+import Five from "@/components/Services/SecondService/Five/Five";
+import Seven from "@/components/Services/SecondService/Seven";
 
 const Service = () => {
   return (
@@ -26,6 +27,7 @@ const Service = () => {
         <Four />
         <Five />
         <Six />
+        <Seven />
       </div>
     </>
   );

@@ -42,12 +42,13 @@ const Support = () => {
     generateCaptcha();
   }, []);
 
-  const { mutate: sendMailMutation, isLoading } = useMutation((data: any) => sendMail(data), {
-    onSuccess(response: any) {
+  const { mutate: sendMailMutation, isPending: isMailPending } = useMutation({
+    mutationFn: (data: any) => sendMail(data),
+    onSuccess: (response: any) => {
       message.success("Success!");
       reset();
     },
-    onError(err: any) {
+    onError: (err: any) => {
       message.error(err.response?.data?.message);
     },
   });

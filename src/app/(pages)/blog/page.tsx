@@ -13,7 +13,10 @@ const Blog = () => {
     itemsPerPage: itemsPerPage,
   };
 
-  const { data, isLoading } = useQuery(["BLOG", formFilter], () => getBlogList(formFilter));
+  const { data, isPending: isLoading } = useQuery({
+    queryKey: ["BLOG", formFilter],
+    queryFn: () => getBlogList(formFilter),
+  });
 
   const handleLoadMore = () => {
     setItemsPerPage((prev) => prev + 3);

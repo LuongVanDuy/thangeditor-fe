@@ -34,11 +34,12 @@ const Contact = () => {
     mode: "onChange",
   });
 
-  const { mutate: sendMailMutation, isLoading } = useMutation((data: any) => sendMail(data), {
-    onSuccess(response: any) {
+  const { mutate: sendMailMutation, isPending: isLoading } = useMutation({
+    mutationFn: (data: any) => sendMail(data),
+    onSuccess: (response: any) => {
       message.success("Success!");
     },
-    onError(err: any) {
+    onError: (err: any) => {
       message.error(err.response?.data?.message);
     },
   });

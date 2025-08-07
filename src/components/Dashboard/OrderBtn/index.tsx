@@ -10,7 +10,8 @@ import plus from "@/assets/plus.svg";
 
 const OrderBtn = () => {
   const router = useRouter();
-  const { mutate: genOIDMutation, isLoading: isGenering } = useMutation(["OID"], () => generateOrderId(), {
+  const { mutate: genOIDMutation, isPending: isGenerating } = useMutation({
+    mutationFn: () => generateOrderId(),
     onSuccess: (data: any) => {
       const oid = data?.id;
       if (oid) {

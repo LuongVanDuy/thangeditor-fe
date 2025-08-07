@@ -33,13 +33,14 @@ const ForgotPassword = () => {
     mode: "onChange",
   });
 
-  const { mutate: forgotMutation, isLoading } = useMutation((data: any) => forgetPassword(data), {
+  const { mutate: forgotMutation, isPending: isLoading } = useMutation({
+    mutationFn: (data: any) => forgetPassword(data),
     onSuccess() {
       message.success("Thành công!");
       router.push("/auth/login");
     },
     onError(err: any) {
-      message.error(err.response?.data?.message);
+      message.error(err?.response?.data?.message || "Đã xảy ra lỗi.");
     },
   });
 

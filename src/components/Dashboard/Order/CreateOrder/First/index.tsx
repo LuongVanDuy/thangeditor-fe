@@ -16,19 +16,15 @@ const services = [
   { value: "Property Videos", label: "Property Videos" },
 ];
 
-const First = ({
-  setData,
-  data,
-  serviceList,
-  setServiceData,
-  serviceData,
-}: {
-  setData: any;
+interface FirstProps {
+  setData: React.Dispatch<React.SetStateAction<any>>;
   data: any;
-  serviceList: any;
-  setServiceData: any;
+  serviceList: any[];
+  setServiceData: React.Dispatch<React.SetStateAction<any>>;
   serviceData: any;
-}) => {
+}
+
+const First: React.FC<FirstProps> = ({ setData, data, serviceList, setServiceData, serviceData }) => {
   const quantity = data.quantity;
   const url = data.uploadImage;
 
@@ -47,8 +43,10 @@ const First = ({
     }
   }, [data]);
 
+  console.log("serviceList", serviceList);
   const handleChange = (e: any) => {
     const value = e.target.value;
+    const matchedService = serviceList.find((service: any) => service.serviceName === value);
     setService(value);
     setData((prev: any) => ({
       ...prev,
@@ -58,8 +56,6 @@ const First = ({
       servicePrice: matchedService?.subServices?.length ? null : matchedService?.price || null,
       additionalServicePrice: 0,
     }));
-
-    const matchedService = serviceList.find((service: any) => service.serviceName === value);
 
     if (matchedService) {
       setServiceData(matchedService);
@@ -107,10 +103,10 @@ const First = ({
                   service === serviceOption.value ? "border-primary border-[2px] bg-[#FFFEEA]" : "bg-[#fbfbfb]"
                 }`}
               >
-                <div className="flex justify-between mb-4">
+                <label className="flex items-center gap-2 cursor-pointer">
                   <Radio value={serviceOption.value} />
-                </div>
-                <h1 className="font-medium text-[18px] md:text-[24px]">{serviceOption.label}</h1>
+                  <span className="font-medium text-[18px] ml-2">{serviceOption.label}</span>
+                </label>
               </div>
             ))}
           </div>
@@ -134,7 +130,7 @@ const First = ({
                   <div className="flex justify-between mb-4">
                     <Radio value={serviceOption.serviceName} />
                   </div>
-                  <h1 className="font-medium text-[18px] md:text-[24px]">{serviceOption.serviceName}</h1>
+                  <h1 className="font-medium text-[18px]">{serviceOption.serviceName}</h1>
                 </div>
               ))}
             </div>
@@ -143,7 +139,7 @@ const First = ({
       )}
 
       <div className="order-card mb-4">
-        <h1 className="text-[#212529] text-[18px] font-medium mb-4">Up load some photos of your property*</h1>
+        <h1 className="text-[#212529] text-[18px] font-medium mb-4">Upload some photos of your property*</h1>
         <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
           <CustomInput
             onChange={(value: any) => {

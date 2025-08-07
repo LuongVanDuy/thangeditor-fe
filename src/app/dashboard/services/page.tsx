@@ -20,45 +20,9 @@ const data = [
     slug: "virtual-staging-renovation",
   },
   {
-    title: "Commercial Virtual Staging",
-    categories: "Virtual Staging & Renovation",
-    desc: " Give buyers to visualize their business setup in a comfy & efficient environment.",
-    slug: "virtual-staging-renovation",
-  },
-  {
-    title: "Matterport Virtual Staging.",
-    categories: "Virtual Staging & Renovation",
-    desc: "Virtually stage your property link and create an immersive 3D walkthrough.",
-    slug: "virtual-staging-renovation",
-  },
-  {
-    title: "Virtual Renovation",
-    categories: "Virtual Staging & Renovation",
-    desc: " Virtually renovate your wall, ceiling, floor, kitchen, bathrooms etc.",
-    slug: "virtual-staging-renovation",
-  },
-  {
     title: "Occupied to Vacant",
     categories: "Photo Editing",
     desc: "Remove dated or cluttered furnishings from your listing images.",
-    slug: "photo-editing",
-  },
-  {
-    title: "Day to Dusk",
-    categories: "Photo Editing",
-    desc: "Turn daylight home photos into eye catching dusk images.",
-    slug: "photo-editing",
-  },
-  {
-    title: "Object removal",
-    categories: "Photo Editing",
-    desc: "Remove unwanted or distracting items from your listing photos.",
-    slug: "photo-editing",
-  },
-  {
-    title: "Image Enhancement",
-    categories: "Photo Editing",
-    desc: " Brighten, sharpen, balance, and remove reflections in your listing photos.",
     slug: "photo-editing",
   },
   {

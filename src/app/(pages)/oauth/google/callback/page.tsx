@@ -6,65 +6,68 @@ import { useRouter, useSearchParams } from "next/navigation";
 import { useQuery, useMutation } from "@tanstack/react-query";
 import { googleLogin, LoginWithToken } from "@/lib/api/auth.api";
 import { setRefreshToken, setToken } from "@/lib/helpers";
+import { useEffect } from "react";
 
 const GoogleCallback = () => {
   const router = useRouter();
   const searchParams = useSearchParams();
   const code = searchParams.get("code");
 
-  const { mutate: loginWithTokenMutation, isLoading: isLoggingIn } = useMutation(
-    (payload: { email: string; verifyToken: string }) => LoginWithToken(payload),
-    {
-      onSuccess: (response: any) => {
-        message.success("Success!");
-        setToken(response?.accessToken);
-        setRefreshToken(response?.refreshToken);
+  const { mutate: loginWithTokenMutation, isPending: isLoggingIn } = useMutation({
+    mutationFn: (payload: { email: string; verifyToken: string }) => LoginWithToken(payload),
+    onSuccess: (response: any) => {
+      message.success("Success!");
+      setToken(response?.accessToken);
+      setRefreshToken(response?.refreshToken);
 
-        setCookie(null, "ACCESS_TOKEN", response?.accessToken, {
-          maxAge: 30 * 24 * 60 * 60,
-          path: "/",
-          httpOnly: false,
-        });
+      setCookie(null, "ACCESS_TOKEN", response?.accessToken, {
+        maxAge: 30 * 24 * 60 * 60,
+        path: "/",
+        httpOnly: false,
+      });
 
-        router.replace("/");
-      },
-      onError: (err: any) => {
-        message.error(err.response?.data?.message || "Đăng nhập thất bại!");
-        console.error("Error during token login:", err.response?.data?.message);
-      },
+      router.replace("/");
     },
-  );
+    onError: (err: any) => {
+      message.error(err?.response?.data?.message || "Đăng nhập thất bại!");
+      console.error("Error during token login:", err?.response?.data?.message);
+    },
+  });
 
   const {
     data,
     isLoading: isFetchingGoogleData,
     isError,
-  } = useQuery(
-    ["googleLogin", code],
-    () => {
+  } = useQuery({
+    queryKey: ["googleLogin", code],
+    queryFn: () => {
       if (code) {
         return googleLogin(code);
       }
       throw new Error("Code không tồn tại!");
     },
-    {
-      enabled: !!code,
-      onSuccess: (response) => {
-        const userData = response?.data;
+    enabled: !!code,
+  });
 
-        if (userData) {
-          loginWithTokenMutation({
-            email: userData.email,
-            verifyToken: userData.verifyToken,
-          });
-        }
-      },
-      onError: (err: any) => {
-        message.error(err.response?.data?.message || "Không thể xác thực với Google!");
-        console.error("Error fetching Google data:", err.response?.data?.message);
-      },
-    },
-  );
+  useEffect(() => {
+    if (data && !isFetchingGoogleData) {
+      const userData = data?.data;
+
+      if (userData) {
+        loginWithTokenMutation({
+          email: userData.email,
+          verifyToken: userData.verifyToken,
+        });
+      }
+    }
+  }, [data, isFetchingGoogleData]);
+
+  useEffect(() => {
+    if (isError) {
+      message.error("Không thể xác thực với Google!");
+      console.error("Error fetching Google data");
+    }
+  }, [isError]);
 
   if (isFetchingGoogleData || isLoggingIn) {
     return (

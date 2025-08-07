@@ -50,7 +50,11 @@ const CreateOrder = () => {
   const profile = useRecoilValue(profileState);
   const [isDiscount, setIsDiscount] = useState(false);
 
-  const { data, refetch } = useQuery(["ORDER"], () => getOrderDetail(oid), { enabled: isCreated });
+  const { data, refetch } = useQuery({
+    queryKey: ["ORDER", oid],
+    queryFn: () => getOrderDetail(oid),
+    enabled: isCreated,
+  });
 
   useEffect(() => {
     if (data) {
@@ -263,7 +267,8 @@ const CreateOrder = () => {
     },
   ];
 
-  const { mutate: createOrderMutation, isLoading: isCreating } = useMutation((data: any) => createOrder(data), {
+  const { mutate: createOrderMutation, isPending: isCreating } = useMutation({
+    mutationFn: (data: any) => createOrder(data),
     onSuccess: () => {
       setIsCreated(true);
     },
@@ -288,7 +293,8 @@ const CreateOrder = () => {
     createOrderMutation(data);
   };
 
-  const { mutate: updateMutation, isLoading: isUpdating } = useMutation((data: any) => updateOrder(data, oid), {
+  const { mutate: updateMutation, isPending: isUpdating } = useMutation({
+    mutationFn: (data: any) => updateOrder(data, oid),
     onSuccess: () => {
       refetch();
       console.log(order);

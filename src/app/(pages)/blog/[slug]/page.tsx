@@ -18,9 +18,15 @@ const DetaiBlog = () => {
     itemsPerPage: 3,
   };
 
-  const { data, isLoading } = useQuery(["DETAIL_BLOG"], () => getBlogBySlug(slug));
+  const { data, isPending: isLoading } = useQuery({
+    queryKey: ["DETAIL_BLOG", slug],
+    queryFn: () => getBlogBySlug(slug),
+  });
 
-  const { data: list } = useQuery(["BLOG", formFilter], () => getBlogList(formFilter));
+  const { data: list } = useQuery({
+    queryKey: ["BLOG", formFilter],
+    queryFn: () => getBlogList(formFilter),
+  });
 
   return (
     <div className="sm:px-4 lg:px-[64px] xl:px-[108px] py-12 md:py-[64px] flex flex-col gap-9 md:gap-12">

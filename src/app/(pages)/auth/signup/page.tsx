@@ -50,13 +50,14 @@ const Signup = () => {
     mode: "onChange",
   });
 
-  const { mutate: signupMutation, isLoading } = useMutation((data: any) => Register(data), {
+  const { mutate: signupMutation, isPending: isLoading } = useMutation({
+    mutationFn: (data: any) => Register(data),
     onSuccess() {
       message.success("Success!");
       router.push("/auth/login");
     },
     onError(err: any) {
-      message.error(err.response?.data?.message);
+      message.error(err?.response?.data?.message || "Đăng ký thất bại.");
     },
   });
 

@@ -7,7 +7,8 @@ import React from "react";
 
 const First = () => {
   const router = useRouter();
-  const { mutate: genOIDMutation, isLoading: isGenering } = useMutation(["OID"], () => generateOrderId(), {
+  const { mutate: genOIDMutation, isPending: isGenering } = useMutation({
+    mutationFn: () => generateOrderId(),
     onSuccess: (data: any) => {
       const oid = data?.id;
       if (oid) {

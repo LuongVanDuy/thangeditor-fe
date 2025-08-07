@@ -58,7 +58,8 @@ const OrderCard: React.FC<CardProps> = ({
   const isReady = status === "DONE" || status === "REWORK";
   const isEdit = status === "DONE";
 
-  const { mutate: deleteMutation, isLoading } = useMutation((id: any) => deleteOrder(id, true), {
+  const { mutate: deleteMutation, isPending } = useMutation({
+    mutationFn: (id: any) => deleteOrder(id, true),
     onSuccess: () => {
       message.success("Success!");
       refetch();
@@ -71,7 +72,6 @@ const OrderCard: React.FC<CardProps> = ({
   const handleDelete = () => {
     deleteMutation(id);
   };
-
   return (
     <>
       <div className="rounded-lg bg-[#fbfbfb] hidden md:block">
@@ -135,7 +135,7 @@ const OrderCard: React.FC<CardProps> = ({
             <button
               type="button"
               aria-label="Done"
-              disabled={isDone || isLoading}
+              disabled={isDone || isPending}
               className={`rounded-lg h-[48px] w-[48px] flex items-center justify-center border-[1px] border-[#dc3545]  ${
                 isDone ? "opacity-40 cursor-not-allowed" : "cursor-pointer hover:opacity-80"
               }`}
@@ -209,7 +209,7 @@ const OrderCard: React.FC<CardProps> = ({
               <button
                 type="button"
                 aria-label="Done"
-                disabled={isDone || isLoading}
+                disabled={isDone || isPending}
                 className={`rounded-lg h-[36px] w-[36px] flex items-center justify-center border-[1px] border-[#dc3545]  ${
                   isDone ? "opacity-40 cursor-not-allowed" : "cursor-pointer hover:opacity-80"
                 }`}

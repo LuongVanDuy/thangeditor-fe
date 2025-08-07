@@ -31,11 +31,6 @@ const Services = [
     categories: "Video Editing",
     slug: "video-editing",
   },
-  {
-    title: "Property Videos",
-    categories: "Video Editing",
-    slug: "video-editing",
-  },
 ];
 
 const Home = () => {
@@ -48,15 +43,18 @@ const Home = () => {
     sortDesc: true,
   });
 
-  const { data } = useQuery(["ORDER", formFilter], () => getOrderList(formFilter), {
+  const { data: orderData } = useQuery({
+    queryKey: ["ORDER", formFilter],
+    queryFn: () => getOrderList(formFilter),
     refetchOnWindowFocus: true,
   });
 
-  const { data: responseData } = useQuery(["ORDER_COUNT"], () => getOrderStatus(), {
+  const { data: orderStatusData } = useQuery({
+    queryKey: ["ORDER_COUNT"],
+    queryFn: () => getOrderStatus(),
     refetchOnWindowFocus: true,
   });
-
-  const countData: any = responseData || [];
+  const countData: any = orderStatusData || [];
 
   const statusData = [
     { status: "AWAITING", label: "Awaiting payment", icon: card },
@@ -120,21 +118,23 @@ const Home = () => {
           })}
         </div>
 
-        <div className="card gap-4 md:gap-6 flex flex-col">
-          <h1 className="text-[#212529] text-[14px]">Recent activity</h1>
+        {orderData?.data?.list?.length > 0 && (
+          <div className="card gap-4 md:gap-6 flex flex-col">
+            <h1 className="text-[#212529] text-[14px]">Recent activity</h1>
 
-          {data?.data?.list.map((item: any, index: number) => (
-            <div key={index}>
-              <ProjectCard
-                name={item.projectName}
-                id={item.id}
-                service={item.service}
-                status={item.status}
-                photoCompleted={item.photoCompleted}
-              />
-            </div>
-          ))}
-        </div>
+            {orderData?.data?.list?.map((item: any, index: number) => (
+              <div key={index}>
+                <ProjectCard
+                  name={item.projectName}
+                  id={item.id}
+                  service={item.service}
+                  status={item.status}
+                  photoCompleted={item.photoCompleted}
+                />
+              </div>
+            ))}
+          </div>
+        )}
       </div>
 
       <div className="mb-6">

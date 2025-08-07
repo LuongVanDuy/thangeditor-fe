@@ -65,13 +65,14 @@ const PasswordModal = ({ isOpen, onCancel }: { isOpen: boolean; onCancel: () => 
     onCancel();
   };
 
-  const { mutate: changePasswordMutation, isLoading } = useMutation((data: any) => changePassword(data), {
+  const { mutate: changePasswordMutation, isPending: isLoading } = useMutation({
+    mutationFn: (data: any) => changePassword(data),
     onSuccess: () => {
-      message.success("Sucess!");
+      message.success("Success!");
       reset();
       handleCancel();
     },
-    onError(err: any) {
+    onError: (err: any) => {
       message.error(err.response?.data?.message);
     },
   });

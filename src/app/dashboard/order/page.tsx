@@ -1,3 +1,5 @@
+"use client";
+
 import React, { useState } from "react";
 import Script from "next/script";
 import { CustomSelect } from "@/components/Form/CustomSelect";
@@ -35,7 +37,9 @@ const Page = () => {
 
   const currentTab = tabs.find((tab) => tab.key === formFilter.status) || { label: "All order" };
 
-  const { data, isLoading, refetch } = useQuery(["ORDER", formFilter], () => getOrderList(formFilter), {
+  const { data, isLoading, refetch } = useQuery({
+    queryKey: ["ORDER", formFilter],
+    queryFn: () => getOrderList(formFilter),
     refetchOnWindowFocus: true,
   });
 
@@ -45,6 +49,8 @@ const Page = () => {
       status: key,
     }));
   };
+
+  const hasData = data?.data?.list && data.data.list.length > 0;
 
   return (
     <div>
@@ -82,29 +88,42 @@ const Page = () => {
               </div>
             </div>
 
-            {data?.data?.list.map((item: any, index: number) => (
-              <OrderCard
-                key={index}
-                name={item.projectName}
-                categories={item.service}
-                status={item.status}
-                price={item.orderTotal}
-                style={item.designStyle}
-                quantity={item.quantity}
-                id={item.id}
-                date={item.createdTime}
-                refetch={refetch}
-                photoCompleted={item.photoCompleted}
-              />
-            ))}
+            {isLoading ? (
+              <div className="flex justify-center items-center py-8">
+                <div className="text-[#6C757D]">Loading...</div>
+              </div>
+            ) : hasData ? (
+              <>
+                {data.data.list.map((item: any, index: number) => (
+                  <OrderCard
+                    key={index}
+                    name={item.projectName}
+                    categories={item.service}
+                    status={item.status}
+                    price={item.orderTotal}
+                    style={item.designStyle}
+                    quantity={item.quantity}
+                    id={item.id}
+                    date={item.createdTime}
+                    refetch={refetch}
+                    photoCompleted={item.photoCompleted}
+                  />
+                ))}
 
-            <CustomPagination
-              page={formFilter.page}
-              pageSize={formFilter.itemsPerPage}
-              total={data?.data?.count}
-              setPage={(value) => setFormFilter({ ...formFilter, page: value })}
-              setPerPage={(value) => setFormFilter({ ...formFilter, itemsPerPage: value })}
-            />
+                <CustomPagination
+                  page={formFilter.page}
+                  pageSize={formFilter.itemsPerPage}
+                  total={data?.data?.count}
+                  setPage={(value) => setFormFilter({ ...formFilter, page: value })}
+                  setPerPage={(value) => setFormFilter({ ...formFilter, itemsPerPage: value })}
+                />
+              </>
+            ) : (
+              <div className="flex flex-col justify-center items-center py-16">
+                <div className="text-[#6C757D] text-lg font-medium mb-2">No Data</div>
+                <div className="text-[#ADB5BD] text-sm">No orders found for the selected filter.</div>
+              </div>
+            )}
           </div>
         </div>
       </div>

@@ -43,11 +43,14 @@ const SendFeedBack = ({
     reset();
   };
 
-  const { data } = useQuery(["ORDER", oid, isOpen], () => getOrderDetail(oid), {
+  const { data } = useQuery({
+    queryKey: ["ORDER", oid, isOpen],
+    queryFn: () => getOrderDetail(oid),
     enabled: Boolean(oid && isOpen),
   });
 
-  const { mutate: updateMutation, isLoading: isUpdating } = useMutation((data: any) => updateOrder(data, oid), {
+  const { mutate: updateMutation, isPending: isUpdating } = useMutation({
+    mutationFn: (data: any) => updateOrder(data, oid),
     onSuccess: () => {
       message.success("Success!");
       onCancel();
@@ -66,7 +69,8 @@ const SendFeedBack = ({
     updateMutation(submitData);
   };
 
-  const { mutate: sendMutation, isLoading } = useMutation((data: any) => sendFeedBack(data), {
+  const { mutate: sendMutation, isPending: isLoading } = useMutation({
+    mutationFn: (data: any) => sendFeedBack(data),
     onSuccess: () => {
       handleUpdate();
     },

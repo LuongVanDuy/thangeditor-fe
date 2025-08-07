@@ -49,7 +49,8 @@ const Login = () => {
     mode: "onChange",
   });
 
-  const { mutate: loginMutation, isLoading } = useMutation((data: any) => login(data), {
+  const { mutate: loginMutation, isPending: isLoading } = useMutation({
+    mutationFn: (data: any) => login(data),
     onSuccess(response: any) {
       message.success("Success!");
 
@@ -65,7 +66,7 @@ const Login = () => {
       router.replace("/");
     },
     onError(err: any) {
-      message.error(err.response?.data?.message);
+      message.error(err.response?.data?.message || "Đăng nhập thất bại.");
     },
   });
 

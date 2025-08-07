@@ -17,7 +17,9 @@ export function InitGlobalData() {
     data: profile,
     isLoading,
     refetch,
-  } = useQuery(["PROFILE", getToken()], () => getProfile(), {
+  } = useQuery({
+    queryKey: ["PROFILE", getToken()],
+    queryFn: () => getProfile(),
     enabled: !!getToken() && !excludePath.includes(pathname),
   });
 

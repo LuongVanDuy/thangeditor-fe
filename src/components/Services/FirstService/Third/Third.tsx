@@ -11,10 +11,14 @@ import img3 from "@/assets/Widget3.svg";
 
 const Third = () => {
   const router = useRouter();
-  const { mutate: genOIDMutation, isLoading: isGenering } = useMutation(["OID"], () => generateOrderId(), {
+
+  const { mutate: genOIDMutation, isPending: isGenering } = useMutation({
+    mutationFn: () => generateOrderId(),
     onSuccess: (data: any) => {
       const oid = data?.id;
-      router.push(`/dashboard/order/create-order?oid=${oid}`);
+      if (oid) {
+        router.push(`/dashboard/order/create-order?oid=${oid}`);
+      }
     },
     onError: (error: any) => {
       console.error("Failed to generate order ID:", error);
@@ -27,7 +31,7 @@ const Third = () => {
   return (
     <div className="sm:px-4 xs:px-[64px] xl:px-[108px] py-12 md:py-[64px] flex flex-col gap-9 md:gap-12">
       <h1 className="text-[24px] xs:text-[30px] lg:text-[36px] font-medium text-center">
-        How to order virtual staging
+        How to order virtual stagingss
       </h1>
 
       <div className="flex flex-col lg:flex-row justify-center items-stretch">
@@ -40,8 +44,8 @@ const Third = () => {
               Please submit your image link and select style from the order screen
             </h3>
           </div>
-          <div className="mx-auto mt-auto">
-            <Image src={img1} alt="widget" className="w-[325px] h-auto" />
+          <div className="mx-auto mt-auto w-[95%]">
+            <Image src={img1} alt="widget" className="w-full h-auto" />
           </div>
         </div>
 
@@ -52,8 +56,8 @@ const Third = () => {
             <h2 className="text-[#fff] font-medium text-[20px] md:text-[24px]">Edited by Vamedi</h2>
             <h3 className="text-[#fff] text-[14px] md:text-[16px]">Vamedi will do the best editing of your images.</h3>
           </div>
-          <div className="mx-auto mt-auto">
-            <Image src={img2} alt="widget" className="w-[325px] h-auto" />
+          <div className="mx-auto mt-auto w-[95%]">
+            <Image src={img2} alt="widget" className="w-full h-auto" />
           </div>
         </div>
 
@@ -66,8 +70,8 @@ const Third = () => {
               We will resend the edited images within 12-48 hours in the Vamedi dashboard
             </h3>
           </div>
-          <div className="mx-auto mt-auto">
-            <Image src={img3} alt="widget" className="w-[325px] h-auto" />
+          <div className="mx-auto mt-auto w-[95%]">
+            <Image src={img3} alt="widget" className="w-full h-auto" />
           </div>
         </div>
       </div>

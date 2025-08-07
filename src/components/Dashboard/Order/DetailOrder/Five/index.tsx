@@ -24,13 +24,15 @@ const Five = ({
   const amount = data.orderTotal;
   const profile = useRecoilValue(profileState);
 
-  const { mutateAsync: handleRemoveMutation } = useMutation(() => removeNewPerson(), {
+  const { mutateAsync: handleRemoveMutation } = useMutation({
+    mutationFn: () => removeNewPerson(),
     onError: (err: any) => {
       message.error(err.response?.data?.message);
     },
   });
 
-  const { mutate: updateMutation, isLoading: isUpdating } = useMutation((data: any) => updateOrder(data, oid), {
+  const { mutate: updateMutation, isPending: isUpdating } = useMutation({
+    mutationFn: (data: any) => updateOrder(data, oid),
     onSuccess: async () => {
       if (!isDiscount) {
         await handleRemoveMutation();
@@ -70,7 +72,8 @@ const Five = ({
     });
   };
 
-  const { mutateAsync: sendMailMutation, isLoading: isSending } = useMutation((data: any) => sendOrderMail(data), {
+  const { mutateAsync: sendMailMutation, isPending: isSending } = useMutation({
+    mutationFn: (data: any) => sendOrderMail(data),
     onError: (err: any) => {
       message.error(err.response?.data?.message);
     },

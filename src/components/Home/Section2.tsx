@@ -73,7 +73,8 @@ const HomeSection2 = () => {
     swiperRef?.current?.swiper.slideNext();
   };
 
-  const { mutate: genOIDMutation } = useMutation(["OID"], (title: string) => generateOrderId(), {
+  const { mutate: genOIDMutation } = useMutation({
+    mutationFn: (title: string) => generateOrderId(),
     onSuccess: (data: any, variables: string) => {
       const oid = data?.id;
       const title = variables;

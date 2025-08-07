@@ -34,14 +34,7 @@ const data = [
 
 const HomeSection7 = () => {
   return (
-    <div
-      style={{
-        backgroundImage: `url(${bg.src})`,
-        backgroundSize: "cover",
-        backgroundPosition: "center",
-        backgroundColor: "#FDC101",
-      }}
-    >
+    <div className="bg-[#FDC101]">
       <div className="sm:px-4 lg:px-[64px] xl:px-[108px] py-12 md:py-[64px] flex flex-col gap-12">
         <div className="text-center">
           <h1 className="text-[#fff] text-[24px] md:text-[30px] lg:text-[36px] font-medium mb-4 md:mb-6">

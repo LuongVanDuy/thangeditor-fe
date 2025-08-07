@@ -11,7 +11,9 @@ import zap from "@/assets/zap.svg";
 
 const Four = () => {
   const router = useRouter();
-  const { mutate: genOIDMutation, isLoading: isGenering } = useMutation(["OID"], () => generateOrderId(), {
+
+  const { mutate: genOIDMutation, isPending: isGenering } = useMutation({
+    mutationFn: () => generateOrderId(),
     onSuccess: (data: any) => {
       const oid = data?.id;
       if (oid) {
@@ -27,13 +29,7 @@ const Four = () => {
     genOIDMutation();
   };
   return (
-    <div
-      style={{
-        backgroundImage: `url(${bg.src})`,
-        backgroundSize: "cover",
-        backgroundPosition: "center",
-      }}
-    >
+    <div className="bg-[#FDC101]">
       <div className="sm:px-4 xs:px-[64px] xl:px-[108px] py-12 md:py-[64px] flex flex-col gap-9 md:gap-12">
         <h1 className="text-[24px] xs:text-[30px] lg:text-[36px] font-medium text-center">
           How Much Does Virtual Staging Cost

@@ -47,7 +47,10 @@ const DetailOrder = () => {
   const profile = useRecoilValue(profileState);
   const [isDiscount, setIsDiscount] = useState(false);
 
-  const { data, refetch } = useQuery(["ORDER"], () => getOrderDetail(oid));
+  const { data, refetch } = useQuery({
+    queryKey: ["ORDER", oid],
+    queryFn: () => getOrderDetail(oid),
+  });
   const orderData = data?.data;
 
   const [order, setOrder] = useState({
@@ -229,7 +232,8 @@ const DetailOrder = () => {
     },
   ];
 
-  const { mutate: updateMutation, isLoading: isUpdating } = useMutation((data: any) => updateOrder(data, oid), {
+  const { mutate: updateMutation, isPending: isUpdating } = useMutation({
+    mutationFn: (data: any) => updateOrder(data, oid),
     onSuccess: () => {
       refetch();
     },

@@ -14,7 +14,8 @@ import CompareImg from "@/components/Form/Compare";
 
 const First = () => {
   const router = useRouter();
-  const { mutate: genOIDMutation, isLoading: isGenering } = useMutation(["OID"], () => generateOrderId(), {
+  const { mutate: genOIDMutation, isPending: isGenering } = useMutation({
+    mutationFn: () => generateOrderId(),
     onSuccess: (data: any) => {
       const oid = data?.id;
       if (oid) {
@@ -25,7 +26,6 @@ const First = () => {
       console.error("Failed to generate order ID:", error);
     },
   });
-
   const handleNewOrder = () => {
     genOIDMutation();
   };
