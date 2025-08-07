@@ -3,7 +3,7 @@
 import React, { useState } from "react";
 import CustomTabs from "@/components/Form/CustomTabs";
 import OrderBtn from "@/components/Dashboard/OrderBtn";
-import Card from "@/components/Dashboard/Services/Card";
+import Card from "@/components/Dashboard/Services/ServiceCard";
 
 const tabs = [
   { key: "", label: "All service" },

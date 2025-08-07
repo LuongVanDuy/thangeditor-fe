@@ -1,32 +1,26 @@
 "use client";
+
 import React from "react";
-import Image from "next/image";
 import Link from "next/link";
 import { useRouter } from "next/navigation";
-
 import { useMutation } from "@tanstack/react-query";
-// import { generateOrderId } from "@/api/order.service";
-
 import bg from "@/assets/mediumBanner.png";
 import { CompareSlider } from "@/components/Form/Compare/CompareSlider";
 
 import after1 from "@/assets/virtual-after.jpg";
 import before1 from "@/assets/virtual-before.jpg";
 import { generateOrderId } from "@/lib/api/order.api";
+import { StaticImageData } from "next/image";
 
-const Card = ({
-  title,
-  img = bg,
-  categories,
-  slug,
-  desc,
-}: {
+interface CardProps {
   title: string;
-  img?: any;
+  img?: StaticImageData | string;
   categories: string;
   slug: string;
   desc: string;
-}) => {
+}
+
+const ServiceCard: React.FC<CardProps> = ({ title, img = bg, categories, slug, desc }) => {
   const router = useRouter();
 
   const { mutate: genOIDMutation } = useMutation(["OID"], (title: any) => generateOrderId(), {
@@ -71,7 +65,7 @@ const Card = ({
             <div className="flex gap-4 items-center">
               <div
                 onClick={() => handleNewOrder(title)}
-                className="h-9 w-[134px] flex justify-center items-center rounded-lg font-medium text-primary cursor-pointer hover:opacity-80 border border-[1px] border-solid border-primary"
+                className="h-9 w-[134px] flex justify-center items-center rounded-lg font-medium text-primary cursor-pointer hover:opacity-80 border-[1px] border-solid border-primary"
               >
                 Place an order
               </div>
@@ -89,4 +83,4 @@ const Card = ({
   );
 };
 
-export default Card;
+export default ServiceCard;

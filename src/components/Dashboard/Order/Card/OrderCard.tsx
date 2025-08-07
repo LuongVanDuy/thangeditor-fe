@@ -27,7 +27,20 @@ const title: any = {
   REWORK: "rework ",
 };
 
-const Card = ({
+interface CardProps {
+  name: string;
+  categories: string;
+  status: string;
+  price?: number;
+  style: string;
+  quantity?: number;
+  id: string;
+  date: Date | any;
+  refetch: () => void;
+  photoCompleted: string;
+}
+
+const OrderCard: React.FC<CardProps> = ({
   name,
   categories,
   status,
@@ -38,17 +51,6 @@ const Card = ({
   date,
   refetch,
   photoCompleted,
-}: {
-  name: string;
-  categories: string;
-  status: string;
-  price?: number;
-  style: string;
-  quantity: number;
-  id: string;
-  date: any;
-  refetch: any;
-  photoCompleted: string;
 }) => {
   const router = useRouter();
   const [open, setOpen] = useState(false);
@@ -225,4 +227,4 @@ const Card = ({
   );
 };
 
-export default Card;
+export default OrderCard;

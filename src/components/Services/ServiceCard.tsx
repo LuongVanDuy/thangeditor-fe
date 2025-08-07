@@ -16,19 +16,16 @@ const convertToSlug = (text: string) => {
     .replace(/^[-]+|[-]+$/g, "");
 };
 
-const Card = ({
-  title,
-  style,
-  categories,
-  slug,
-  desc,
-}: {
+interface CardProps {
   title: string;
-  style?: string;
+  className?: string;
   categories: string;
   slug: string;
   desc: string;
-}) => {
+  style?: string;
+}
+
+const ServiceCard: React.FC<CardProps> = ({ title, className, categories, slug, desc, style }) => {
   const router = useRouter();
 
   const { mutate: genOIDMutation } = useMutation(["OID"], (title: any) => generateOrderId(), {
@@ -96,4 +93,4 @@ const Card = ({
   );
 };
 
-export default Card;
+export default ServiceCard;

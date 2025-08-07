@@ -1,6 +1,6 @@
 import React from "react";
 
-const page = () => {
+const Privacy = () => {
   return (
     <div className="sm:pl-4 sm:pr-4 lg:pl-[64px] lg:pr-[64px] xl:pl-[108px] xl:pr-[108px] pb-[64px] py-12 flex flex-col privacy-page">
       <h1 className=" font-medium sm:text-[32px] md:text-[40px] lg:text-[48px]">VAMEDIA PRIVACY POLICY</h1>
@@ -171,4 +171,4 @@ const page = () => {
   );
 };
 
-export default page;
+export default Privacy;

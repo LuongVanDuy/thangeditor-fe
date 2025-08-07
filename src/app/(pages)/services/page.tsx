@@ -1,6 +1,6 @@
 "use client";
 
-import Card from "@/components/Services/Card";
+import ServiceCard from "@/components/Services/ServiceCard";
 import React, { useState } from "react";
 
 const data = [
@@ -63,10 +63,6 @@ const data = [
 const Services = () => {
   const [currentTab, setCurrentTab] = useState("");
 
-  const handleTabChange = (key: string) => {
-    setCurrentTab(key);
-  };
-
   const filteredData = data.filter((item) => {
     return currentTab === "" || item.categories === currentTab;
   });
@@ -79,7 +75,7 @@ const Services = () => {
         <div className="grid grid-cols-1 md:grid-cols-2 xl:grid-cols-3 gap-4 md:gap-6 mb-4 md:mb-0">
           {filteredData.map((item, index) => (
             <div key={index}>
-              <Card title={item.title} categories={item.categories} desc={item.desc} slug={item.slug} />
+              <ServiceCard title={item.title} categories={item.categories} desc={item.desc} slug={item.slug} />
             </div>
           ))}
         </div>

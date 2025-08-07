@@ -1,24 +1,19 @@
 import React from "react";
-import Image from "next/image";
+import Image, { StaticImageData } from "next/image";
 import blog from "@/assets/blog.png";
 import Link from "next/link";
 import icon from "@/assets/Link.svg";
 
-const Card = ({
-  key,
-  img = blog,
-  title,
-  subject,
-  desc,
-  slug,
-}: {
-  key: any;
-  img?: any;
-  title?: string;
-  desc?: string;
-  subject?: string;
-  slug?: string;
-}) => {
+interface BlogCardProps {
+  key: string;
+  img?: StaticImageData | string;
+  title: string;
+  subject?: string | any;
+  desc: string;
+  slug: string;
+}
+
+const BlogCard: React.FC<BlogCardProps> = ({ img = blog, title, subject, desc, slug, key }) => {
   return (
     <div className="flex flex-col flex-shrink-0 w-full xs:w-[387px] gap-6" key={key}>
       <div>
@@ -38,4 +33,4 @@ const Card = ({
   );
 };
 
-export default Card;
+export default BlogCard;

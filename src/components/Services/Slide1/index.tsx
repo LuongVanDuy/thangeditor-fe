@@ -1,6 +1,6 @@
 import React, { useRef } from "react";
 import Image from "next/image";
-import Card from "../Card";
+import Card from "../ServiceCard";
 import Link from "next/link";
 import { Swiper as SwiperType } from "swiper";
 import left from "@/assets/chevron-left.svg";

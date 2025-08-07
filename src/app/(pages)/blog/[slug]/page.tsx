@@ -7,10 +7,10 @@ import { useQuery } from "@tanstack/react-query";
 import { getBlogBySlug, getBlogList } from "@/lib/api/blog.api";
 import blog from "@/assets/blog.png";
 import Link from "next/link";
-import Card from "@/components/Blog/Card";
 import { formatDateToShort } from "@/lib/helpers";
+import BlogCard from "@/components/Blog/BlogCard";
 
-const Detai = () => {
+const DetaiBlog = () => {
   const { slug } = useParams();
 
   const formFilter = {
@@ -52,7 +52,7 @@ const Detai = () => {
         <div className="flex flex-wrap gap-8 justify-center">
           {list?.data?.list.map((item: any, index: number) => (
             <div key={index}>
-              <Card key={item.id} slug={item.slug} title={item.title} desc={item.content} />
+              <BlogCard key={item.id} slug={item.slug} title={item.title} desc={item.content} />
             </div>
           ))}
         </div>
@@ -65,4 +65,4 @@ const Detai = () => {
   );
 };
 
-export default Detai;
+export default DetaiBlog;

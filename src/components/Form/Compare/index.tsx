@@ -66,9 +66,9 @@ const CompareImg: React.FC<CompareImgProps> = ({ type, rounded, before = beforeI
           <path
             d="M9 7L4 12L9 17M15 7L20 12L15 17"
             stroke="#343A40"
-            stroke-width="2"
-            stroke-linecap="round"
-            stroke-linejoin="round"
+            strokeWidth="2"
+            strokeLinecap="round"
+            strokeLinejoin="round"
           />
         </svg>
       </div>

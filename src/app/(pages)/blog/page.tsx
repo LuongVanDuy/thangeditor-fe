@@ -3,7 +3,7 @@
 import React, { useState } from "react";
 import { useQuery } from "@tanstack/react-query";
 import { getBlogList } from "@/lib/api/blog.api";
-import Card from "@/components/Blog/Card";
+import BlogCard from "@/components/Blog/BlogCard";
 
 const Blog = () => {
   const [itemsPerPage, setItemsPerPage] = useState(6);
@@ -30,7 +30,7 @@ const Blog = () => {
 
       <div className="flex flex-wrap gap-8 justify-center">
         {data?.data?.list.map((item: any) => (
-          <Card key={item.id} slug={item.slug} title={item.title} desc={item.shortDesc} />
+          <BlogCard key={item.id} slug={item.slug} title={item.title} desc={item.shortDesc} />
         ))}
       </div>
 
