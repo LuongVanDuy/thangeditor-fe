@@ -6,13 +6,6 @@ import { Radio } from "antd";
 const services = [
   { value: "Image Enhancement", label: "Image Enhancement" },
   { value: "Virtual Staging", label: "Virtual Staging" },
-  { value: "Day to Dusk", label: "Day to Dusk" },
-  { value: "Day to Twilight", label: "Day to Twilight" },
-  { value: "Object Removal", label: "Object Removal" },
-  { value: "Changing Seasons", label: "Changing Seasons" },
-  { value: "Water in Pool", label: "Water in Pool" },
-  { value: "Lawn Replacement", label: "Lawn Replacement" },
-  { value: "Rain to Shine", label: "Rain to Shine" },
   { value: "Property Videos", label: "Property Videos" },
 ];
 

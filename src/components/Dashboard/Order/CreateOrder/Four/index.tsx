@@ -10,12 +10,14 @@ const Four = ({
   serviceData,
   isVideoService,
   isDiscount,
+  handlePayment,
 }: {
   setData: any;
   data: any;
   serviceData: any;
   isVideoService: boolean;
   isDiscount: boolean;
+  handlePayment?: () => void;
 }) => {
   const quantity = data.quantity;
   const [selectedDelivery, setSelectedDelivery] = useState(data.additionalServicePrice || 0);
@@ -49,6 +51,15 @@ const Four = ({
 
   const handleCheckboxChange = (checked: boolean) => {
     setData((prevData: any) => ({ ...prevData, isAgreed: checked ? 1 : 0 }));
+  };
+
+  const handleMakePayment = () => {
+    if (!data.isAgreed) {
+      return;
+    }
+    if (handlePayment) {
+      handlePayment();
+    }
   };
 
   return (
@@ -97,7 +108,9 @@ const Four = ({
           <h2 className="text-primary text-[20px] font-medium">{formatCurrency(data?.orderTotal)}</h2>
         </div>
 
-        <div className="btn-primary">Make payment</div>
+        <div className="btn-primary" onClick={handleMakePayment}>
+          Make payment
+        </div>
 
         <div className="flex items-center gap-2 text-[#343A40] font-medium">
           <CustomCheckbox onChange={(checked: any) => handleCheckboxChange(checked)} checked={data.isAgreed === 1} /> I
@@ -218,7 +231,9 @@ const Four = ({
           <h2 className="text-primary text-[20px] font-medium">{formatCurrency(data?.orderTotal)}</h2>
         </div>
 
-        <div className="btn-primary">Make payment</div>
+        <div className="btn-primary" onClick={handleMakePayment}>
+          Make payment
+        </div>
 
         <div className="flex items-center gap-2 text-[#343A40] font-medium">
           <CustomCheckbox onChange={(checked: any) => handleCheckboxChange(checked)} checked={data.isAgreed === 1} /> I

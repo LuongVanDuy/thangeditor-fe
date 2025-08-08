@@ -49,10 +49,6 @@ export function CustomSelect({
   mode?: string | any;
   allowClear?: boolean;
 }) {
-  // const filterOption = (input, option) => {
-  //   return option?.label?.toLowerCase()?.indexOf(input.toLowerCase()) >= 0;
-  // };
-
   const filterOption = (input: any, option: any) => {
     const value = option?.value?.toString();
     return value && value.toLowerCase().indexOf(input.toLowerCase()) >= 0;
@@ -78,15 +74,15 @@ export function CustomSelect({
     >
       {prefixIcon && <div className="flex items-center absolute top-[30%] left-[2%] z-[1]">{prefixIcon}</div>}
       <Select
-        open={open} // Thêm thuộc tính open
-        onDropdownVisibleChange={setOpen} // Cập nhật trạng thái mở
+        open={open}
+        onOpenChange={setOpen}
         showSearch={!!showSearch}
         filterOption={filterSort}
         onChange={onChange}
         onSearch={onSearch}
         onClick={onClick}
         options={options}
-        dropdownRender={dropdownRender}
+        popupRender={dropdownRender}
         value={value}
         disabled={disabled}
         placeholder={placeholder}

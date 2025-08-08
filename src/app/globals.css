@@ -15,7 +15,7 @@
 }
 
 .btn-quaternary {
-  @apply bg-[#198754] rounded-lg px-4 md:px-6 py-2 md:py-3 flex items-center justify-center font-medium cursor-pointer hover:opacity-80 text-white;
+  @apply bg-[#198754] rounded-lg  px-4 md:px-6 py-2 md:py-2 flex items-center justify-center font-medium cursor-pointer hover:opacity-80 text-white;
 }
 
 .btn-five {
@@ -59,7 +59,7 @@
 }
 
 .ant-checkbox-checked .ant-checkbox-inner {
-  background-color: #FDC101 !important;
+  background-color: #fdc101 !important;
 }
 
 .header-drawer .ant-drawer-body {
@@ -96,8 +96,8 @@ body::-webkit-scrollbar {
 }
 
 .ant-radio-wrapper .ant-radio-checked .ant-radio-inner {
-  border-color: #FDC101 !important;
-  background-color: #FDC101 !important;
+  border-color: #fdc101 !important;
+  background-color: #fdc101 !important;
 }
 
 .ant-radio-wrapper {
@@ -267,4 +267,3 @@ body::-webkit-scrollbar {
 .react-compare-slider .__rcs-handle-line {
   width: 1px !important;
 }
-

@@ -8,7 +8,6 @@ type CustomTagProps = {
 
 const CustomTag: React.FC<CustomTagProps> = ({ color, title }) => {
   return (
-    // success | processing | warning | error | volcano | default
     <CustomTagWrapper color={color} bordered={false}>
       {title}
     </CustomTagWrapper>

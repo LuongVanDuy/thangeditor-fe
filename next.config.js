@@ -5,6 +5,9 @@ const nextConfig = {
   experimental: {
     missingSuspenseWithCSRBailout: false,
   },
+  compiler: {
+    styledComponents: true,
+  },
   // images: {
   //   domains: ["api.vamedi.net"],
   //   remotePatterns: [

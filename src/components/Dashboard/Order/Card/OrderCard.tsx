@@ -81,7 +81,6 @@ const OrderCard: React.FC<CardProps> = ({
             <h1 className="text-[#343a40]">{categories}</h1>
           </div>
           <div className="flex items-center gap-1">
-            <h1 className="uppercase text-[#6C757D] text-[12px]">Status</h1>
             <CustomTag title={title[status] || "awaiting payment"} color={color[status] || "warning"} />
           </div>
         </div>
@@ -89,48 +88,49 @@ const OrderCard: React.FC<CardProps> = ({
         <div className="p-6 flex justify-between gap-12 flex-wrap">
           <div className="flex gap-6 flex-wrap">
             <div>
-              <h1 className="text-[#6C757D] text-[12px] uppercase">Style</h1>
-              <h2 className="text-[#212529]">{style}</h2>
+              <h1 className="text-sm text-gray-500 uppercase">Style</h1>
+              <h2 className="text-base text-gray-900 mt-2 font-medium">{style}</h2>
             </div>
             <div>
-              <h1 className="text-[#6C757D] text-[12px] uppercase">Quantity</h1>
-              <h2 className="text-[#212529]">
+              <h1 className="text-sm text-gray-500 uppercase">Quantity</h1>
+              <h2 className="text-base text-gray-900 mt-2 font-medium">
                 {quantity ? `${quantity} ${categories === "Property Videos" ? "videos" : "images"}` : "----"}
               </h2>
             </div>
             <div>
-              <h1 className="text-[#6C757D] text-[12px] uppercase">Order ID</h1>
-              <h2 className="text-[#212529]">{id}</h2>
+              <h1 className="text-sm text-gray-500 uppercase">Order ID</h1>
+              <h2 className="text-base text-gray-900 mt-2 font-medium">{id}</h2>
             </div>
             <div>
-              <h1 className="text-[#6C757D] text-[12px] uppercase">Placed on</h1>
-              <h2 className="text-[#212529]">{formatTextDate(date)}</h2>
+              <h1 className="text-sm text-gray-500 uppercase">Placed on</h1>
+              <h2 className="text-base text-gray-900 mt-2 font-medium">{formatTextDate(date)}</h2>
             </div>
             <div>
-              <h1 className="text-[#6C757D] text-[12px] uppercase">Total</h1>
-              <h2 className="text-[#212529]">{price ? formatCurrency(price) : "----"}</h2>
+              <h1 className="text-sm text-gray-500 uppercase">Total</h1>
+              <h2 className="text-base text-gray-900 mt-2 font-medium">{price ? formatCurrency(price) : "----"}</h2>
             </div>
           </div>
 
           <div className="flex gap-2">
-            <div
-              onClick={() => router.push(`/dashboard/order/${id}`)}
-              className={`btn-quaternary ${isDone ? "!hidden" : "block"}`}
-            >
-              Review & Pay
-            </div>
-
             <button
               type="button"
-              aria-label="Open"
-              disabled={!isEdit}
-              className={`rounded-lg h-[48px] w-[48px] flex items-center justify-center border-[1px] border-[#212529]  ${
-                isEdit ? "cursor-pointer hover:opacity-80 block" : "hidden"
-              }`}
-              onClick={() => setOpen(true)}
+              onClick={() => router.push(`/dashboard/order/${id}`)}
+              className="bg-[#198754] rounded-lg  px-6 flex items-center justify-center font-medium cursor-pointer hover:opacity-80 text-white"
             >
-              <Image src={edit} alt="icon" width={24} height={24} />
+              Review & Pay
             </button>
+
+            {isEdit && (
+              <button
+                type="button"
+                aria-label="Open"
+                disabled={!isEdit}
+                onClick={() => setOpen(true)}
+                className="rounded-lg h-[48px] w-[48px] flex items-center justify-center border-[1px] border-[#212529] cursor-pointer hover:opacity-80"
+              >
+                <Image src={edit} alt="icon" width={24} height={24} />
+              </button>
+            )}
 
             <button
               type="button"
@@ -187,12 +187,13 @@ const OrderCard: React.FC<CardProps> = ({
             <div className="text-primary ">{price ? formatCurrency(price) : "----"}</div>
 
             <div className="flex gap-2">
-              <div
+              <button
+                type="button"
                 onClick={() => router.push(`/dashboard/order/${id}`)}
-                className={`btn-quaternary h-9 ${isDone ? "!hidden" : "block"}`}
+                className="bg-[#198754] rounded-lg  px-6 flex items-center justify-center font-medium cursor-pointer hover:opacity-80 text-white"
               >
                 Review & Pay
-              </div>
+              </button>
 
               <button
                 type="button"

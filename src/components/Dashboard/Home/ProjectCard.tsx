@@ -30,7 +30,6 @@ const ProjectCard: React.FC<ProjectCardProps> = ({ name, service, id, status }) 
   const router = useRouter();
   const statusColor = getStatusColor(status);
   const isDone = status === "DONE" || status === "READY";
-  const isComplete = status === "DONE";
 
   return (
     <div className="card-2 flex flex-wrap justify-between gap-6">
@@ -54,12 +53,11 @@ const ProjectCard: React.FC<ProjectCardProps> = ({ name, service, id, status }) 
           </h2>
         </div>
       </div>
-      <div
-        onClick={() => router.push(`/dashboard/order/${id}`)}
-        className={`btn-quaternary ${isDone ? "!hidden" : "block"}`}
-      >
-        Review & Pay
-      </div>
+      {!isDone && (
+        <div onClick={() => router.push(`/dashboard/order/${id}`)} className="btn-quaternary ">
+          Review & Pay
+        </div>
+      )}
     </div>
   );
 };
