@@ -1,18 +1,75 @@
 [
   {
     "id": 1,
-    "serviceName": "Image Enhancement",
+    "slug": "virtual-staging",
+    "title": "Virtual Staging",
+    "category": "Virtual Staging & Renovation",
+    "desc": "Help buyers fall in love with your listings by turning vacant rooms into stylish spaces.",
+    "tagline": "Enhance Your Real Estate Property Listing, Starting at $16!",
+    "description": "Make your listings stand out from the competition with our affordable, photo-realistic Virtual Staging services. Transform empty rooms into digitally furnished spaces to sell properties faster.",
+    "startingPrice": 16,
+    "price": 16,
+    "images": [
+      {
+        "beforeUrl": "/assets/virtual-staging.png",
+        "afterUrl": "/assets/virtual-staging.png"
+      },
+      {
+        "beforeUrl": "/assets/virtual-staging.png",
+        "afterUrl": "/assets/virtual-staging.png"
+      },
+      {
+        "beforeUrl": "/assets/virtual-staging.png",
+        "afterUrl": "/assets/virtual-staging.png"
+      },
+      {
+        "beforeUrl": "/assets/virtual-staging.png",
+        "afterUrl": "/assets/virtual-staging.png"
+      }
+    ],
     "subServices": [
       {
-        "serviceName": "Single Exposure (Basic image enhancement)",
+        "title": "Add furniture to an empty room",
+        "price": 14
+      },
+      {
+        "title": "Remodel (change the furnitures)",
+        "price": 14
+      }
+    ],
+    "addExtra": [
+      {
+        "name": "24h",
+        "price": 6
+      }
+    ]
+  },
+  {
+    "id": 2,
+    "slug": "photo-editing",
+    "title": "Photo editing",
+    "category": "Photo Editing",
+    "desc": "Remove unwanted or distracting items from your listing photos.",
+    "tagline": "",
+    "description": "Remove Unwanted Items From Your Real Estate Photos",
+    "price": 8,
+    "images": [
+      {
+        "beforeUrl": "/assets/photo-editing.png",
+        "afterUrl": "/assets/photo-editing.png"
+      }
+    ],
+    "subServices": [
+      {
+        "title": "Single Exposure (Basic image enhancement)",
         "price": 0.8
       },
       {
-        "serviceName": "Blended Brackets (HDR) Hand-blended exposures",
+        "title": "Blended Brackets (HDR) Hand-blended exposures",
         "price": 1
       },
       {
-        "serviceName": "Flambient (Advanced flash blending)",
+        "title": "Flambient (Advanced flash blending)",
         "price": 2
       }
     ],
@@ -43,121 +100,20 @@
     ]
   },
   {
-    "id": 2,
-    "serviceName": "Virtual Staging",
-    "subServices": [
-      {
-        "serviceName": "Add furniture to an empty room",
-        "price": 14
-      },
-      {
-        "serviceName": "Remodel (change the furnitures)",
-        "price": 14
-      }
-    ],
-    "addExtra": [
-      {
-        "name": "24h",
-        "price": 6
-      }
-    ]
-  },
-  {
     "id": 3,
-    "serviceName": "Day to Dusk",
-    "price": 3,
-    "addExtra": [
+    "slug": "video-editing",
+    "title": "Video Editing",
+    "category": "Video Editing",
+    "desc": "Create a real estate video to gain prospects' attention and sell their listings faster.",
+    "tagline": "",
+    "description": "Use Real Estate Video Editing cost-effectively as a marketing tool for the client to get a realistic feel of the property.",
+    "price": 60,
+    "images": [
       {
-        "name": "24h",
-        "price": 1
-      }
-    ]
-  },
-  {
-    "id": 4,
-    "serviceName": "Day to Twilight",
-    "price": 2,
-    "addOn": [
-      {
-        "category": "",
-        "items": ["Blend Flash Exposures", "Composite Lighting"]
+        "beforeUrl": "video-editting.png",
+        "afterUrl": ""
       }
     ],
-    "addExtra": [
-      {
-        "name": "24h",
-        "price": 1
-      }
-    ]
-  },
-  {
-    "id": 5,
-    "serviceName": "Object Removal",
-    "subServices": [
-      {
-        "serviceName": "Small object: 1-4 items (get a quote)",
-        "price": 6
-      },
-      {
-        "serviceName": "Clear Room: Decluttering whole spaces (get a quote)",
-        "price": 6
-      }
-    ],
-    "addExtra": [
-      {
-        "name": "24h",
-        "price": 3
-      }
-    ]
-  },
-  {
-    "id": 6,
-    "serviceName": "Changing Seasons",
-    "price": 10,
-    "addExtra": [
-      {
-        "name": "24h",
-        "price": 5
-      }
-    ]
-  },
-  {
-    "id": 7,
-    "serviceName": "Water in Pool",
-    "price": 4,
-    "addExtra": [
-      {
-        "name": "24h",
-        "price": 2
-      }
-    ]
-  },
-  {
-    "id": 8,
-    "serviceName": "Lawn Replacement",
-    "price": 4,
-    "addExtra": [
-      {
-        "name": "24h",
-        "price": 2
-      }
-    ]
-  },
-  {
-    "id": 9,
-    "serviceName": "Rain to Shine",
-    "price": 10,
-    "addExtra": [
-      {
-        "name": "24h",
-        "price": 5
-      }
-    ]
-  },
-  {
-    "id": 10,
-    "serviceName": "Property Videos",
-    "price": 40,
     "addOn": [
       {
         "category": "Sound Design",

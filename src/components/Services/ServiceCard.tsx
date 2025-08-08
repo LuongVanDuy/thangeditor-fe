@@ -6,26 +6,30 @@ import Link from "next/link";
 import { useMutation } from "@tanstack/react-query";
 import { generateOrderId } from "@/lib/api/order.api";
 import { CompareSlider } from "@/components/Form/Compare/CompareSlider";
-import after1 from "@/assets/virtual-after.jpg";
-import before1 from "@/assets/virtual-before.jpg";
-
-const convertToSlug = (text: string) => {
-  return text
-    .toLowerCase()
-    .replace(/[^a-z0-9]+/g, "-")
-    .replace(/^[-]+|[-]+$/g, "");
-};
 
 interface CardProps {
   title: string;
   className?: string;
-  categories: string;
+  category: string;
   slug: string;
   desc: string;
   style?: string;
+  beforeUrl?: any;
+  afterUrl?: any;
+  small?: boolean;
 }
 
-const ServiceCard: React.FC<CardProps> = ({ title, className, categories, slug, desc, style }) => {
+const ServiceCard: React.FC<CardProps> = ({
+  title,
+  className,
+  category,
+  slug,
+  desc,
+  style,
+  beforeUrl,
+  afterUrl,
+  small = false,
+}) => {
   const router = useRouter();
 
   const { mutate: genOIDMutation } = useMutation({
@@ -46,48 +50,71 @@ const ServiceCard: React.FC<CardProps> = ({ title, className, categories, slug, 
     genOIDMutation(title);
   };
 
-  const serviceUrl = `/services/${convertToSlug(categories)}/${slug}`;
+  const serviceUrl = `/services/${slug}`;
 
   return (
-    <div className={`rounded-2xl overflow-hidden ${style}  shadow-md`}>
+    <div className={`rounded-2xl overflow-hidden ${style} shadow-md ${className}`}>
       <div className="relative max-w-[1540px]">
         <div className="relative w-full aspect-[600/345] overflow-hidden no-swipe">
-          <CompareSlider beforeImage={after1?.src} afterImage={before1?.src} />
+          {beforeUrl && afterUrl ? (
+            <CompareSlider beforeImage={beforeUrl} afterImage={afterUrl} />
+          ) : (
+            <img src={beforeUrl} alt="Before" className="w-full h-full object-cover" />
+          )}
         </div>
       </div>
 
-      <div className="p-4 md:p-6 lg:p-9 gap-9 md:gap-10 lg:gap-12 flex flex-col">
+      <div className={`gap-9 md:gap-10 lg:gap-12 flex flex-col ${small ? "p-2 md:p-3 lg:p-4" : "p-4 md:p-6 lg:p-9"}`}>
         <div>
-          <h1 className="text-primary text-[12px] uppercase">{categories}</h1>
-          <Link href={serviceUrl} className="font-medium text-[24px] md:text-[28px] lg:text-[32px] mt-2 mb-4">
-            {title}
+          <h3 className="text-primary text-[12px] uppercase tracking-wide">{category}</h3>
+          <Link
+            href={serviceUrl}
+            title={`${title} - ${category}`}
+            aria-label={`Learn more about ${title}`}
+            className={`font-medium mt-2 mb-4 block ${
+              small ? "text-[18px] md:text-[22px] lg:text-[26px]" : "text-[24px] md:text-[28px] lg:text-[32px]"
+            }`}
+          >
+            <h2 className="font-medium text-inherit">{title}</h2>
           </Link>
-          <h3 className="text-[#0000008F]">{desc}</h3>
+          <p className="text-[#0000008F]">{desc}</p>
         </div>
 
         <div>
-          <h1 className="text-[#000000CC] text-[14px] block md:hidden mb-4">
-            Starting from <span className="text-primary">$16</span>
-          </h1>
+          <p className="text-[#000000CC] text-[14px] block md:hidden mb-4">
+            Starting from{" "}
+            <span className="text-primary" itemProp="price">
+              $16
+            </span>
+          </p>
 
           <div className="flex gap-4 items-center">
-            <div
-              onClick={() => {
-                handleNewOrder(title);
-              }}
-              className="px-4 md:px-6 py-2 md:py-3 rounded-lg border border-[1px] border-solid border-primary border-[1px] font-medium text-primary cursor-pointer hover:opacity-80"
+            <button
+              onClick={() => handleNewOrder(title)}
+              className={`px-4 md:px-6 py-2 md:py-3 rounded-lg border border-primary font-medium text-primary cursor-pointer hover:opacity-80 ${
+                small ? "text-sm md:text-base" : ""
+              }`}
+              aria-label={`Place an order for ${title}`}
             >
               Place an order
-            </div>
+            </button>
+
             <Link
               href={serviceUrl}
-              className="px-4 md:px-6 py-2 md:py-3 rounded-lg border-[1px] border-[#DEE2E6] font-medium text-[#343A40] cursor-pointer hover:opacity-80"
+              title={`Learn more about ${title}`}
+              className={`px-4 md:px-6 py-2 md:py-3 rounded-lg border border-[#DEE2E6] font-medium text-[#343A40] cursor-pointer hover:opacity-80 ${
+                small ? "text-sm md:text-base" : ""
+              }`}
             >
               Learn more
             </Link>
-            <h1 className="text-[#000000CC] text-[14px] hidden md:block">
-              Starting from <span className="text-primary">$16</span>
-            </h1>
+
+            <p className="text-[#000000CC] text-[14px] hidden md:block">
+              Starting from{" "}
+              <span className="text-primary" itemProp="price">
+                $16
+              </span>
+            </p>
           </div>
         </div>
       </div>

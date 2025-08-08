@@ -20,7 +20,7 @@ const HomeSection1 = () => {
   };
 
   return (
-    <div>
+    <section>
       <div className="p-4 md:p-6">
         <div className=" rounded-2xl overflow-hidden relative mx-0 xl:mx-auto">
           <div className="relative w-full aspect-[600/345] md:aspect-[1440/534] rounded-xl overflow-hidden shadow-xl">
@@ -70,7 +70,7 @@ const HomeSection1 = () => {
           </div>
         </div>
       </div>
-    </div>
+    </section>
   );
 };
 

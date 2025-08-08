@@ -47,7 +47,7 @@ const HomeSection3 = () => {
   return (
     <div className="bg-[#FFFEEA]">
       <div className="sm:px-4 lg:px-[64px] xl:px-[108px] py-12 md:py-[64px] flex flex-col gap-9 md:gap-12 ">
-        <h1 className="text-[24px] mđ:text-[30px] lg:text-[36px] font-medium text-center">Why choose my service?</h1>
+        <h2 className="text-[24px] mđ:text-[30px] lg:text-[36px] font-medium text-center">Why choose my service?</h2>
 
         <div className="grid sm:grid-cols-2 md:grid-cols-3 gap-8">
           {cards.map((card, index) => (
@@ -60,8 +60,8 @@ const HomeSection3 = () => {
                 </div>
               </div>
               <div className="text-start md:text-center mt-5">
-                <h1 className="text-[#212529] font-medium sm:text-[18px] md:text-[20px] mb-2">{card.title}</h1>
-                <h2 className="text-[#495057]">{card.desc}</h2>
+                <h3 className="text-[#212529] font-medium sm:text-[18px] md:text-[20px] mb-2">{card.title}</h3>
+                <p className="text-[#495057]">{card.desc}</p>
               </div>
             </div>
           ))}

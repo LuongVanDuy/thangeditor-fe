@@ -189,7 +189,7 @@ const CreateOrder = () => {
 
   useEffect(() => {
     if (order?.service) {
-      const foundService = jsonServiceData.find((service: any) => service.serviceName === order.service);
+      const foundService = jsonServiceData.find((service: any) => service.title === order.service);
       setServiceData(foundService || null);
     }
   }, [order.service]);

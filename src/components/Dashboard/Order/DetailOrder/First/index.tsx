@@ -49,7 +49,7 @@ const First = ({
       additionalServicePrice: 0,
     }));
 
-    const matchedService = serviceList.find((service: any) => service.serviceName === value);
+    const matchedService = serviceList.find((service: any) => service.title === value);
 
     if (matchedService) {
       setServiceData(matchedService);
@@ -59,7 +59,7 @@ const First = ({
   const handleSubServiceChange = (e: any) => {
     if (!subService.length) return;
     const value = e.target.value;
-    const matchedSubService = serviceData?.subServices?.find((sub: any) => sub.serviceName === value);
+    const matchedSubService = serviceData?.subServices?.find((sub: any) => sub.title === value);
 
     setData((prev: any) => ({
       ...prev,
@@ -116,14 +116,12 @@ const First = ({
                 <div
                   key={index}
                   className={`p-4 rounded-lg ${
-                    subServiceData === serviceOption.serviceName
-                      ? "border-primary border-[2px] bg-[#FFFEEA]"
-                      : "bg-[#fbfbfb]"
+                    subServiceData === serviceOption.title ? "border-primary border-[2px] bg-[#FFFEEA]" : "bg-[#fbfbfb]"
                   }`}
                 >
                   <label className="flex items-center gap-2 cursor-pointer">
-                    <Radio value={serviceOption.serviceName} />
-                    <span className="font-medium text-[16px]">{serviceOption.serviceName}</span>
+                    <Radio value={serviceOption.title} />
+                    <span className="font-medium text-[16px]">{serviceOption.title}</span>
                   </label>
                 </div>
               ))}

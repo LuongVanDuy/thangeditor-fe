@@ -27,12 +27,10 @@ export default function PagesLayout({
     <>
       <RecoilRoot>
         <QueryClientProvider client={queryClient}>
-          <div className="overflow-hidden">
-            <Header />
-            <div className="bg-[#fff]">{children}</div>
-            <InitGlobalData />
-            <Footer />
-          </div>
+          <Header />
+          <div className="bg-[#fff]">{children}</div>
+          <InitGlobalData />
+          <Footer />
         </QueryClientProvider>
       </RecoilRoot>
     </>

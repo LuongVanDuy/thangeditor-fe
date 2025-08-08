@@ -27,24 +27,24 @@ const Four = ({
     const value = e.target.value;
     setSelectedDelivery(value);
 
-    let serviceName = null;
+    let title = null;
     switch (value) {
       case 0:
-        serviceName = "Normal Delivery";
+        title = "Normal Delivery";
         break;
       case 6:
-        serviceName = "Rapid Delivery";
+        title = "Rapid Delivery";
         break;
       case 12:
-        serviceName = "Super Rapid Delivery";
+        title = "Super Rapid Delivery";
         break;
       default:
-        serviceName = "Normal Delivery";
+        title = "Normal Delivery";
     }
 
     setData((prev: any) => ({
       ...prev,
-      additionalService: serviceName,
+      additionalService: title,
       additionalServicePrice: value,
     }));
   };

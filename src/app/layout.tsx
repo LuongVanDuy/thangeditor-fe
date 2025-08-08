@@ -18,9 +18,7 @@ export const metadata: Metadata = {
 export default function RootLayout({ children }: { children: React.ReactNode }) {
   return (
     <html lang="en" suppressHydrationWarning={true}>
-      <body className={beVietnamPro.className}>
-        <div className="overflow-hidden">{children}</div>
-      </body>
+      <body className={beVietnamPro.className}>{children}</body>
     </html>
   );
 }

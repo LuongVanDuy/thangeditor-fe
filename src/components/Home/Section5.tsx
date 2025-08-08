@@ -18,9 +18,9 @@ const HomeSection5 = () => {
       }}
     >
       <div className="py-[48px] md:py-[64px] flex flex-col gap-6 justify-center">
-        <h1 className="text-[#495057] text-center text-[14px] md:text-[16px]">
+        <h2 className="text-[#495057] text-center text-[14px] md:text-[16px]">
           Chosen by many leading real estate companies
-        </h1>
+        </h2>
         <div className="flex flex-wrap gap-6 justify-center">
           <div className="bg-[#f4f4f4] px-4 py-3 rounded-lg">
             <Image src={acb} alt="icon" className="h-[40px] w-auto" />

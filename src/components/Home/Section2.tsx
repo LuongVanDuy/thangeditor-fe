@@ -9,15 +9,12 @@ import right from "@/assets/chevron-right.svg";
 import { Swiper, SwiperRef, SwiperSlide } from "swiper/react";
 import { Navigation } from "swiper/modules";
 import "swiper/css";
-import after1 from "@/assets/virtual-after.jpg";
-import before1 from "@/assets/virtual-before.jpg";
-import after2 from "@/assets/enhen-after.jpg";
-import before2 from "@/assets/enhen-before.jpg";
 import styled from "styled-components";
 import { useMutation } from "@tanstack/react-query";
 import { generateOrderId } from "@/lib/api/order.api";
 import { CompareSlider } from "@/components/Form/Compare/CompareSlider";
 import { useRouter } from "next/navigation";
+import { jsonServiceData } from "@/lib/constants";
 
 export const StyledSwiperSlide = styled(SwiperSlide)`
   width: 600px;
@@ -33,33 +30,6 @@ export const StyledSwiperSlide = styled(SwiperSlide)`
     height: 500px;
   }
 `;
-
-const data = [
-  {
-    title: "Virtual Staging",
-    categories: "Virtual Staging & Renovation",
-    desc: "Help buyers fall in love with your listings by turning vacant rooms into stylish spaces.",
-    slug: "virtual-staging-renovation/virtual-staging",
-    after: after1,
-    before: before1,
-  },
-  {
-    title: "Image Enhancement",
-    categories: "Photo Editing",
-    desc: "Create competitive advantage by enhancing real estate image",
-    slug: "photo-editing/object-removal",
-    after: after2,
-    before: before2,
-  },
-  {
-    title: "Property Videos",
-    categories: "Video Editing",
-    desc: "Create a real estate video to gain prospects' attention and sell their listings faster.",
-    slug: "video-editing/real-estate-video-editing",
-    after: after2,
-    before: before2,
-  },
-];
 
 const HomeSection2 = () => {
   const router = useRouter();
@@ -93,7 +63,7 @@ const HomeSection2 = () => {
 
   return (
     <div className="sm:px-4 lg:pl-[64px] xl:pl-[108px] pb-[64px] pt-12 md:pt-0 ">
-      <h1 className="text-[#495057] text-[18px] mb-4 block md:hidden">My services</h1>
+      <h2 className="text-[#495057] text-[18px] mb-4 block md:hidden">My services</h2>
       <Swiper
         ref={swiperRef}
         modules={[Navigation]}
@@ -114,18 +84,46 @@ const HomeSection2 = () => {
         }}
         className="mySwiper2 !pl-[4px] !mr-[-4px]"
       >
-        {data.map((item, index) => (
+        {jsonServiceData.map((item, index) => (
           <SwiperSlide key={index} className="pb-[4px]">
             <div className="rounded-2xl overflow-hidden shadow-md">
               <div className="relative max-w-[1540px]">
                 <div className="relative w-full aspect-[600/345] overflow-hidden no-swipe">
-                  <CompareSlider beforeImage={item.before?.src} afterImage={item.after?.src} />
+                  {item?.images?.[0] &&
+                    (() => {
+                      const firstImg = item.images[0];
+
+                      let beforeSrc = null;
+                      let afterSrc = null;
+
+                      if (firstImg.beforeUrl) {
+                        beforeSrc = require(`@/assets/${firstImg.beforeUrl.split("/").pop()}`).default.src;
+                      }
+
+                      if (firstImg.afterUrl) {
+                        afterSrc = require(`@/assets/${firstImg.afterUrl.split("/").pop()}`).default.src;
+                      }
+
+                      if (item.id === 3) {
+                        return beforeSrc ? (
+                          <img src={beforeSrc} alt="Before" className="w-full h-full object-cover" />
+                        ) : null;
+                      }
+
+                      if (beforeSrc && afterSrc) {
+                        return <CompareSlider beforeImage={beforeSrc} afterImage={afterSrc} />;
+                      } else if (beforeSrc) {
+                        return <img src={beforeSrc} alt="Before" className="w-full h-full object-cover" />;
+                      }
+
+                      return null;
+                    })()}
                 </div>
               </div>
 
               <div className="p-4 md:p-6 lg:p-9 gap-9 md:gap-10 lg:gap-12 flex flex-col">
                 <div>
-                  <h1 className="text-primary text-[12px] uppercase">{item.categories}</h1>
+                  <p className="text-primary text-[12px] uppercase">{item.category}</p>
                   <Link
                     href={`/services/${item.slug}`}
                     className="font-medium text-[24px] md:text-[28px] lg:text-[32px] mt-2 mb-4"
@@ -136,26 +134,26 @@ const HomeSection2 = () => {
                 </div>
 
                 <div>
-                  <h1 className="text-[#000000CC] text-[14px] block md:hidden mb-4">
+                  <h3 className="text-[#000000CC] text-[14px] block md:hidden mb-4">
                     Starting from <span className="text-primary">$16</span>
-                  </h1>
+                  </h3>
 
                   <div className="flex gap-4 items-center">
-                    <div
+                    <button
                       onClick={() => handleNewOrder(item.title)}
                       className="px-4 md:px-6 py-2 md:py-3 rounded-lg font-medium text-primary cursor-pointer hover:opacity-80  border-[1px] border-solid border-primary"
                     >
                       Place an order
-                    </div>
+                    </button>
                     <Link
                       href={`/services/${item.slug}`}
                       className="px-4 md:px-6 py-2 md:py-3 rounded-lg border-[1px] border-[#DEE2E6] font-medium text-[#343A40] cursor-pointer hover:opacity-80"
                     >
                       Learn more
                     </Link>
-                    <h1 className="text-[#000000CC] text-[14px] hidden md:block">
-                      Starting from <span className="text-primary">$16</span>
-                    </h1>
+                    <div className="text-[#000000CC] text-[14px] hidden md:block">
+                      Starting from <span className="text-primary">${item.price}</span>
+                    </div>
                   </div>
                 </div>
               </div>

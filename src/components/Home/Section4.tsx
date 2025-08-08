@@ -24,7 +24,7 @@ const HomeSection4 = () => {
   return (
     <div className="sm:px-4 xs:px-[64px] xl:px-[108px] py-12 md:py-[64px] flex flex-col gap-9 md:gap-12">
       <div className="flex justify-between">
-        <h1 className="text-[24px] xs:text-[30px] lg:text-[36px] font-medium">How does it work</h1>
+        <h2 className="text-[24px] xs:text-[30px] lg:text-[36px] font-medium">How does it work</h2>
         <div onClick={handleButtonClick} className="btn-primary w-[162px] h-[58px]">
           Try for free
         </div>
@@ -34,11 +34,11 @@ const HomeSection4 = () => {
         {/* 1 */}
         <div className="flex-1 border-[1px] border-[#FFF046] bg-[#FFFEEA] px-4 pt-6 md:pt-12 md:px-9 sm:rounded-t-2xl lg:rounded-bl-2xl lg:rounded-t-none gap-12 flex flex-col justify-between">
           <div className="flex flex-col gap-4">
-            <h1 className="uppercase text-primary font-medium text-[14px]">Step 1</h1>
-            <h2 className="text-[#212529] font-medium text-[20px] md:text-[24px]">Submit your photo</h2>
-            <h3 className="text-[#343A40] text-[14px] md:text-[16px]">
+            <p className="uppercase text-primary font-medium text-[14px]">Step 1</p>
+            <h3 className="text-[#212529] font-medium text-[20px] md:text-[24px]">Submit your photo</h3>
+            <p className="text-[#343A40] text-[14px] md:text-[16px]">
               Please submit your image link and select style from the order screen
-            </h3>
+            </p>
           </div>
           <div className="mx-auto mt-auto">
             <Image src={img1} alt="widget" className="w-[325px] h-auto" />
@@ -48,9 +48,9 @@ const HomeSection4 = () => {
         {/* 2 */}
         <div className="flex-1 border-[1px] border-primary bg-primary px-4 pt-6 md:pt-12 md:px-9 gap-12 flex flex-col justify-between">
           <div className="flex flex-col gap-4">
-            <h1 className="uppercase text-[#000000] font-medium text-[14px]">Step 2</h1>
-            <h2 className="text-[#000000] font-medium text-[20px] md:text-[24px]">Edited by Vamedi</h2>
-            <h3 className="text-[#000] text-[14px] md:text-[16px]">Vamedi will do the best editing of your images.</h3>
+            <p className="uppercase text-[#000000] font-medium text-[14px]">Step 2</p>
+            <h3 className="text-[#000000] font-medium text-[20px] md:text-[24px]">Edited by Vamedi</h3>
+            <p className="text-[#000] text-[14px] md:text-[16px]">Vamedi will do the best editing of your images.</p>
           </div>
           <div className="mx-auto mt-auto">
             <Image src={img2} alt="widget" className="w-[325px] h-auto" />
@@ -60,11 +60,11 @@ const HomeSection4 = () => {
         {/* 3 */}
         <div className="flex-1 border-[1px] border-[#FFF046] bg-[#FFFEEA] px-4 pt-6 md:pt-12 md:px-9 sm:rounded-b-2xl lg:rounded-tr-2xl lg:rounded-b-none gap-12 flex flex-col justify-between">
           <div className="flex flex-col gap-4">
-            <h1 className="uppercase text-primary font-medium text-[14px]">Step 3</h1>
-            <h2 className="text-[#212529] font-medium text-[20px] md:text-[24px]">Get them delivered!</h2>
-            <h3 className="text-[#343A40] text-[14px] md:text-[16px]">
+            <p className="uppercase text-primary font-medium text-[14px]">Step 3</p>
+            <h3 className="text-[#212529] font-medium text-[20px] md:text-[24px]">Get them delivered!</h3>
+            <p className="text-[#343A40] text-[14px] md:text-[16px]">
               We will resend the edited images within 12-48 hours in the Vamedi dashboard
-            </h3>
+            </p>
           </div>
           <div className="mx-auto mt-auto">
             <Image src={img3} alt="widget" className="w-[325px] h-auto" />

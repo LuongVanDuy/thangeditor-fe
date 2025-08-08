@@ -37,12 +37,12 @@ const HomeSection7 = () => {
     <div className="bg-[#FDC101]">
       <div className="sm:px-4 lg:px-[64px] xl:px-[108px] py-12 md:py-[64px] flex flex-col gap-12">
         <div className="text-center">
-          <h1 className="text-[#000000] text-[24px] md:text-[30px] lg:text-[36px] font-medium mb-4 md:mb-6">
+          <h2 className="text-[#000000] text-[24px] md:text-[30px] lg:text-[36px] font-medium mb-4 md:mb-6">
             Customer happiness is our priority
-          </h1>
-          <h2 className="text-[#000] text-[18px]">
-            Hear feedback from our happy customers and learn how we helped them take their businesses to new heights.
           </h2>
+          <p className="text-[#000] text-[18px]">
+            Hear feedback from our happy customers and learn how we helped them take their businesses to new heights.
+          </p>
         </div>
 
         <div className="hidden md:flex flex-wrap justify-center gap-6">
@@ -51,8 +51,8 @@ const HomeSection7 = () => {
               <div className="rounded-2xl p-9 gap-9 bg-[#fff] flex flex-col shadow-md">
                 <div className="flex gap-3 flex-col">
                   <Image src={icon} alt="icon" />
-                  <h1 className="font-medium text-[#212529] text-[18px]">{item.title}</h1>
-                  <h2 className="text-[#495057]">{item.desc}</h2>
+                  <h3 className="font-medium text-[#212529] text-[18px]">{item.title}</h3>
+                  <p className="text-[#495057]">{item.desc}</p>
                 </div>
 
                 <div className="flex gap-4">
@@ -66,8 +66,8 @@ const HomeSection7 = () => {
                     />
                   </div>
                   <div>
-                    <h1 className="font-medium text-primary text-[18px]">{item.name}</h1>
-                    <h2 className="text-[#6C757D] text-[14px]">{item.role}</h2>
+                    <h3 className="font-medium text-primary text-[18px]">{item.name}</h3>
+                    <p className="text-[#6C757D] text-[14px]">{item.role}</p>
                   </div>
                 </div>
               </div>
@@ -80,8 +80,8 @@ const HomeSection7 = () => {
             <div key={index} className="rounded-2xl p-9 gap-9 bg-[#fff] flex flex-col shadow-md">
               <div className="flex gap-3 flex-col">
                 <Image src={icon} alt="icon" />
-                <h1 className="font-medium text-[#212529] text-[18px]">{item.title}</h1>
-                <h2 className="text-[#495057]">{item.desc}</h2>
+                <h3 className="font-medium text-[#212529] text-[18px]">{item.title}</h3>
+                <p className="text-[#495057]">{item.desc}</p>
               </div>
 
               <div className="flex gap-4">
@@ -95,8 +95,8 @@ const HomeSection7 = () => {
                   />
                 </div>
                 <div>
-                  <h1 className="font-medium text-primary text-[18px]">{item.name}</h1>
-                  <h2 className="text-[#6C757D] text-[14px]">{item.role}</h2>
+                  <h3 className="font-medium text-primary text-[18px]">{item.name}</h3>
+                  <p className="text-[#6C757D] text-[14px]">{item.role}</p>
                 </div>
               </div>
             </div>

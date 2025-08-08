@@ -1,70 +1,14 @@
 "use client";
 
 import ServiceCard from "@/components/Services/ServiceCard";
+import { jsonServiceData } from "@/lib/constants";
 import React, { useState } from "react";
-
-const data = [
-  {
-    title: "Virtual Staging",
-    categories: "Virtual Staging & Renovation",
-    desc: "Virtual home staging helps showcase a property's true potential and helps buyers visualize their dream home.",
-    slug: "virtual-staging-renovation",
-  },
-  {
-    title: "Commercial Virtual Staging",
-    categories: "Virtual Staging & Renovation",
-    desc: " Give buyers to visualize their business setup in a comfy & efficient environment.",
-    slug: "virtual-staging-renovation",
-  },
-  {
-    title: "Matterport Virtual Staging.",
-    categories: "Virtual Staging & Renovation",
-    desc: "Virtually stage your property link and create an immersive 3D walkthrough.",
-    slug: "virtual-staging-renovation",
-  },
-  {
-    title: "Virtual Renovation",
-    categories: "Virtual Staging & Renovation",
-    desc: " Virtually renovate your wall, ceiling, floor, kitchen, bathrooms etc.",
-    slug: "virtual-staging-renovation",
-  },
-  {
-    title: "Occupied to Vacant",
-    categories: "Photo Editing",
-    desc: "Remove dated or cluttered furnishings from your listing images.",
-    slug: "photo-editing",
-  },
-  {
-    title: "Day to Dusk",
-    categories: "Photo Editing",
-    desc: "Turn daylight home photos into eye catching dusk images.",
-    slug: "photo-editing",
-  },
-  {
-    title: "Object removal",
-    categories: "Photo Editing",
-    desc: "Remove unwanted or distracting items from your listing photos.",
-    slug: "photo-editing",
-  },
-  {
-    title: "Image Enhancement",
-    categories: "Photo Editing",
-    desc: " Brighten, sharpen, balance, and remove reflections in your listing photos.",
-    slug: "photo-editing",
-  },
-  {
-    title: "Property Videos",
-    categories: "Video Editing",
-    desc: "Create a real estate video to gain prospects' attention and sell their listings faster.",
-    slug: "video-editing",
-  },
-];
 
 const Services = () => {
   const [currentTab, setCurrentTab] = useState("");
 
-  const filteredData = data.filter((item) => {
-    return currentTab === "" || item.categories === currentTab;
+  const filteredData = jsonServiceData.filter((item) => {
+    return currentTab === "" || item.category === currentTab;
   });
 
   return (
@@ -73,11 +17,35 @@ const Services = () => {
 
       <div className="flex flex-col gap-6">
         <div className="grid grid-cols-1 md:grid-cols-2 xl:grid-cols-3 gap-4 md:gap-6 mb-4 md:mb-0">
-          {filteredData.map((item, index) => (
-            <div key={index}>
-              <ServiceCard title={item.title} categories={item.categories} desc={item.desc} slug={item.slug} />
-            </div>
-          ))}
+          {filteredData.map((item, index) => {
+            let beforeSrc = null;
+            let afterSrc = null;
+
+            if (item?.images?.[0]) {
+              const firstImg = item.images[0];
+
+              if (firstImg.beforeUrl) {
+                beforeSrc = require(`@/assets/${firstImg.beforeUrl.split("/").pop()}`).default.src;
+              }
+
+              if (firstImg.afterUrl) {
+                afterSrc = require(`@/assets/${firstImg.afterUrl.split("/").pop()}`).default.src;
+              }
+            }
+
+            return (
+              <div key={index}>
+                <ServiceCard
+                  title={item.title}
+                  category={item.category}
+                  desc={item.desc}
+                  slug={item.slug}
+                  beforeUrl={beforeSrc}
+                  afterUrl={afterSrc}
+                />
+              </div>
+            );
+          })}
         </div>
       </div>
     </div>

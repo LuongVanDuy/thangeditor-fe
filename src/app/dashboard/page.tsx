@@ -14,24 +14,8 @@ import OrderBtn from "@/components/Dashboard/OrderBtn";
 import Link from "next/link";
 import Card from "@/components/Dashboard/Home/Services/Card";
 import ProjectCard from "@/components/Dashboard/Home/ProjectCard";
-
-const Services = [
-  {
-    title: "Virtual Staging",
-    categories: "Virtual Staging & Renovation",
-    slug: "virtual-staging-renovation",
-  },
-  {
-    title: "Object removal",
-    categories: "Photo Editing",
-    slug: "photo-editing",
-  },
-  {
-    title: "Property Videos",
-    categories: "Video Editing",
-    slug: "video-editing",
-  },
-];
+import { jsonServiceData } from "@/lib/constants";
+import { CompareSlider } from "@/components/Form/Compare/CompareSlider";
 
 const Home = () => {
   const profile = useRecoilValue(profileState);
@@ -147,10 +131,48 @@ const Home = () => {
           </div>
         </div>
 
-        <div className="grid 2xl:grid-cols-4 md:grid-cols-1 lg:grid-cols-2 gap-4 md:gap-6 mb-4 md:mb-0">
-          {Services.map((item, index) => (
+        <div className="grid 2xl:grid-cols-3 md:grid-cols-1 lg:grid-cols-3 gap-4 md:gap-6 mb-4 md:mb-0">
+          {jsonServiceData.map((item, index) => (
             <div key={index}>
-              <Card title={item.title} categories={item.categories} slug={item.slug} />
+              <div className="rounded-2xl overflow-hidden shadow-md mb-6">
+                <div className="relative w-full aspect-[600/345] overflow-hidden no-swipe">
+                  {item?.images?.[0] &&
+                    (() => {
+                      const firstImg = item.images[0];
+
+                      let beforeSrc = null;
+                      let afterSrc = null;
+
+                      if (firstImg.beforeUrl) {
+                        beforeSrc = require(`@/assets/${firstImg.beforeUrl.split("/").pop()}`).default.src;
+                      }
+
+                      if (firstImg.afterUrl) {
+                        afterSrc = require(`@/assets/${firstImg.afterUrl.split("/").pop()}`).default.src;
+                      }
+
+                      if (item.id === 3) {
+                        return beforeSrc ? (
+                          <img src={beforeSrc} alt="Before" className="w-full h-full object-cover" />
+                        ) : null;
+                      }
+
+                      if (beforeSrc && afterSrc) {
+                        return <CompareSlider beforeImage={beforeSrc} afterImage={afterSrc} />;
+                      } else if (beforeSrc) {
+                        return <img src={beforeSrc} alt="Before" className="w-full h-full object-cover" />;
+                      }
+
+                      return null;
+                    })()}{" "}
+                </div>
+                <div className="p-4 md:p-6">
+                  <h1 className="text-primary text-[12px] uppercase">{item.category}</h1>
+                  <Link href={`/services/${item.slug}`} className="font-medium text-[18px] md:text-[20px] mt-4">
+                    {item.title}
+                  </Link>
+                </div>
+              </div>
             </div>
           ))}
         </div>

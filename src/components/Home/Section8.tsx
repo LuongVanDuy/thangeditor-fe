@@ -23,7 +23,7 @@ const HomeSection8 = () => {
 
   return (
     <div className="px-4 lg:px-[64px] py-12 md:py-[64px] flex flex-col gap-9 md:gap-12">
-      <h1 className="text-[24px] md:text-[30px] lg:text-[36px] font-medium mb-4 md:mb-6 text-center">Blog</h1>
+      <h2 className="text-[24px] md:text-[30px] lg:text-[36px] font-medium mb-4 md:mb-6 text-center">Blog</h2>
 
       <div className="flex flex-wrap gap-8 justify-center">
         {blogList.map((item: any, index: number) => (
@@ -38,16 +38,16 @@ const HomeSection8 = () => {
               />
             </div>
             <div className="flex flex-col gap-6 justify-center">
-              <h2 className="text-primary text-[12px] uppercase font-medium">{item.subject || "Blog"}</h2>
+              <p className="text-primary text-[12px] uppercase font-medium">{item.subject || "Blog"}</p>
               <div className="flex items-start justify-between">
                 <Link href={`/blog/${item.slug}`}>
-                  <h1 className="text-[24px] font-medium text-[#212529] hover:opacity-80 cursor-pointer">
+                  <h3 className="text-[24px] font-medium text-[#212529] hover:opacity-80 cursor-pointer">
                     {item.title}
-                  </h1>
+                  </h3>
                 </Link>
                 <Image src={icon} alt="arrow" width={20} height={20} />
               </div>
-              <h2 className="text-[#495057]">{item.shortDesc}</h2>
+              <p className="text-[#495057]">{item.shortDesc}</p>
             </div>
           </div>
         ))}
