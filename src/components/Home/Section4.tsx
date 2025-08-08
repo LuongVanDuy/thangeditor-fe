@@ -48,9 +48,9 @@ const HomeSection4 = () => {
         {/* 2 */}
         <div className="flex-1 border-[1px] border-primary bg-primary px-4 pt-6 md:pt-12 md:px-9 gap-12 flex flex-col justify-between">
           <div className="flex flex-col gap-4">
-            <h1 className="uppercase text-[#fff] font-medium text-[14px]">Step 2</h1>
-            <h2 className="text-[#fff] font-medium text-[20px] md:text-[24px]">Edited by Vamedi</h2>
-            <h3 className="text-[#fff] text-[14px] md:text-[16px]">Vamedi will do the best editing of your images.</h3>
+            <h1 className="uppercase text-[#000000] font-medium text-[14px]">Step 2</h1>
+            <h2 className="text-[#000000] font-medium text-[20px] md:text-[24px]">Edited by Vamedi</h2>
+            <h3 className="text-[#000] text-[14px] md:text-[16px]">Vamedi will do the best editing of your images.</h3>
           </div>
           <div className="mx-auto mt-auto">
             <Image src={img2} alt="widget" className="w-[325px] h-auto" />

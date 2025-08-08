@@ -94,7 +94,7 @@ const First = ({
   return (
     <>
       <div className="order-card">
-        <h1 className="text-[#212529] text-[18px] font-medium mb-4">Choose your service*</h1>
+        <h1 className="text-[#212529] text-[16px] font-bold mb-4">Choose your service*</h1>
         <Radio.Group onChange={handleChange} value={service} className="w-full">
           <div className="grid grid-cols-1 md:grid-cols-3 lg:grid-cols-4 gap-3">
             {services.map((serviceOption, index) => (
@@ -104,10 +104,10 @@ const First = ({
                   service === serviceOption.value ? "border-primary border-[2px] bg-[#FFFEEA]" : "bg-[#fbfbfb]"
                 }`}
               >
-                <div className="flex justify-between mb-4">
+                <label className="flex items-center gap-5 cursor-pointer">
                   <Radio value={serviceOption.value} />
-                </div>
-                <h1 className="font-medium text-[18px] md:text-[24px]">{serviceOption.label}</h1>
+                  <span className="font-medium text-[16px]">{serviceOption.label}</span>
+                </label>
               </div>
             ))}
           </div>
@@ -116,7 +116,7 @@ const First = ({
 
       {subService.length > 0 && (
         <div className="order-card">
-          <h1 className="text-[#212529] text-[18px] font-medium mb-4">Choose your sub service*</h1>
+          <h1 className="text-[#212529] text-[16px] font-bold mb-4">Choose your sub service*</h1>
           <Radio.Group onChange={handleSubServiceChange} value={data.subService} className="w-full">
             <div className="grid grid-cols-1 md:grid-cols-3 gap-3">
               {subService.map((serviceOption: any, index: number) => (
@@ -128,10 +128,10 @@ const First = ({
                       : "bg-[#fbfbfb]"
                   }`}
                 >
-                  <div className="flex justify-between mb-4">
+                  <label className="flex items-center gap-2 cursor-pointer">
                     <Radio value={serviceOption.serviceName} />
-                  </div>
-                  <h1 className="font-medium text-[18px] md:text-[24px]">{serviceOption.serviceName}</h1>
+                    <span className="font-medium text-[16px]">{serviceOption.serviceName}</span>
+                  </label>
                 </div>
               ))}
             </div>
@@ -140,7 +140,7 @@ const First = ({
       )}
 
       <div className="order-card">
-        <h1 className="text-[#212529] text-[18px] font-medium mb-4">Up load some photos of your property*</h1>
+        <h1 className="text-[#212529] text-[16px] font-bold mb-4">Upload some photos of your property*</h1>
         <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
           <CustomInput
             onChange={(value: any) => {

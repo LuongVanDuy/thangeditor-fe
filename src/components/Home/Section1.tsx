@@ -29,10 +29,12 @@ const HomeSection1 = () => {
         </div>
       </div>
 
-      <div className="py-[64px] md:px-[48px] lg:px-[86px] xl:px-[108px] hidden md:flex lg:justify-between">
-        <div className="md: text-[36px] lg:text-[48px]">Make your ideal space right before your eyes</div>
+      <div className="py-[64px] md:px-[48px] lg:px-[86px] xl:px-[108px] gap-x-16 hidden items-center md:flex lg:justify-between">
+        <div className="md:text-[36px] lg:text-[48px] flex-1">
+          Make your ideal space <br /> right before your eyes
+        </div>
 
-        <div>
+        <div className="flex-1">
           <div className="text-[#495057] mb-4">
             Trusted by over 2,000 professional real estate photographers since 2012.
           </div>

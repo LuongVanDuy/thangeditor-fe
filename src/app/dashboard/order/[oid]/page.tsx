@@ -25,6 +25,7 @@ import First from "@/components/Dashboard/Order/DetailOrder/First";
 import Five from "@/components/Dashboard/Order/DetailOrder/Five";
 import Four from "@/components/Dashboard/Order/DetailOrder/Four";
 import DeleteModal from "@/components/Dashboard/Order/DeleteModal";
+import { jsonServiceData } from "@/lib/constants";
 
 const StyledDrawer = styled(Drawer)`
   .ant-drawer .ant-drawer-content-wrapper {
@@ -131,7 +132,7 @@ const DetailOrder = () => {
 
   useEffect(() => {
     if (order?.service) {
-      const foundService = serviceData.find((service: any) => service.serviceName === order.service);
+      const foundService = jsonServiceData.find((service: any) => service.serviceName === order.service);
       if (foundService) {
         setServiceData(foundService);
       } else {
@@ -147,7 +148,7 @@ const DetailOrder = () => {
         <First
           setData={setOrder}
           data={order}
-          serviceList={serviceData}
+          serviceList={jsonServiceData}
           serviceData={serviceData}
           setServiceData={setServiceData}
         />
@@ -193,7 +194,7 @@ const DetailOrder = () => {
         <First
           setData={setOrder}
           data={order}
-          serviceList={serviceData}
+          serviceList={jsonServiceData}
           serviceData={serviceData}
           setServiceData={setServiceData}
         />
@@ -302,8 +303,7 @@ const DetailOrder = () => {
       }
 
       const isValidUrl = (url: string) => {
-        const pattern = /^(https?:\/\/)?([a-zA-Z0-9-]+\.)+[a-zA-Z]{2,6}(:[0-9]{1,5})?(\/[^\s]*)?$/;
-        return pattern.test(url);
+        return url.includes("http");
       };
 
       if (!isValidUrl(order.uploadImage)) {
@@ -429,22 +429,24 @@ const DetailOrder = () => {
             <div className="flex gap-12">
               <div>
                 <h1 className="text-[#6C757D] text-[12px] uppercase">Service</h1>
-                <h2 className="text-[#343A40]">{order.service ? order.service : "---"}</h2>
+                <h2 className="text-[#343A40] mt-1">{order.service ? order.service : "---"}</h2>
               </div>
 
               <div>
                 <h1 className="text-[#6C757D] text-[12px] uppercase">Total images</h1>
-                <h2 className="text-[#343A40]">{order.quantity ? order.quantity : "---"}</h2>
+                <h2 className="text-[#343A40] mt-1">{order.quantity ? order.quantity : "---"}</h2>
               </div>
 
               <div>
                 <h1 className="text-[#6C757D] text-[12px] uppercase">Desgin style</h1>
-                <h2 className="text-[#343A40]">{order.designStyle ? order.designStyle : "---"}</h2>
+                <h2 className="text-[#343A40] mt-1">{order.designStyle ? order.designStyle : "---"}</h2>
               </div>
 
               <div>
                 <h1 className="text-primary text-[12px] uppercase">Order total</h1>
-                <h2 className="text-primary">{order.orderTotal !== 0 ? formatCurrency(order.orderTotal) : "---"}</h2>
+                <h2 className="text-primary mt-1">
+                  {order.orderTotal !== 0 ? formatCurrency(order.orderTotal) : "---"}
+                </h2>
               </div>
             </div>
           </div>

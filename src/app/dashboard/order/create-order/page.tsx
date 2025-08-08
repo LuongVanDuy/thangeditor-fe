@@ -25,6 +25,7 @@ import Third from "@/components/Dashboard/Order/CreateOrder/Third";
 import Four from "@/components/Dashboard/Order/CreateOrder/Four";
 import Five from "@/components/Dashboard/Order/CreateOrder/Five";
 import DeleteModal from "@/components/Dashboard/Order/DeleteModal";
+import { jsonServiceData } from "@/lib/constants";
 
 const StyledDrawer = styled(Drawer)`
   .ant-drawer .ant-drawer-content-wrapper {
@@ -42,6 +43,7 @@ const CreateOrder = () => {
   const searchParams = useSearchParams();
   const oid = searchParams.get("oid");
   const service = searchParams.get("service");
+
   const [current, setCurrent] = useState(0);
   const [isEditing, setIsEditing] = useState(false);
   const [isCreated, setIsCreated] = useState(false);
@@ -166,7 +168,7 @@ const CreateOrder = () => {
 
   useEffect(() => {
     if (order?.service) {
-      const foundService = serviceData.find((service: any) => service.serviceName === order.service);
+      const foundService = jsonServiceData.find((service: any) => service.serviceName === order.service);
       if (foundService) {
         setServiceData(foundService);
       } else {
@@ -182,7 +184,7 @@ const CreateOrder = () => {
         <First
           setData={setOrder}
           data={order}
-          serviceList={serviceData}
+          serviceList={jsonServiceData}
           serviceData={serviceData}
           setServiceData={setServiceData}
         />
@@ -228,7 +230,7 @@ const CreateOrder = () => {
         <First
           setData={setOrder}
           data={order}
-          serviceList={serviceData}
+          serviceList={jsonServiceData}
           serviceData={serviceData}
           setServiceData={setServiceData}
         />
@@ -345,12 +347,11 @@ const CreateOrder = () => {
       }
 
       const isValidUrl = (url: string) => {
-        const pattern = /^(https?:\/\/)?([a-zA-Z0-9-]+\.)+[a-zA-Z]{2,6}(:[0-9]{1,5})?(\/[^\s]*)?$/;
-        return pattern.test(url);
+        return url.includes("http");
       };
 
       if (!isValidUrl(order.uploadImage)) {
-        message.warning("Please enter a valid image link.");
+        message.warning("Please enter a valid image link");
         return;
       }
 
@@ -474,7 +475,7 @@ const CreateOrder = () => {
                   autoFocus
                 />
               ) : (
-                <h1 className="text-[#6C757D] font-medium text-[24px] flex gap-1 items-center">
+                <h1 className="text-[#6C757D] font-medium text-[24px] mt-1 flex gap-1 items-center">
                   {order.projectName || "Project name"} <Image src={pen} alt="icon" />
                 </h1>
               )}
@@ -486,26 +487,27 @@ const CreateOrder = () => {
             <div className="flex gap-12">
               <div>
                 <h1 className="text-[#6C757D] text-[12px] uppercase">Service</h1>
-                <h2 className="text-[#343A40]">{order.service ? order.service : "---"}</h2>
+                <h2 className="text-[#343A40] mt-1">{order.service ? order.service : "---"}</h2>
               </div>
 
               <div>
                 <h1 className="text-[#6C757D] text-[12px] uppercase">Total images</h1>
-                <h2 className="text-[#343A40]">{order.quantity ? order.quantity : "---"}</h2>
+                <h2 className="text-[#343A40] mt-1">{order.quantity ? order.quantity : "---"}</h2>
               </div>
 
               <div>
                 <h1 className="text-[#6C757D] text-[12px] uppercase">Desgin style</h1>
-                <h2 className="text-[#343A40]">{order.designStyle ? order.designStyle : "---"}</h2>
+                <h2 className="text-[#343A40] mt-1">{order.designStyle ? order.designStyle : "---"}</h2>
               </div>
 
               <div>
                 <h1 className="text-primary text-[12px] uppercase">Order total</h1>
-                <h2 className="text-primary">{order.orderTotal !== 0 ? formatCurrency(order.orderTotal) : "---"}</h2>
+                <h2 className="text-primary m-1">
+                  {order.orderTotal !== 0 ? formatCurrency(order.orderTotal) : "---"}
+                </h2>
               </div>
             </div>
           </div>
-
           <div className="px-4 pb-3 pt-6 flex md:hidden items-center bg-[#fff] -mt-3 -mx-6 justify-between relative z-10">
             <div className="cursor-pointer">
               {isEditing ? (
@@ -519,7 +521,7 @@ const CreateOrder = () => {
               ) : (
                 <h1
                   onClick={handleEditClick}
-                  className="text-[#212529] font-medium text-[18px] flex gap-1 items-center"
+                  className="text-[#212529] font-medium text-[16px] flex gap-1 items-center"
                 >
                   {order.projectName || "Project name"} <Image src={pen} alt="icon" className="h-[18px] w-[18px]" />
                 </h1>
@@ -550,7 +552,6 @@ const CreateOrder = () => {
               <h2 className="text-primary">{order.orderTotal !== 0 ? formatCurrency(order.orderTotal) : "---"}</h2>
             </div>
           </div>
-
           <div>{steps[current].content}</div>
         </div>
 

@@ -143,7 +143,7 @@ const HomeSection2 = () => {
                   <div className="flex gap-4 items-center">
                     <div
                       onClick={() => handleNewOrder(item.title)}
-                      className="px-4 md:px-6 py-2 md:py-3 rounded-lg font-medium text-primary cursor-pointer hover:opacity-80 border border-[1px] border-solid border-primary"
+                      className="px-4 md:px-6 py-2 md:py-3 rounded-lg font-medium text-primary cursor-pointer hover:opacity-80  border-[1px] border-solid border-primary"
                     >
                       Place an order
                     </div>

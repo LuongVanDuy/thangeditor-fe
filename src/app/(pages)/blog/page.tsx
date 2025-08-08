@@ -37,7 +37,7 @@ const Blog = () => {
         ))}
       </div>
 
-      <div className="btn-primary h-12 w-full xs:w-[132px] mx-auto cursor-pointer" onClick={handleLoadMore}>
+      <div className="btn-primary px-4 py-2 mx-auto cursor-pointer" onClick={handleLoadMore}>
         Load more
       </div>
     </div>

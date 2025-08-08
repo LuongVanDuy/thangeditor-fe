@@ -28,6 +28,8 @@ const First: React.FC<FirstProps> = ({ setData, data, serviceList, setServiceDat
   const quantity = data.quantity;
   const url = data.uploadImage;
 
+  console.log("url", url);
+
   const [service, setService] = useState(null);
   const [subServiceData, setSubServiceData] = useState(null);
 
@@ -43,10 +45,8 @@ const First: React.FC<FirstProps> = ({ setData, data, serviceList, setServiceDat
     }
   }, [data]);
 
-  console.log("serviceList", serviceList);
   const handleChange = (e: any) => {
     const value = e.target.value;
-    const matchedService = serviceList.find((service: any) => service.serviceName === value);
     setService(value);
     setData((prev: any) => ({
       ...prev,
@@ -56,6 +56,8 @@ const First: React.FC<FirstProps> = ({ setData, data, serviceList, setServiceDat
       servicePrice: matchedService?.subServices?.length ? null : matchedService?.price || null,
       additionalServicePrice: 0,
     }));
+
+    const matchedService = serviceList.find((service: any) => service.serviceName === value);
 
     if (matchedService) {
       setServiceData(matchedService);
@@ -93,7 +95,7 @@ const First: React.FC<FirstProps> = ({ setData, data, serviceList, setServiceDat
   return (
     <>
       <div className="order-card">
-        <h1 className="text-[#212529] text-[18px] font-medium mb-4">Choose your service*</h1>
+        <h1 className="text-[#212529] text-[16px] font-bold mb-4">Choose your service*</h1>
         <Radio.Group onChange={handleChange} value={service} className="w-full">
           <div className="grid grid-cols-1 md:grid-cols-3 lg:grid-cols-4 gap-3">
             {services.map((serviceOption, index) => (
@@ -105,7 +107,7 @@ const First: React.FC<FirstProps> = ({ setData, data, serviceList, setServiceDat
               >
                 <label className="flex items-center gap-2 cursor-pointer">
                   <Radio value={serviceOption.value} />
-                  <span className="font-medium text-[18px] ml-2">{serviceOption.label}</span>
+                  <span className="font-medium text-[16px] ml-2">{serviceOption.label}</span>
                 </label>
               </div>
             ))}
@@ -115,7 +117,7 @@ const First: React.FC<FirstProps> = ({ setData, data, serviceList, setServiceDat
 
       {subService.length > 0 && (
         <div className="order-card">
-          <h1 className="text-[#212529] text-[18px] font-medium mb-4">Choose your sub service*</h1>
+          <h1 className="text-[#212529] text-[16px] font-bold mb-4">Choose your sub service*</h1>
           <Radio.Group onChange={handleSubServiceChange} value={data.subService} className="w-full">
             <div className="grid grid-cols-1 md:grid-cols-3 gap-3">
               {subService.map((serviceOption: any, index: number) => (
@@ -127,10 +129,10 @@ const First: React.FC<FirstProps> = ({ setData, data, serviceList, setServiceDat
                       : "bg-[#fbfbfb]"
                   }`}
                 >
-                  <div className="flex justify-between mb-4">
+                  <label className="flex items-center gap-2 cursor-pointer">
                     <Radio value={serviceOption.serviceName} />
-                  </div>
-                  <h1 className="font-medium text-[18px]">{serviceOption.serviceName}</h1>
+                    <span className="font-medium text-[16px]">{serviceOption.serviceName}</span>
+                  </label>
                 </div>
               ))}
             </div>
@@ -139,7 +141,7 @@ const First: React.FC<FirstProps> = ({ setData, data, serviceList, setServiceDat
       )}
 
       <div className="order-card mb-4">
-        <h1 className="text-[#212529] text-[18px] font-medium mb-4">Upload some photos of your property*</h1>
+        <h1 className="text-[#212529] text-[16px] font-bold  mb-4">Upload some photos of your property*</h1>
         <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
           <CustomInput
             onChange={(value: any) => {

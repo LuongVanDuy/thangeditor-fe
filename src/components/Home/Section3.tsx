@@ -45,14 +45,7 @@ const cards = [
 
 const HomeSection3 = () => {
   return (
-    <div
-      style={{
-        backgroundImage: `url(${bg.src})`,
-        backgroundSize: "cover",
-        backgroundPosition: "center",
-        backgroundColor: "#FFFEEA",
-      }}
-    >
+    <div className="bg-[#FFFEEA]">
       <div className="sm:px-4 lg:px-[64px] xl:px-[108px] py-12 md:py-[64px] flex flex-col gap-9 md:gap-12 ">
         <h1 className="text-[24px] mđ:text-[30px] lg:text-[36px] font-medium text-center">Why choose my service?</h1>
 
