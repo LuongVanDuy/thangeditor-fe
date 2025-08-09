@@ -74,9 +74,9 @@
   padding: 0 !important;
 }
 
-body::-webkit-scrollbar {
+/* body::-webkit-scrollbar {
   display: none;
-}
+} */
 
 .ant-drawer-right .ant-drawer-content-wrapper {
   width: 362px !important;
@@ -86,14 +86,14 @@ body::-webkit-scrollbar {
   padding: 0 !important;
 }
 
-.scrollbar-hidden {
+/* .scrollbar-hidden {
   scrollbar-width: none;
   -ms-overflow-style: none;
 }
 
 .scrollbar-hidden::-webkit-scrollbar {
   display: none;
-}
+} */
 
 .ant-radio-wrapper .ant-radio-checked .ant-radio-inner {
   border-color: #fdc101 !important;

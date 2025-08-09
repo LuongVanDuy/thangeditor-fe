@@ -35,13 +35,14 @@ const HomeSection4 = () => {
         <div className="flex-1 border-[1px] border-[#FFF046] bg-[#FFFEEA] px-4 pt-6 md:pt-12 md:px-9 sm:rounded-t-2xl lg:rounded-bl-2xl lg:rounded-t-none gap-12 flex flex-col justify-between">
           <div className="flex flex-col gap-4">
             <p className="uppercase text-primary font-medium text-[14px]">Step 1</p>
-            <h3 className="text-[#212529] font-medium text-[20px] md:text-[24px]">Submit your photo</h3>
+            <h3 className="text-[#212529] font-medium text-[20px] md:text-[24px]">Choose a style</h3>
             <p className="text-[#343A40] text-[14px] md:text-[16px]">
-              Please submit your image link and select style from the order screen
+              Different homes need different styling: choose from multiple options to find the best fit for your
+              listing.
             </p>
           </div>
-          <div className="mx-auto mt-auto">
-            <Image src={img1} alt="widget" className="w-[325px] h-auto" />
+          <div className="mx-auto mt-auto w-[95%]">
+            <Image src={img1} alt="widget" className="w-full h-auto" />
           </div>
         </div>
 
@@ -49,11 +50,13 @@ const HomeSection4 = () => {
         <div className="flex-1 border-[1px] border-primary bg-primary px-4 pt-6 md:pt-12 md:px-9 gap-12 flex flex-col justify-between">
           <div className="flex flex-col gap-4">
             <p className="uppercase text-[#000000] font-medium text-[14px]">Step 2</p>
-            <h3 className="text-[#000000] font-medium text-[20px] md:text-[24px]">Edited by Vamedi</h3>
-            <p className="text-[#000] text-[14px] md:text-[16px]">Vamedi will do the best editing of your images.</p>
+            <h3 className="text-[#000000] font-medium text-[20px] md:text-[24px]">Upload photos</h3>
+            <p className="text-[#000] text-[14px] md:text-[16px]">
+              Whether adding professional photos or images you took yourself, use the easy upload feature to submit.
+            </p>
           </div>
-          <div className="mx-auto mt-auto">
-            <Image src={img2} alt="widget" className="w-[325px] h-auto" />
+          <div className="mx-auto mt-auto w-[95%]">
+            <Image src={img2} alt="widget" className="w-full h-auto" />
           </div>
         </div>
 
@@ -63,11 +66,11 @@ const HomeSection4 = () => {
             <p className="uppercase text-primary font-medium text-[14px]">Step 3</p>
             <h3 className="text-[#212529] font-medium text-[20px] md:text-[24px]">Get them delivered!</h3>
             <p className="text-[#343A40] text-[14px] md:text-[16px]">
-              We will resend the edited images within 12-48 hours in the Vamedi dashboard
+              Within 24-48 hours, your images will arrive in both your inbox and your VA Media dashboard.
             </p>
           </div>
-          <div className="mx-auto mt-auto">
-            <Image src={img3} alt="widget" className="w-[325px] h-auto" />
+          <div className="mx-auto mt-auto w-[95%]">
+            <Image src={img3} alt="widget" className="w-full h-auto" />
           </div>
         </div>
       </div>

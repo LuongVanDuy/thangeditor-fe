@@ -10,13 +10,7 @@ import msb from "@/assets/mbs.svg";
 
 const HomeSection5 = () => {
   return (
-    <div
-      style={{
-        backgroundImage: `url(${bg.src})`,
-        backgroundSize: "cover",
-        backgroundPosition: "center",
-      }}
-    >
+    <section className="bg-[#FBFBFB]">
       <div className="py-[48px] md:py-[64px] flex flex-col gap-6 justify-center">
         <h2 className="text-[#495057] text-center text-[14px] md:text-[16px]">
           Chosen by many leading real estate companies
@@ -43,7 +37,7 @@ const HomeSection5 = () => {
           </div>
         </div>
       </div>
-    </div>
+    </section>
   );
 };
 

@@ -82,7 +82,7 @@ const HeroSection = () => {
 
               return (
                 <SwiperSlide key={index}>
-                  <div className="relative w-full aspect-[600/345] md:aspect-[1204/590] no-swipe">
+                  <div className="relative w-full aspect-[600/345] md:aspect-[1020/589] no-swipe">
                     <CompareSlider beforeImage={beforeSrc} afterImage={afterSrc} />
                   </div>
                 </SwiperSlide>

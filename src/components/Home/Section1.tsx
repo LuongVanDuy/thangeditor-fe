@@ -36,7 +36,7 @@ const HomeSection1 = () => {
 
         <div className="flex-1">
           <div className="text-[#495057] mb-4">
-            Trusted by over 2,000 professional real estate photographers since 2012.
+            Try to incorporate about all the services that Styldod provides with this content
           </div>
 
           <div className="flex gap-4">

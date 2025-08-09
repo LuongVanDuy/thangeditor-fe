@@ -14,32 +14,32 @@ const cards = [
   {
     img: icon1,
     title: "Unbeatable prices",
-    desc: "We want to be a reputable partner with the most optimal costs",
+    desc: "We want to help your listing marketing shine, while helping you stay on budget.",
   },
   {
     img: icon2,
     title: "Fast turnarounds",
-    desc: "Time is your necessity and we always understand that. We can process faster than 12 hours if you want.",
+    desc: "Time is of the essence when you are marketing a home. We’ll get your images back to you within 24–48 hours, tops.",
   },
   {
     img: icon3,
-    title: "No exception",
-    desc: "There are no limits to any requirements, just let us know what your job needs",
+    title: "No subscriptions",
+    desc: "You can bring any project to us, any time, any size. No monthly commitment needed!",
   },
   {
     img: icon4,
-    title: "Support 24/7",
-    desc: "Supporter are always ready to assist you via live chat, email or phone number",
+    title: "24x7 support",
+    desc: "Customer service experts available 24/7 on live chat, phone or email.",
   },
   {
     img: icon5,
     title: "Money back guarantee",
-    desc: "100% refund if you are not satisfied with the display of your images.",
+    desc: "If you aren’t happy with the way your images turned out, let us know, and we will refund your money.",
   },
   {
     img: icon6,
-    title: "First order free",
-    desc: "Free 5 completed images for your first order.",
+    title: "Free trial for first image",
+    desc: "Your first image is on us! Try us out at no cost and see what we can do for you.",
   },
 ];
 
