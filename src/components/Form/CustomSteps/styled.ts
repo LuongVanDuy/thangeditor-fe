@@ -31,17 +31,17 @@ import styled from "styled-components";
 
 export const StyleWrapper = styled.div<any>`
   .ant-steps-item-active .ant-steps-item-icon {
-    background-color: #FDC101;
-    border-color: #FDC101;
+    background-color: #fdc101;
+    border-color: #fdc101;
   }
 
   .ant-steps-item-active .ant-steps-item-content .ant-steps-item-title {
-    color: #FDC101 !important;
+    color: #fdc101 !important;
   }
 
   .ant-steps-item-finish .ant-steps-item-icon {
-    background-color: #fff0f5;
-    border-color: #ff6c99;
+    background-color: #fffeea;
+    border-color: #fff046;
   }
 
   .ant-steps-item-finish .ant-steps-item-content .ant-steps-item-title {
@@ -49,7 +49,7 @@ export const StyleWrapper = styled.div<any>`
   }
 
   .ant-steps .ant-steps-item-finish > .ant-steps-item-container > .ant-steps-item-tail::after {
-    background-color: #ff6c99 !important;
+    background-color: #fff046 !important;
   }
 
   .ant-steps .ant-steps-item-tail::after {
@@ -57,7 +57,7 @@ export const StyleWrapper = styled.div<any>`
   }
 
   .ant-steps-item-finish .ant-steps-item-icon .ant-steps-icon {
-    color: #FDC101;
+    color: #fdc101;
   }
 
   .ant-steps-item-content .ant-steps-item-title {
@@ -72,4 +72,3 @@ export const StyleWrapper = styled.div<any>`
     margin-top: 0 !important;
   }
 `;
-

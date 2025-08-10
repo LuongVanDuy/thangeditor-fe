@@ -55,7 +55,7 @@ const ProjectCard: React.FC<ProjectCardProps> = ({ name, service, id, status }) 
       </div>
       {!isDone && (
         <div onClick={() => router.push(`/dashboard/order/${id}`)} className="btn-quaternary ">
-          Review & Pay
+          Review
         </div>
       )}
     </div>

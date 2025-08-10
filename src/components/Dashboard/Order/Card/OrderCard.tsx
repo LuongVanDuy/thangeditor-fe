@@ -117,7 +117,7 @@ const OrderCard: React.FC<CardProps> = ({
               onClick={() => router.push(`/dashboard/order/${id}`)}
               className="bg-[#198754] rounded-lg  px-6 flex items-center justify-center font-medium cursor-pointer hover:opacity-80 text-white"
             >
-              Review & Pay
+              Review
             </button>
 
             {isEdit && (
@@ -192,7 +192,7 @@ const OrderCard: React.FC<CardProps> = ({
                 onClick={() => router.push(`/dashboard/order/${id}`)}
                 className="bg-[#198754] rounded-lg  px-6 flex items-center justify-center font-medium cursor-pointer hover:opacity-80 text-white"
               >
-                Review & Pay
+                Review
               </button>
 
               <button
