@@ -1,7 +1,7 @@
 "use client";
 import React, { useState, useRef, useEffect, useCallback, useMemo } from "react";
 import Image from "next/image";
-import { useParams, useRouter } from "next/navigation";
+import { useParams, useRouter, useSearchParams } from "next/navigation";
 import { message, Divider, Drawer } from "antd";
 import { useMutation, useQuery } from "@tanstack/react-query";
 import { useRecoilValue } from "recoil";
@@ -28,6 +28,8 @@ import { updateOrder, getOrderDetail } from "@/lib/api/order.api";
 import { formatCurrency } from "@/lib/helpers";
 import { profileState } from "@/lib/store/state";
 import { jsonServiceData } from "@/lib/constants";
+import DisableWrapper from "@/components/Form/DisableWrapper";
+import { sendOrderMail } from "@/lib/api/auth.api";
 
 // Types
 interface OrderData {
@@ -89,6 +91,24 @@ const DetailOrder = () => {
 
   // State
   const [current, setCurrent] = useState(0);
+  const searchParams = useSearchParams();
+
+  const [isDisabled, setIsDisabled] = React.useState(false);
+
+  useEffect(() => {
+    const step = searchParams.get("step");
+    if (step === "2") {
+      setCurrent(1);
+      const params = new URLSearchParams(searchParams.toString());
+      params.delete("step");
+
+      const basePath = window.location.pathname;
+      const newUrl = params.toString() ? `${basePath}?${params.toString()}` : basePath;
+
+      router.replace(newUrl, { scroll: false });
+    }
+  }, [searchParams]);
+
   const [isEditing, setIsEditing] = useState(false);
   const [open, setOpen] = useState(false);
   const [openDeleteModal, setOpenDeleteModal] = useState(false);
@@ -133,8 +153,7 @@ const DetailOrder = () => {
 
     const discount = isDiscount ? 10 : 0;
     let finalPrice = Math.max(subTotal - discount, 0);
-    const tax = finalPrice * 0.03 + 0.49;
-    finalPrice = Math.max(finalPrice + tax, 1);
+    finalPrice = Math.max(finalPrice, 1);
 
     return finalPrice;
   }, [order.quantity, order.servicePrice, order.additionalServicePrice, isDiscount]);
@@ -175,6 +194,8 @@ const DetailOrder = () => {
         isAgreed: orderData.isAgreed,
         status: orderData.status,
       });
+
+      setIsDisabled(orderData.status === "DONE");
     }
   }, [data, oid]);
 
@@ -268,6 +289,12 @@ const DetailOrder = () => {
   const next = useCallback(() => {
     if (!validateStep(current)) return;
 
+    if (isDisabled) {
+      setCurrent((prev) => prev + 1);
+      return;
+    }
+
+    // Còn lại, làm như bình thường
     const stepActions = {
       0: () => handleUpdate({ status: "AWAITING" }),
       1: () => {
@@ -297,36 +324,47 @@ const DetailOrder = () => {
 
     stepActions[current as keyof typeof stepActions]?.();
     setCurrent((prev) => prev + 1);
-  }, [current, order, handleUpdate, validateStep, updateMutation]);
+  }, [current, order, handleUpdate, validateStep, updateMutation, isDisabled]);
 
   const prev = useCallback(() => {
     setCurrent((prev) => prev - 1);
   }, []);
 
   const handleInputChange = useCallback((value: any) => {
-    // Handle both event and direct value
     const inputValue = typeof value === "string" ? value : value?.target?.value || "";
     setOrder((prevOrder) => ({ ...prevOrder, projectName: inputValue }));
   }, []);
 
-  const handlePayment = useCallback(() => {
+  const handlePayment = useCallback(async () => {
     if (!order.isAgreed) {
-      message.warning("Please agree to the terms and conditions before payment.");
+      message.warning("Please agree to the terms and conditions.");
       return;
     }
-    updateMutation(
+
+    await updateMutation(
       {
         ...order,
         status: "PENDING_PAYMENT",
       },
       {
-        onSuccess: () => {
-          message.success("Payment successful! Your order has been submitted.");
+        onSuccess: async () => {
+          message.success("Your order has been submitted.");
+
+          await sendOrderMail({
+            orderId: order.id,
+            service: order.service,
+            designStyle: order.designStyle,
+            additionalService: order.additionalService,
+            orderTotal: order.orderTotal,
+            createdTime: new Date().toISOString(),
+            email: profile?.data?.email ?? "",
+          });
+
           router.push("/dashboard/order");
         },
       },
     );
-  }, [order, updateMutation, router]);
+  }, [order, updateMutation, router, profile]);
 
   // Step configuration
   const steps = useMemo(
@@ -482,6 +520,14 @@ const DetailOrder = () => {
     </div>
   );
 
+  const handlePlaceOrderClick = () => {
+    if (isDisabled) {
+      router.push("/dashboard/order");
+    } else {
+      handlePayment();
+    }
+  };
+
   return (
     <>
       <div className="create-order w-full px-4 md:px-6 relative flex flex-col flex-grow">
@@ -503,14 +549,24 @@ const DetailOrder = () => {
             </div>
           </div>
 
-          <div>{steps[current].content}</div>
+          <DisableWrapper disabled={isDisabled}>
+            <div>{steps[current].content}</div>
+          </DisableWrapper>
         </div>
 
         {/* Footer Navigation */}
         <div className="bg-[#fff] px-6 py-4 -mx-6 flex gap-2 md:gap-5 items-center justify-between">
           {current === 0 ? (
-            <div className="btn-five" onClick={() => setOpenDeleteModal(true)}>
-              <span className="hidden md:block">Cancel</span>
+            <div
+              className="btn-five"
+              onClick={() => {
+                if (!isDisabled) {
+                  setOpenDeleteModal(true);
+                }
+              }}
+              style={{ cursor: isDisabled ? "not-allowed" : "pointer" }}
+            >
+              <span className="hidden md:block">{isDisabled ? "Can't Cancel" : "Cancel"}</span>
               <span className="block md:hidden">
                 <Image src={pinkLeft} alt="icon" />
               </span>
@@ -536,8 +592,8 @@ const DetailOrder = () => {
               <Image src={whiteRight} alt="icon" />
             </div>
           ) : (
-            <div className="btn-six" onClick={handlePayment}>
-              Pay <span className="hidden md:block">{formatCurrency(order.orderTotal)}</span>
+            <div className="btn-six" onClick={handlePlaceOrderClick}>
+              {isDisabled ? "Back to List" : "Place Order"}
             </div>
           )}
         </div>

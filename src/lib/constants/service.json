@@ -11,20 +11,8 @@
     "price": 16,
     "images": [
       {
-        "beforeUrl": "/assets/virtual-staging.png",
-        "afterUrl": "/assets/virtual-staging.png"
-      },
-      {
-        "beforeUrl": "/assets/virtual-staging.png",
-        "afterUrl": "/assets/virtual-staging.png"
-      },
-      {
-        "beforeUrl": "/assets/virtual-staging.png",
-        "afterUrl": "/assets/virtual-staging.png"
-      },
-      {
-        "beforeUrl": "/assets/virtual-staging.png",
-        "afterUrl": "/assets/virtual-staging.png"
+        "beforeUrl": "/assets/virtual-staging-bf.jpg",
+        "afterUrl": "/assets/virtual-staging-at.jpg"
       }
     ],
     "subServices": [
@@ -47,16 +35,16 @@
   {
     "id": 2,
     "slug": "photo-editing",
-    "title": "Photo editing",
+    "title": "HDR & Flambient",
     "category": "Photo Editing",
-    "desc": "Remove unwanted or distracting items from your listing photos.",
+    "desc": "Combine multiple images to create the most perfect result.",
     "tagline": "",
     "description": "Remove Unwanted Items From Your Real Estate Photos",
     "price": 8,
     "images": [
       {
-        "beforeUrl": "/assets/photo-editing.png",
-        "afterUrl": "/assets/photo-editing.png"
+        "beforeUrl": "/assets/photo-editing-1.jpg",
+        "afterUrl": "/assets/photo-editing-2.jpg"
       }
     ],
     "subServices": [
@@ -106,7 +94,7 @@
     "category": "Video Editing",
     "desc": "Create a real estate video to gain prospects' attention and sell their listings faster.",
     "tagline": "",
-    "description": "Use Real Estate Video Editing cost-effectively as a marketing tool for the client to get a realistic feel of the property.",
+    "description": "Leverage real estate video editing as a cost-effective marketing tool, giving clients an immersive and realistic view of the property.",
     "price": 60,
     "images": [
       {

@@ -1,33 +1,31 @@
 import React from "react";
-import bg from "@/assets/bg.png";
-import cus1 from "@/assets/customer1.jpg";
-import cus2 from "@/assets/customer2.jpeg";
-import cus3 from "@/assets/customer3.jpg";
+import cus1 from "@/assets/customer1.png";
+import cus2 from "@/assets/customer2.png";
+import cus3 from "@/assets/customer3.png";
 import Image from "next/image";
 
 import icon from "@/assets/Heading.svg";
 
 const data = [
   {
-    title: "Delivery time and quality of work are impeccable.",
-    desc: "The process is easy from start to finish. Definitely worth the investment, if you are looking to tweak some of your real estate projects. Thank you so much again!",
-    name: "julio_garza",
-    role: "Sales Associate",
+    title: "The quality of the images is outstanding!",
+    desc: "Every photo is sharp, vibrant and true to life. Your team clearly knows how to make my property shine, and the results always blow me away.",
+    name: "Brandon Wang",
+    role: "Sales Agent",
     img: cus1,
   },
   {
-    title: "Very easy to work with.",
-    desc: "Instructions were clear and I received more than expected. I was very pleased with the exposure correction and light balance that I couldn't get right on my own. I will send all my work to her in the future.",
-    name: "robertduncan888",
-    role: "Sales Associate",
-
+    title: "I am really impressed with your service.",
+    desc: "The workflow is smooth, communication is quick, and the edits are always on point. It feels like you really listen and understand what the client is asking for.",
+    name: "John Williams",
+    role: "Real Estate Agent",
     img: cus2,
   },
   {
-    title: "The experience was amazing.",
-    desc: "Despite many editing requests, the work is always completed with outstanding quality, professionalism and a positive attitude. The attention to detail and willingness to accommodate every request truly exceeded my expectations.",
-    name: "dougmazell",
-    role: "Sales Associate",
+    title: "Their prices are very reasonable for the level of workmanship.",
+    desc: "I have worked at many places and paid many different prices. But the 'object removal' results have never been as satisfying as they are here. They remove them but leave no smudges or distortions of other objects.",
+    name: "Anthony Smith",
+    role: "Photographer",
     img: cus3,
   },
 ];

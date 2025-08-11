@@ -3,16 +3,11 @@ import { CustomInput } from "@/components/Form/CustomInput";
 import { LinkOutlined } from "@ant-design/icons";
 import { Radio } from "antd";
 
-const services = [
-  { value: "Image Enhancement", label: "Image Enhancement" },
-  { value: "Virtual Staging", label: "Virtual Staging" },
-  { value: "Property Videos", label: "Property Videos" },
-];
+import { jsonServiceData } from "@/lib/constants"; // import dữ liệu thật
 
 const First = ({
   setData,
   data,
-  serviceList,
   setServiceData,
   serviceData,
 }: {
@@ -22,6 +17,12 @@ const First = ({
   setServiceData: any;
   serviceData: any;
 }) => {
+  // Dùng jsonServiceData trực tiếp cho danh sách dịch vụ
+  const services = jsonServiceData.map((service) => ({
+    value: service.title,
+    label: service.title,
+  }));
+
   const [service, setService] = useState(null);
   const [subServiceData, setSubServiceData] = useState(null);
 
@@ -49,7 +50,7 @@ const First = ({
       additionalServicePrice: 0,
     }));
 
-    const matchedService = serviceList.find((service: any) => service.title === value);
+    const matchedService = jsonServiceData.find((s) => s.title === value);
 
     if (matchedService) {
       setServiceData(matchedService);

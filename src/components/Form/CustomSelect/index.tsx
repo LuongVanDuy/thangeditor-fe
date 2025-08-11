@@ -1,7 +1,7 @@
 import { Select } from "antd";
 import cx from "classnames";
 import Image from "next/image";
-import React, { useRef, type ReactNode } from "react";
+import React, { ReactNode } from "react";
 import SortingIcon from "@/assets/chevron-down.svg";
 import { ComponentStyled } from "./styled";
 
@@ -75,14 +75,13 @@ export function CustomSelect({
       {prefixIcon && <div className="flex items-center absolute top-[30%] left-[2%] z-[1]">{prefixIcon}</div>}
       <Select
         open={open}
-        onOpenChange={setOpen}
+        onDropdownVisibleChange={setOpen} // Sửa chỗ này
         showSearch={!!showSearch}
         filterOption={filterSort}
         onChange={onChange}
         onSearch={onSearch}
         onClick={onClick}
         options={options}
-        popupRender={dropdownRender}
         value={value}
         disabled={disabled}
         placeholder={placeholder}

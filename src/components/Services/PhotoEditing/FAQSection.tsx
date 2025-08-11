@@ -15,35 +15,68 @@ const { Panel } = Collapse;
 const items: any[] = [
   {
     key: "1",
-    label: "What is Virtual Staging?",
+    label: "Why HDR and Flambient Photo Editing Are Becoming Popular in the Real Estate Industry?",
     children: (
       <div className="text-[#6C757D] text-[16px]">
-        <p className="mb-5">
-          Virtual staging is a powerful real estate marketing tool in which a home is staged virtually with the help of
-          computer vision technology.
-        </p>
-        <p>
-          It is a digital interior design technique where an editor creates interiors in specific styles by adding or
-          editing colors, furniture, accessories, lighting, and other elements in a given space. With virtual furniture
-          staging, you can furnish an empty house virtually, without having to buy a single piece of furniture. When
-          properties are staged virtually, they help prospective clients visualize the space better and perhaps see
-          themselves living there. We have a team of professional editors ready to turn your photos into stunning
-          professional images. Our services are offered across the USA, Canada, Australia, the UK, Spain, etc.
-        </p>
+        HDR and Flambient photo editing technologies are becoming increasingly popular in the real estate industry
+        because they create images that are both visually impressive. Both techniques produce sharp images, accurate
+        colors, and a warm atmosphere. This helps agents attract more buyers and close deals faster.
       </div>
     ),
     showArrow: false,
   },
   {
     key: "2",
-    label: "Does Virtual Staging Help You Sell Property Faster?",
-    children: <div className="text-[#6C757D] text-[16px]">loris irum</div>,
+    label: "HDR or Flambient — Which is Better?",
+    children: (
+      <div className="text-[#6C757D] text-[16px]">
+        <p className="mb-5">
+          Both methods have their own strengths. HDR is useful when there are bright windows looking out or when the
+          scene has high contrast, because HDR preserves detail in both the highlights and shadows.
+        </p>
+        <p className="mb-5">
+          <strong>HDR disadvantages:</strong> prone to ghosting if there is a moving object, sometimes looks a bit
+          “flat” if over-processed, and takes a lot of time in post-production.
+        </p>
+        <p className="mb-5">
+          Flambient has better control over light: sharper images, less noise because of low ISO, and more natural
+          colors. But requires tools (flash/softbox) and lighting skills to avoid annoying shadows or reflections.
+        </p>
+        <p>
+          So, each method has its own advantages and disadvantages, the important thing is that you know how to apply it
+          appropriately in practice.
+        </p>
+      </div>
+    ),
     showArrow: false,
   },
   {
     key: "3",
-    label: "Where To Use The Virtually Staged Photos?",
-    children: <div className="text-[#6C757D] text-[16px]">loris irum</div>,
+    label: "How HDR and Flambient Help Sell Your Homes",
+    children: (
+      <div className="text-[#6C757D] text-[16px]">
+        <ul className="list-disc pl-5 space-y-2">
+          <li>
+            <strong>Make a Strong First Impression:</strong> High-quality, eye-catching photos increase viewing rates.
+          </li>
+          <li>
+            <strong>Convey the Value of Your Home:</strong> Images with accurate lighting and color balance help buyers
+            understand the space, materials, and true condition of the property.
+          </li>
+          <li>
+            <strong>Stimulate Emotion and Action:</strong> Photos are warm, crisp, and connect emotionally with viewers
+            — increasing the likelihood of contacting, scheduling a viewing, or making an offer.
+          </li>
+          <li>
+            <strong>Grow Credibility for Sellers/Agents:</strong> Professional photos reflect your brand.
+          </li>
+          <li>
+            <strong>Support Better Advertising:</strong> Good photos and videos perform better on social media and paid
+            advertising, leading to higher engagement and conversion rates.
+          </li>
+        </ul>
+      </div>
+    ),
     showArrow: false,
   },
 ];

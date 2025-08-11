@@ -89,11 +89,6 @@ const Four = ({
           </div>
         )}
 
-        <div className="flex justify-between items-center">
-          <h1 className="text-[#495057] text-[14px] md:text-[16px]">Tax fee</h1>
-          <h2 className="text-[#343A40]">3%</h2>
-        </div>
-
         <div className="border-t border-[#DEE2E6]"></div>
 
         <div className="flex justify-between items-center">
@@ -109,7 +104,7 @@ const Four = ({
         </div>
 
         <div className="btn-primary" onClick={handleMakePayment}>
-          Make payment
+          Place Order
         </div>
 
         <div className="flex items-center gap-2 text-[#343A40] font-medium">
@@ -211,12 +206,6 @@ const Four = ({
             <h2 className="text-[#343A40]">{formatCurrency(-10)}</h2>
           </div>
         )}
-
-        <div className="flex justify-between items-center">
-          <h1 className="text-[#495057] text-[14px] md:text-[16px]">Tax fee</h1>
-          <h2 className="text-[#343A40]">3%</h2>
-        </div>
-
         <div className="border-t border-[#DEE2E6]"></div>
 
         <div className="flex justify-between items-center">
@@ -232,7 +221,7 @@ const Four = ({
         </div>
 
         <div className="btn-primary" onClick={handleMakePayment}>
-          Make payment
+          Place Order
         </div>
 
         <div className="flex items-center gap-2 text-[#343A40] font-medium">

@@ -8,6 +8,11 @@ import star from "@/assets/star.svg";
 import checked from "@/assets/Checked .svg";
 import { generateOrderId } from "@/lib/api/order.api";
 import CompareImg from "@/components/Form/Compare";
+import { CompareSlider } from "@/components/Form/Compare/CompareSlider";
+import hdr1 from "@/assets/hdr-1.jpg";
+import hdr2 from "@/assets/hdr-2.jpg";
+import hdr3 from "@/assets/hdr-3.jpg";
+import hdr4 from "@/assets/hdr-4.jpg";
 
 const DifferenceSection = () => {
   const router = useRouter();
@@ -35,18 +40,8 @@ const DifferenceSection = () => {
       <div className="grid grid-cols-1 md:grid-cols-2 items-center gap-6 md:gap-12 xl:gap-[96px] px-0 xl:px-8">
         <div className="block md:hidden">
           <div className="rounded-2xl relative max-w-[1540px]">
-            <CompareImg type="secondary" />
-
-            <div
-              className={`px-3 py-1 absolute left-4 bottom-4 backdrop-blur-md border-[1px] border-[#FFFFFF4D] rounded-2xl uppercase text-[#fff] text-[12px] `}
-            >
-              Before
-            </div>
-
-            <div
-              className={`px-3 py-1 absolute right-4 bottom-4 backdrop-blur-md border-[1px] border-[#FFFFFF4D] rounded-2xl uppercase text-[#fff] text-[12px]`}
-            >
-              After
+            <div className="relative w-full aspect-[510/382] overflow-hidden no-swipe rounded-2xl">
+              <CompareSlider beforeImage={hdr1.src} afterImage={hdr2.src} />;
             </div>
           </div>
         </div>
@@ -58,71 +53,30 @@ const DifferenceSection = () => {
                 <Image src={help} alt="icon" height={24} width={24} />
               </div>
             </div>
-            <h1 className="text-[#212529] fonr-medium text-[20px] md:text-[32px]">
-              What is Virtual Cleaning & Object Removal by VA Media&nbsp;?
-            </h1>
+            <h2 className="text-[#212529] font-medium text-[20px] md:text-[32px]">HDR </h2>
           </div>
 
           <p className="text-[#495057] text-[16px]">
-            Clutter distracts potential buyers from seeing a property&apos;s full potential. VA Media removes the
-            clutter for just $8 per photo within 2 business days! Our object removal service removes unwanted items and
-            old furniture, which are distractions in a photo, and replaces them with beautiful and trendy pieces of
-            furniture.
+            HDR photography is perfect for real estate because it captures every detail with balanced light and dark,
+            bringing each room and exterior to life. Highlighting outstanding features, giving buyers a true look at the
+            property. Accuracy in detail helps the property stand out and attract great interest.
           </p>
         </div>
 
         <div className="hidden md:block">
           <div className="rounded-2xl relative max-w-[1540px]">
-            <CompareImg type="secondary" />
-
-            <div
-              className={`px-3 py-1 absolute left-4 bottom-4 backdrop-blur-md border-[1px] border-[#FFFFFF4D] rounded-2xl uppercase text-[#fff] text-[12px] `}
-            >
-              Before
-            </div>
-
-            <div
-              className={`px-3 py-1 absolute right-4 bottom-4 backdrop-blur-md border-[1px] border-[#FFFFFF4D] rounded-2xl uppercase text-[#fff] text-[12px]`}
-            >
-              After
+            <div className="relative w-full aspect-[510/382] overflow-hidden no-swipe rounded-2xl">
+              <CompareSlider beforeImage={hdr1.src} afterImage={hdr2.src} />;
             </div>
           </div>
         </div>
       </div>
 
       <div className="grid grid-cols-1 md:grid-cols-2 items-center gap-6 md:gap-12 xl:gap-[96px] px-0 xl:px-8">
-        <div className="block md:hidden">
+        <div className="">
           <div className="rounded-2xl relative max-w-[1540px]">
-            <CompareImg type="secondary" />
-
-            <div
-              className={`px-3 py-1 absolute left-4 bottom-4 backdrop-blur-md border-[1px] border-[#FFFFFF4D] rounded-2xl uppercase text-[#fff] text-[12px] `}
-            >
-              Before
-            </div>
-
-            <div
-              className={`px-3 py-1 absolute right-4 bottom-4 backdrop-blur-md border-[1px] border-[#FFFFFF4D] rounded-2xl uppercase text-[#fff] text-[12px]`}
-            >
-              After
-            </div>
-          </div>
-        </div>
-
-        <div className="hidden md:block">
-          <div className="rounded-2xl relative max-w-[1540px]">
-            <CompareImg type="secondary" />
-
-            <div
-              className={`px-3 py-1 absolute left-4 bottom-4 backdrop-blur-md border-[1px] border-[#FFFFFF4D] rounded-2xl uppercase text-[#fff] text-[12px] `}
-            >
-              Before
-            </div>
-
-            <div
-              className={`px-3 py-1 absolute right-4 bottom-4 backdrop-blur-md border-[1px] border-[#FFFFFF4D] rounded-2xl uppercase text-[#fff] text-[12px]`}
-            >
-              After
+            <div className="relative w-full aspect-[510/382] overflow-hidden no-swipe rounded-2xl">
+              <CompareSlider beforeImage={hdr1.src} afterImage={hdr2.src} />;
             </div>
           </div>
         </div>
@@ -134,48 +88,15 @@ const DifferenceSection = () => {
                 <Image src={star} alt="icon" height={24} width={24} />
               </div>
             </div>
-            <h1 className="text-[#212529] fonr-medium text-[20px] md:text-[32px]">
-              Key Benefits of Virtual Object Removal for Real Estate
-            </h1>
+            <h2 className="text-[#212529] fonr-medium text-[20px] md:text-[32px]">Flambient</h2>
           </div>
 
           <div className="flex flex-col gap-4">
             <div className="flex gap-3 items-start">
-              <div className="flex flex-shrink-0">
-                <Image src={checked} alt="check" height={24} width={24} />
-              </div>
               <div className="text-[#495057] text-[16px]">
-                Better Appeal: Give your potential buyers a beautiful place to see where they can imagine themselves
-                staying in it.
-              </div>
-            </div>
-
-            <div className="flex gap-3 items-start">
-              <div className="flex flex-shrink-0">
-                <Image src={checked} alt="check" height={24} width={24} />
-              </div>
-              <div className="text-[#495057] text-[16px]">
-                Decluttered Space: Remove unwanted clutter or the tenant&apos;s furniture to present a visually
-                appealing clutter-free space to future buyers.
-              </div>
-            </div>
-
-            <div className="flex gap-3 items-start">
-              <div className="flex flex-shrink-0">
-                <Image src={checked} alt="check" height={24} width={24} />
-              </div>
-              <div className="text-[#495057] text-[16px]">
-                Virtual Staging Prep: Empty a room of unappealing furniture and prep a neat image space for virtual
-                staging.
-              </div>
-            </div>
-
-            <div className="flex gap-3 items-start">
-              <div className="flex flex-shrink-0">
-                <Image src={checked} alt="check" height={24} width={24} />
-              </div>
-              <div className="text-[#495057] text-[16px]">
-                Quicker Sales: Our realtors tell us that our virtually staged homes sell quicker than expected.
+                Flambient photography combines flash and ambient light to create bright, balanced images with sharp
+                details and true-to-life colors. This method avoids overexposed windows, eliminates noise, and reduces
+                shadows. The outcome is inviting, high-quality photos that showcase properties at their best.
               </div>
             </div>
           </div>

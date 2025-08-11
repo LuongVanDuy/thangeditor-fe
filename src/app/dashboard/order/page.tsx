@@ -13,7 +13,7 @@ import OrderCard from "@/components/Dashboard/Order/Card/OrderCard";
 
 const tabs = [
   { key: "", label: "All order" },
-  { key: "awaiting", label: "Awaiting payment" },
+  { key: "awaiting", label: "Awaiting" },
   { key: "ready", label: "Getting ready" },
   { key: "done", label: "Order delivered" },
   { key: "rework", label: "Rework requested" },
@@ -54,7 +54,6 @@ const Page = () => {
 
   return (
     <div>
-      <Script src={`https://sandbox.paypal.com/sdk/js?client-id=${clientId}`} strategy="afterInteractive" />
       <div
         style={{ minHeight: "calc(100vh - 24px)" }}
         className="w-full px-4 md:px-6 bg-[#fbfbfb] flex flex-col gap-9 md:gap-12"

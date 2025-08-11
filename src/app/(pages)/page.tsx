@@ -16,7 +16,7 @@ export default function Home() {
       <HomeSection2 />
       <HomeSection3 />
       <HomeSection4 />
-      <HomeSection5 />
+      {/* <HomeSection5 /> */}
       <HomeSection6 />
       <HomeSection7 />
       <HomeSection8 />

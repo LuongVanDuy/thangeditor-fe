@@ -22,7 +22,7 @@ const color: any = {
 
 const title: any = {
   DONE: "completed",
-  AWAITING: "awaiting payment",
+  AWAITING: "awaiting",
   READY: "ready",
   REWORK: "rework ",
 };
@@ -81,7 +81,7 @@ const OrderCard: React.FC<CardProps> = ({
             <h1 className="text-[#343a40]">{categories}</h1>
           </div>
           <div className="flex items-center gap-1">
-            <CustomTag title={title[status] || "awaiting payment"} color={color[status] || "warning"} />
+            <CustomTag title={title[status] || "awaiting"} color={color[status] || "warning"} />
           </div>
         </div>
 
@@ -162,7 +162,7 @@ const OrderCard: React.FC<CardProps> = ({
       <div className="rounded-lg bg-[#fbfbfb] block md:hidden mb-6">
         <div className="flex justify-between py-3 px-4 border-b-[1px] border-[#f4f4f4] items-center">
           <h1 className="text-[#212529] font-medium">{name}</h1>
-          <CustomTag title={title[status] || "awaiting payment"} color={color[status] || "warning"} />
+          <CustomTag title={title[status] || "awaiting"} color={color[status] || "warning"} />
         </div>
         <div className="p-6 gap-6 flex flex-col">
           <div className="flex flex-col gap-2">

@@ -14,20 +14,23 @@ const { Panel } = Collapse;
 const items: any[] = [
   {
     key: "1",
-    label: "What is Virtual Staging?",
+    label: "What is real estate video editing?",
     children: (
       <div className="text-[#6C757D] text-[16px]">
         <p className="mb-5">
-          Virtual staging is a powerful real estate marketing tool in which a home is staged virtually with the help of
-          computer vision technology.
+          Real estate video editing is the process of refining raw footage of a property into a polished, professional,
+          and engaging video that appeals to potential buyers or renters.
         </p>
-        <p>
-          It is a digital interior design technique where an editor creates interiors in specific styles by adding or
-          editing colors, furniture, accessories, lighting, and other elements in a given space.With virtual furniture
-          staging, you can furnish an empty house virtually, without having to buy a single piece of furniture. When
-          properties are staged virtually, they help prospective clients visualize the space better and perhaps see
-          themselves living there. We have a team of professional editors ready to turn your photos into stunning
-          professional images. Our services are offered across the USA, Canada, Australia, the UK, Spain, etc.
+        <p className="mb-5">This process typically involves:</p>
+        <ul className="list-disc pl-5 space-y-2">
+          <li>Cutting and arranging footage to show the best angles of the property.</li>
+          <li>Correcting color and lighting to make rooms look bright and inviting.</li>
+          <li>Adding smooth transitions for a seamless viewing experience.</li>
+          <li>Adding background music, voiceovers, or text overlays to add more life.</li>
+        </ul>
+        <p className="mt-5">
+          The goal is to present the property in the most engaging way possible, giving viewers a sense of authenticity
+          and emotional appeal.
         </p>
       </div>
     ),
@@ -35,14 +38,54 @@ const items: any[] = [
   },
   {
     key: "2",
-    label: "Does Virtual Staging Help You Sell Property Faster?",
-    children: <div className="text-[#6C757D] text-[16px]">loris irum</div>,
+    label: "Does video help sell real estate?",
+    children: (
+      <div className="text-[#6C757D] text-[16px]">
+        <p className="mb-5">
+          Absolutely. Real estate videos are a highly effective marketing tool that can help sell properties faster and
+          for more money. Research shows that 73% of homeowners are more likely to choose agents who use video
+          marketing.
+        </p>
+        <p className="mb-5">
+          Furthermore, according to the National Association of Realtors, only 14% of agents use video. 45% of
+          homebuyers find video tours extremely helpful, and more than half of them actively seek out real estate videos
+          when they are looking to buy.
+        </p>
+        <p>As such, video engages both sellers and buyers, strengthens listings, and drives sales.</p>
+      </div>
+    ),
     showArrow: false,
   },
   {
     key: "3",
-    label: "Where To Use The Virtually Staged Photos?",
-    children: <div className="text-[#6C757D] text-[16px]">loris irum</div>,
+    label: "What are the different types of real estate videos?",
+    children: (
+      <div className="text-[#6C757D] text-[16px]">
+        <p className="mb-5">Common real estate video formats include:</p>
+        <ul className="list-disc pl-5 space-y-2">
+          <li>
+            <strong>Property listing videos:</strong> Showcase the amenities or features of a property for sale or rent
+            with a professionally edited, eye-catching video.
+          </li>
+          <li>
+            <strong>Testimonials:</strong> The best way to build trust and credibility with potential buyers. It gives
+            them an objective look at what previous buyers have to say.
+          </li>
+          <li>
+            <strong>Neighborhood videos:</strong> Highlight local amenities, schools, and attractions to add value to
+            your listing. This is one of the most important factors influencing a buyer&apos;s decision.
+          </li>
+          <li>
+            <strong>Real estate tips videos:</strong> Share practical advice for people in the form of tips. For
+            example, tips on staging your home in style or finding the right real estate agent.
+          </li>
+          <li>
+            <strong>Guided tour videos:</strong> Provide guided tours of a property to encourage research and in-person
+            visits. These videos help buyers visualize what it would be like to live in that home.
+          </li>
+        </ul>
+      </div>
+    ),
     showArrow: false,
   },
 ];

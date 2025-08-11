@@ -14,32 +14,32 @@ const cards = [
   {
     img: icon1,
     title: "Unbeatable prices",
-    desc: "We want to help your listing marketing shine, while helping you stay on budget.",
+    desc: "Make your real estate marketing campaign shine without breaking the bank.",
   },
   {
     img: icon2,
-    title: "Fast turnarounds",
-    desc: "Time is of the essence when you are marketing a home. We’ll get your images back to you within 24–48 hours, tops.",
+    title: "Fast turnaround",
+    desc: "Get your edited photos in just 24–48 hours, because time is of the essence in real estate.",
   },
   {
     img: icon3,
-    title: "No subscriptions",
-    desc: "You can bring any project to us, any time, any size. No monthly commitment needed!",
+    title: "No sign-up required",
+    desc: "Send us any project, any time, any size, with no monthly commitment.",
   },
   {
     img: icon4,
-    title: "24x7 support",
-    desc: "Customer service experts available 24/7 on live chat, phone or email.",
+    title: "24/7 Expert support",
+    desc: "Our friendly team is always available via live chat, phone or email.",
   },
   {
     img: icon5,
     title: "Money back guarantee",
-    desc: "If you aren’t happy with the way your images turned out, let us know, and we will refund your money.",
+    desc: "Not satisfied? Let us know and we’ll refund your money.",
   },
   {
     img: icon6,
-    title: "Free trial for first image",
-    desc: "Your first image is on us! Try us out at no cost and see what we can do for you.",
+    title: "First photo free",
+    desc: "Try our service for free the first time and see the difference for yourself.",
   },
 ];
 

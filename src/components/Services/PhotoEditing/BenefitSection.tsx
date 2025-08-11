@@ -12,23 +12,23 @@ import Image from "next/image";
 const cardData = [
   {
     img: icon1,
-    title: "Get higher sale price",
-    desc: "With our professional staging services see your listings attract more buyers and fetch higher selling prices",
+    title: "Higher Prices",
+    desc: "High-quality, stunning images attract buyers and can help you secure the highest value for your property.",
   },
   {
     img: icon2,
-    title: "All eyes on you",
-    desc: "It is statistically proven that home buyers tend to choose listings with professional photos and they sell faster.",
+    title: "All Eyes on You",
+    desc: "Stand out in a crowded marketplace. Our professionally edited images will make your property the center of attention.",
   },
   {
     img: icon3,
-    title: "Go from no to pro",
-    desc: "Go online. Go virtual. Let your imaging and our staging do the rest. Go and grab the attention of your buyers.",
+    title: "From Nobodies to Experts",
+    desc: "Professional, polished real estate marketing images that enhance your business's credibility and reputation.",
   },
   {
     img: icon4,
-    title: "Drab to fab",
-    desc: "Transform your ordinary listing, into a property that your potential buyers can envision as their dream home.",
+    title: "From Simple to Great",
+    desc: "Turn ordinary real estate photos into eye-catching masterpieces that inspire buyers to click, explore, and schedule viewings.",
   },
 ];
 

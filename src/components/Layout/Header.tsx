@@ -1,10 +1,9 @@
 "use client";
-import React, { useEffect, useState } from "react";
+import React, { useEffect, useRef, useState } from "react";
 import Image from "next/image";
 import Link from "next/link";
 import { usePathname, useRouter } from "next/navigation";
 import { Dropdown, MenuProps, Drawer } from "antd";
-import DrawerContent from "./Drawer/DrawerContent";
 import MenuContent from "./Drawer/MenuContent";
 
 import userIcon from "@/assets/user.svg";
@@ -19,6 +18,7 @@ import { useRecoilState } from "recoil";
 import { destroyCookie } from "nookies";
 import { clearToken, getToken, setRefreshToken, setToken } from "@/lib/helpers";
 import { profileState } from "@/lib/store/state";
+import { jsonServiceData } from "@/lib/constants";
 
 const Header = () => {
   const router = useRouter();
@@ -43,6 +43,20 @@ const Header = () => {
 
     return () => window.removeEventListener("resize", handleResize);
   }, []);
+
+  const [isOpen, setIsOpen] = useState(false);
+  const closeTimeout = useRef<NodeJS.Timeout | null>(null);
+
+  const handleMouseEnter = () => {
+    if (closeTimeout.current) clearTimeout(closeTimeout.current);
+    setIsOpen(true);
+  };
+
+  const handleMouseLeave = () => {
+    closeTimeout.current = setTimeout(() => {
+      setIsOpen(false);
+    }, 150); // Delay 150ms trước khi ẩn
+  };
 
   const logout = () => {
     clearToken();
@@ -122,18 +136,37 @@ const Header = () => {
             >
               Home
             </Link>
-            <li className="flex gap-1 items-center">
+            <li
+              className="flex gap-1 items-center relative"
+              onMouseEnter={handleMouseEnter}
+              onMouseLeave={handleMouseLeave}
+            >
               <Link
                 href="/services"
-                className={`${
+                className={`flex items-center gap-1 ${
                   activePage === "/services" ? "text-primary" : "text-secondary"
                 } cursor-pointer hover:opacity-80`}
               >
                 Services
-              </Link>
-              <div onClick={() => setOpen(!open)}>
                 <Image src={down} alt="" className="cursor-pointer" />
-              </div>
+              </Link>
+
+              <ul
+                className={`absolute top-full left-0 bg-white shadow-md border rounded-xl mt-1 min-w-[200px] z-50 transition-all duration-200 ease-out transform origin-top ${
+                  isOpen ? "opacity-100 scale-y-100 pointer-events-auto" : "opacity-0 scale-y-0 pointer-events-none"
+                }`}
+              >
+                {jsonServiceData.map((service) => (
+                  <li key={service.id}>
+                    <Link
+                      href={`/services/${service.slug}`}
+                      className="block px-4 py-2 text-secondary hover:bg-gray-100 hover:text-primary"
+                    >
+                      {service.title}
+                    </Link>
+                  </li>
+                ))}
+              </ul>
             </li>
             <Link
               href="/blog"
@@ -206,19 +239,6 @@ const Header = () => {
           </div>
         </div>
       </div>
-
-      <Drawer
-        placement="top"
-        closable={false}
-        onClose={() => setOpen(false)}
-        open={open}
-        key="top"
-        mask={true}
-        zIndex={9}
-        className="header-drawer mt-[80px] shadow-md"
-      >
-        <DrawerContent onClose={() => setOpen(false)} />
-      </Drawer>
 
       <Drawer
         placement="right"

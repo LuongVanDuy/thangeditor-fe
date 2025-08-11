@@ -11,9 +11,6 @@ import styled from "styled-components";
 import CustomStep from "@/components/Form/CustomSteps";
 import { CustomInput } from "@/components/Form/CustomInput";
 import First from "@/components/Dashboard/Order/CreateOrder/First";
-import Second from "@/components/Dashboard/Order/CreateOrder/Second";
-import Third from "@/components/Dashboard/Order/CreateOrder/Third";
-import Four from "@/components/Dashboard/Order/CreateOrder/Four";
 import DeleteModal from "@/components/Dashboard/Order/DeleteModal";
 
 // Assets
@@ -24,7 +21,7 @@ import pinkEye from "@/assets/pinkEye.svg";
 import close from "@/assets/pinkClose.svg";
 
 // API & Utils
-import { createOrder, updateOrder, getOrderDetail } from "@/lib/api/order.api";
+import { createOrder, getOrderDetail } from "@/lib/api/order.api";
 import { profileState } from "@/lib/store/state";
 import { formatCurrency } from "@/lib/helpers";
 import { jsonServiceData } from "@/lib/constants";
@@ -81,6 +78,20 @@ const INITIAL_ORDER_STATE: OrderData = {
   status: "AWAITING",
 };
 
+const itemsPC = [
+  { key: "1", title: "Upload images" },
+  { key: "2", title: "Design style" },
+  { key: "3", title: "Photo details" },
+  { key: "4", title: "Add extras" },
+];
+
+const itemsMB = [
+  { key: "1", title: "Upload images" },
+  { key: "2", title: "Design style" },
+  { key: "3", title: "Photo details" },
+  { key: "4", title: "Add extras" },
+];
+
 const CreateOrder = () => {
   // Hooks
   const router = useRouter();
@@ -104,32 +115,17 @@ const CreateOrder = () => {
     service: decodeService,
   });
 
-  const prevOrderRef = useRef(order);
   const [serviceData, setServiceData] = useState<any | null>(null);
 
-  // Computed values
   const isDiscount = useMemo(() => profile?.data?.newPerson === 1, [profile]);
   const isVideoService = useMemo(() => serviceData?.id === 10, [serviceData]);
 
-  // API queries
-  const { data, refetch } = useQuery({
-    queryKey: ["ORDER", oid],
-    queryFn: () => getOrderDetail(oid),
-    enabled: isCreated,
-  });
-
   const { mutate: createOrderMutation, isPending: isCreating } = useMutation({
     mutationFn: (data: any) => createOrder(data),
-    onSuccess: () => setIsCreated(true),
-    onError: (err: any) => {
-      message.error(err.response?.data?.message);
-      console.error(err.response?.data?.message);
+    onSuccess: () => {
+      setIsCreated(true);
+      router.push(`/dashboard/order/${oid}?step=2`);
     },
-  });
-
-  const { mutate: updateMutation, isPending: isUpdating } = useMutation({
-    mutationFn: (data: any) => updateOrder(data, oid),
-    onSuccess: () => refetch(),
     onError: (err: any) => {
       message.error(err.response?.data?.message);
       console.error(err.response?.data?.message);
@@ -150,37 +146,10 @@ const CreateOrder = () => {
 
     const discount = isDiscount ? 10 : 0;
     let finalPrice = Math.max(subTotal - discount, 0);
-    const tax = finalPrice * 0.03 + 0.49;
-    finalPrice = Math.max(finalPrice + tax, 1);
+    finalPrice = Math.max(finalPrice, 1);
 
     return finalPrice;
   }, [order.quantity, order.servicePrice, order.additionalServicePrice, isDiscount]);
-
-  // Effects
-  useEffect(() => {
-    if (data?.data) {
-      const orderData = data.data;
-      setOrder({
-        id: oid,
-        projectName: orderData.projectName,
-        service: orderData.service,
-        subService: orderData.subService,
-        uploadImage: orderData.uploadImage,
-        servicePrice: orderData.servicePrice,
-        designStyle: orderData.designStyle,
-        quantity: orderData.quantity,
-        styleDetail: orderData.styleDetail,
-        photoDetail: orderData.photoDetail,
-        additionalService: orderData.additionalService,
-        addOnService: orderData.addOnService,
-        additionalServicePrice: orderData.additionalServicePrice,
-        orderTotal: orderData.orderTotal,
-        isAgreed: orderData.isAgreed,
-        status: orderData.status,
-      });
-      setIsCreated(true);
-    }
-  }, [data, oid]);
 
   useEffect(() => {
     const orderTotal = calculateOrderTotal();
@@ -194,7 +163,6 @@ const CreateOrder = () => {
     }
   }, [order.service]);
 
-  // Validation functions
   const validateStep = useCallback(
     (step: number): boolean => {
       switch (step) {
@@ -224,14 +192,6 @@ const CreateOrder = () => {
             return false;
           }
           return true;
-
-        case 3:
-          if (!order.isAgreed) {
-            message.warning("Please agree to the terms and conditions before proceeding.");
-            return false;
-          }
-          return true;
-
         default:
           return true;
       }
@@ -245,63 +205,16 @@ const CreateOrder = () => {
       id: oid,
       projectName: order.projectName,
       service: order.service,
+      subService: order.subService,
       uploadImage: order.uploadImage,
       quantity: order.quantity,
       servicePrice: order.servicePrice,
       designStyle: "Natural",
       additionalService: "Normal Delivery",
+      orderTotal: order.orderTotal,
     };
     createOrderMutation(data);
   }, [order, oid, createOrderMutation]);
-
-  const handlePayment = useCallback(() => {
-    if (!order.isAgreed) {
-      message.warning("Please agree to the terms and conditions before payment.");
-      return;
-    }
-
-    updateMutation(
-      {
-        ...order,
-        status: "PENDING_PAYMENT",
-      },
-      {
-        onSuccess: () => {
-          message.success("Payment successful! Your order has been submitted.");
-          router.push("/dashboard/order");
-        },
-      },
-    );
-  }, [order, updateMutation, router]);
-
-  const handleUpdate = useCallback(
-    (extraData = {}, options = {}) => {
-      const data = {
-        projectName: order.projectName,
-        service: order.service,
-        quantity: order.quantity,
-        servicePrice: order.servicePrice,
-        uploadImage: order.uploadImage,
-        photoDetail: order.photoDetail,
-        designStyle: order.designStyle,
-        additionalService: order.additionalService,
-        additionalServicePrice: order.additionalServicePrice,
-        orderTotal: order.orderTotal,
-        isAgreed: order.isAgreed,
-        subService: order.subService,
-        styleDetail: order.styleDetail,
-        addOnService: order.addOnService,
-        ...extraData,
-      };
-
-      const hasChanged = JSON.stringify(prevOrderRef.current) !== JSON.stringify(data);
-      if (hasChanged) {
-        updateMutation(data, options);
-        prevOrderRef.current = order;
-      }
-    },
-    [order, updateMutation],
-  );
 
   const next = useCallback(() => {
     if (!validateStep(current)) return;
@@ -310,42 +223,12 @@ const CreateOrder = () => {
       0: () => {
         if (!isCreated) {
           handleCreateOrder();
-        } else {
-          handleUpdate({ status: "AWAITING" });
-        }
-      },
-      1: () => {
-        if (!order.designStyle) {
-          const newData = { ...order, designStyle: "Natural" };
-          setOrder(newData);
-          updateMutation(newData);
-        } else {
-          handleUpdate({ status: "AWAITING" });
-        }
-      },
-      2: () => handleUpdate({ status: "AWAITING" }),
-      3: () => {
-        if (!order.additionalService) {
-          const newData = {
-            ...order,
-            additionalService: "Normal Delivery",
-            additionalServicePrice: 0,
-          };
-          setOrder(newData);
-          updateMutation(newData);
-        } else {
-          handleUpdate({ status: "AWAITING" });
         }
       },
     };
 
     stepActions[current as keyof typeof stepActions]?.();
-    setCurrent((prev) => prev + 1);
-  }, [current, order, isCreated, handleCreateOrder, handleUpdate, validateStep, updateMutation]);
-
-  const prev = useCallback(() => {
-    setCurrent((prev) => prev - 1);
-  }, []);
+  }, [current, order, isCreated, handleCreateOrder, validateStep]);
 
   const handleCancelOrder = useCallback(() => {
     if (isCreated) {
@@ -364,64 +247,10 @@ const CreateOrder = () => {
     () => [
       {
         title: "Upload images",
-        content: (
-          <First
-            setData={setOrder}
-            data={order}
-            serviceList={jsonServiceData}
-            serviceData={serviceData}
-            setServiceData={setServiceData}
-          />
-        ),
-      },
-      {
-        title: "Design style",
-        content: <Second setData={setOrder} data={order} />,
-      },
-      {
-        title: "Photo details",
-        content: (
-          <Third
-            setData={setOrder}
-            photoDetail={order.photoDetail}
-            serviceData={serviceData}
-            checkedValue={order.addOnService}
-          />
-        ),
-      },
-      {
-        title: "Add extras",
-        content: (
-          <Four
-            setData={setOrder}
-            data={order}
-            serviceData={serviceData}
-            isVideoService={isVideoService}
-            isDiscount={isDiscount}
-            handlePayment={handlePayment}
-          />
-        ),
+        content: <First setData={setOrder} data={order} serviceData={serviceData} setServiceData={setServiceData} />,
       },
     ],
-    [order, serviceData, isVideoService, isDiscount, handlePayment],
-  );
-
-  const items = useMemo(
-    () =>
-      steps.map((item) => ({
-        key: item.title,
-        title: item.title,
-      })),
-    [steps],
-  );
-
-  const items2 = useMemo(
-    () =>
-      steps.map((item) => ({
-        key: item.title,
-        title: "",
-      })),
-    [steps],
+    [order, serviceData, isVideoService, isDiscount],
   );
 
   // Responsive handler
@@ -535,38 +364,27 @@ const CreateOrder = () => {
 
         {/* Footer Navigation */}
         <div className="bg-[#fff] px-6 py-4 -mx-6 flex gap-2 md:gap-5 items-center justify-between">
-          {current === 0 ? (
-            <div className="btn-five" onClick={handleCancelOrder}>
-              <span className="hidden md:block">Cancel</span>
-              <span className="block md:hidden">
-                <Image src={pinkLeft} alt="icon" />
-              </span>
-            </div>
-          ) : (
-            <div className="btn-five flex items-center" onClick={prev}>
+          {/* Cancel button */}
+          <div className="btn-five" onClick={handleCancelOrder}>
+            <span className="hidden md:block">Cancel</span>
+            <span className="block md:hidden">
               <Image src={pinkLeft} alt="icon" />
-              <span className="ml-2 hidden lg:block">{steps[current - 1].title}</span>
-            </div>
-          )}
+            </span>
+          </div>
 
           <div className="w-full hidden md:block">
-            <CustomStep current={current} items={items} />
+            <CustomStep current={0} items={itemsPC} />
           </div>
 
           <div className="w-full block md:hidden">
-            <CustomStep current={current} items={items2} />
+            <CustomStep current={0} items={itemsMB} />
           </div>
 
-          {current < steps.length - 1 ? (
-            <div className="btn-six flex items-center" onClick={next}>
-              <span className="hidden md:block mr-2">{steps[current + 1].title}</span>
-              <Image src={whiteRight} alt="icon" />
-            </div>
-          ) : (
-            <div className="btn-six" onClick={handlePayment}>
-              Pay <span className="hidden md:block">{formatCurrency(order.orderTotal)}</span>
-            </div>
-          )}
+          {/* Next button */}
+          <div className="btn-six flex items-center" onClick={next}>
+            <span className="hidden md:block mr-2">{steps[current + 1]?.title || "Next"}</span>
+            <Image src={whiteRight} alt="icon" />
+          </div>
         </div>
       </div>
 

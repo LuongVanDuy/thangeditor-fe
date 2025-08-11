@@ -11,7 +11,7 @@ import zap from "@/assets/zap.svg";
 const pricingPlans = [
   {
     title: "Basic Sale",
-    price: "$8",
+    price: "$0.5",
     features: [
       "Turnaround time: 24-48 hours",
       "Unlimited Free Revisions",
@@ -44,9 +44,9 @@ const PricingSection = () => {
   return (
     <section className="bg-[#FDC101]">
       <div className="sm:px-4 xs:px-[64px] xl:px-[108px] py-12 md:py-[64px] flex flex-col gap-9 md:gap-12">
-        <h1 className="text-[24px] xs:text-[30px] lg:text-[36px] font-medium text-center">
-          How Much Does Virtual Staging Cost
-        </h1>
+        <h2 className="text-[24px] xs:text-[30px] lg:text-[36px] font-medium text-center">
+          Attract more buyers with our real estate HDR and Flamnient editing services
+        </h2>
 
         <div className="flex flex-wrap justify-center gap-6 md:gap-8">
           {pricingPlans.map((plan, index) => (

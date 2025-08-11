@@ -1,6 +1,6 @@
 "use client";
 
-import { message } from "antd";
+import { message, Spin } from "antd";
 import { setCookie } from "nookies";
 import { useRouter, useSearchParams } from "next/navigation";
 import { useQuery, useMutation } from "@tanstack/react-query";
@@ -71,23 +71,23 @@ const GoogleCallback = () => {
 
   if (isFetchingGoogleData || isLoggingIn) {
     return (
-      <div className="sm:px-4 lg:px-[64px] xl:px-[108px] py-12 md:py-[64px] flex flex-col gap-9 md:gap-12">
-        Đang xử lý đăng nhập...
+      <div className="sm:px-4 lg:px-[64px] xl:px-[108px] py-12 md:py-[64px] flex justify-center items-center">
+        <Spin tip="Đang xử lý đăng nhập..." size="large" />
       </div>
     );
   }
 
   if (isError) {
     return (
-      <div className="sm:px-4 lg:px-[64px] xl:px-[108px] py-12 md:py-[64px] flex flex-col gap-9 md:gap-12">
-        Có lỗi xảy ra trong quá trình xác thực!
+      <div className="sm:px-4 lg:px-[64px] xl:px-[108px] py-12 md:py-[64px] flex justify-center items-center">
+        <Spin tip="Có lỗi xảy ra trong quá trình xác thực!" size="large" />
       </div>
     );
   }
 
   return (
-    <div className="sm:px-4 lg:px-[64px] xl:px-[108px] py-12 md:py-[64px] flex flex-col gap-9 md:gap-12">
-      Đăng nhập thành công, đang chuyển hướng...
+    <div className="sm:px-4 lg:px-[64px] xl:px-[108px] py-12 md:py-[64px] flex justify-center items-center">
+      <Spin tip="Đăng nhập thành công, đang chuyển hướng..." size="large" />
     </div>
   );
 };

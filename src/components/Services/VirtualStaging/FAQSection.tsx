@@ -19,16 +19,13 @@ const items: any[] = [
     children: (
       <div className="text-[#6C757D] text-[16px]">
         <p className="mb-5">
-          Virtual staging is a powerful real estate marketing tool in which a home is staged virtually with the help of
-          computer vision technology.
+          Virtual staging is an advanced real estate marketing tool that uses technology to transform empty spaces into
+          beautifully furnished spaces. This method saves you money and time compared to traditional staging.
         </p>
         <p>
-          It is a digital interior design technique where an editor creates interiors in specific styles by adding or
-          editing colors, furniture, accessories, lighting, and other elements in a given space. With virtual furniture
-          staging, you can furnish an empty house virtually, without having to buy a single piece of furniture. When
-          properties are staged virtually, they help prospective clients visualize the space better and perhaps see
-          themselves living there. We have a team of professional editors ready to turn your photos into stunning
-          professional images. Our services are offered across the USA, Canada, Australia, the UK, Spain, etc.
+          Our skilled editors will add furniture, decorations, lighting, and color accents that are uniquely tailored to
+          your property. As a result, we create realistic images that highlight your property. This helps buyers
+          visualize the space, connect emotionally, and picture themselves living there.
         </p>
       </div>
     ),
@@ -36,14 +33,24 @@ const items: any[] = [
   },
   {
     key: "2",
-    label: "Does Virtual Staging Help You Sell Property Faster?",
-    children: <div className="text-[#6C757D] text-[16px]">loris irum</div>,
+    label: "Can virtual staging help sell a property faster?",
+    children: (
+      <div className="text-[#6C757D] text-[16px]">
+        Virtual staging can help sell a property faster. According to the Real Estate Staging Association, staged homes
+        sell 73% faster than non-staged homes. In addition, virtual staging can help increase the value of a property.
+      </div>
+    ),
     showArrow: false,
   },
   {
     key: "3",
-    label: "Where To Use The Virtually Staged Photos?",
-    children: <div className="text-[#6C757D] text-[16px]">loris irum</div>,
+    label: "Where can I use virtual staging photos?",
+    children: (
+      <div className="text-[#6C757D] text-[16px]">
+        Once you receive your virtual staging photos, you can use them anytime, anywhere. Add them to your individual
+        property website, feature them in brochures, post them on social media, or print them for posters and flyers.
+      </div>
+    ),
     showArrow: false,
   },
 ];
@@ -78,9 +85,9 @@ const FAQSection = () => {
       }}
     >
       <div className="sm:px-4 xs:px-[64px] xl:px-[108px] py-12 md:py-[64px] flex flex-col gap-9 md:gap-12 lg:gap-[64px]">
-        <h1 className="text-[24px] xs:text-[30px] lg:text-[36px] font-medium text-center">
+        <h2 className="text-[24px] xs:text-[30px] lg:text-[36px] font-medium text-center">
           Frequently asked questions
-        </h1>
+        </h2>
 
         <StyledCollapse
           defaultActiveKey={["1"]}
