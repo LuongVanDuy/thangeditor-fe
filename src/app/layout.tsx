@@ -10,9 +10,7 @@ const beVietnamPro = Be_Vietnam_Pro({
 
 export const metadata: Metadata = {
   title: "Fixelphoto – The Best Real Estate Photo Editing Service",
-  icons: {
-    icon: "/favicon.png",
-  },
+  icons: [{ rel: "icon", url: "/favicon.png", type: "image/png" }],
 };
 
 export default function RootLayout({ children }: { children: React.ReactNode }) {

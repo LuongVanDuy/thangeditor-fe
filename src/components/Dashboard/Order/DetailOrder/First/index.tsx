@@ -145,13 +145,14 @@ const First = ({
           />
 
           <CustomInput
+            withStepper
             onChange={(value: any) => {
               handleQuantityChange(value);
             }}
             placeholder="Enter your images quantity"
             className="h-12 "
             type="number"
-            value={data?.quantity ?? ""}
+            value={data?.quantity ?? 0}
           />
         </div>
       </div>

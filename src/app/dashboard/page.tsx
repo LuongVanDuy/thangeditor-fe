@@ -12,7 +12,6 @@ import { getOrderList, getOrderStatus } from "@/lib/api/order.api";
 import { profileState } from "@/lib/store/state";
 import OrderBtn from "@/components/Dashboard/OrderBtn";
 import Link from "next/link";
-import Card from "@/components/Dashboard/Home/Services/Card";
 import ProjectCard from "@/components/Dashboard/Home/ProjectCard";
 import { jsonServiceData } from "@/lib/constants";
 import { CompareSlider } from "@/components/Form/Compare/CompareSlider";

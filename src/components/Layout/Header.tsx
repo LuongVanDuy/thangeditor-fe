@@ -160,7 +160,7 @@ const Header = () => {
                   <li key={service.id}>
                     <Link
                       href={`/services/${service.slug}`}
-                      className="block px-4 py-2 text-secondary hover:bg-gray-100 hover:text-primary"
+                      className="block px-4 py-2 text-secondary hover:bg-yellow-400 hover:text-white rounded-xl"
                     >
                       {service.title}
                     </Link>

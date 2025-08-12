@@ -148,13 +148,14 @@ const First: React.FC<FirstProps> = ({ setData, data, setServiceData, serviceDat
           />
 
           <CustomInput
+            withStepper
             onChange={(value: any) => {
               handleQuantityChange(value);
             }}
             placeholder="Enter your images quantity"
             className="h-12 "
             type="number"
-            value={quantity ?? ""}
+            value={quantity}
           />
         </div>
       </div>

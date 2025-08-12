@@ -1,4 +1,5 @@
 "use client";
+
 import React, { useState, useRef, useEffect, useCallback, useMemo } from "react";
 import Image from "next/image";
 import { useParams, useRouter, useSearchParams } from "next/navigation";
@@ -285,6 +286,13 @@ const DetailOrder = () => {
     },
     [order, hasChanged, updateMutation],
   );
+
+  useEffect(() => {
+    const step = searchParams.get("step");
+    if (step === "2") {
+      setCurrent(1);
+    }
+  }, [searchParams]);
 
   const next = useCallback(() => {
     if (!validateStep(current)) return;

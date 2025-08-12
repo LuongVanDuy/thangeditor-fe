@@ -6,10 +6,12 @@ import Image from "next/image";
 import { type ReactNode, useEffect, useRef, useState, forwardRef } from "react";
 
 import { InputStyled } from "./styled";
+import { MinusOutlined, PlusOutlined } from "@ant-design/icons";
 
 export const CustomInput = forwardRef<
   any,
   InputProps & {
+    withStepper?: boolean;
     className?: string;
     bordered?: boolean;
     placeholder?: string;
@@ -24,10 +26,6 @@ export const CustomInput = forwardRef<
     value?: any;
     defaultValue?: any;
     forceValue?: any;
-    hasPlus?: boolean;
-    hasMinus?: boolean;
-    onMinus?: (value: any) => void;
-    onPlus?: (value: any) => void;
     allowDecimal?: boolean;
   }
 >(
@@ -47,98 +45,96 @@ export const CustomInput = forwardRef<
       value,
       defaultValue,
       forceValue,
-      hasPlus = false,
-      hasMinus = false,
-      onMinus,
-      onPlus,
+      withStepper = false,
       allowDecimal = false,
       ...rest
     },
     ref,
   ) => {
-    const [label, setLabel] = useState<string>();
+    const [internalValue, setInternalValue] = useState<number>(typeof value === "number" ? value : 0);
+    const [label, setLabel] = useState<string>("");
 
+    // Đồng bộ giá trị từ prop value vào internal state
+    useEffect(() => {
+      if (typeof value === "number" && value !== internalValue) {
+        setInternalValue(value);
+      }
+    }, [value]);
+
+    // Xử lý tăng
+    const handlePlus = () => {
+      const newValue = internalValue + 1;
+      setInternalValue(newValue);
+      onChange(newValue);
+    };
+
+    // Xử lý giảm
+    const handleMinus = () => {
+      const newValue = internalValue > 0 ? internalValue - 1 : 0;
+      setInternalValue(newValue);
+      onChange(newValue);
+    };
+
+    // Xử lý nhập liệu
     const onChangeValue = (e: React.ChangeEvent<HTMLInputElement>) => {
-      const { value } = e.target;
+      const inputVal = e.target.value;
 
-      if (type === "number") {
-        let regex = /^[1-9]\d*$/;
-
+      if (withStepper) {
+        // Chỉ cho phép số, nếu allowDecimal thì cho số thập phân
+        let regex = /^[0-9]*$/;
         if (allowDecimal) {
-          regex = /^[1-9]\d*\.?\d{1,3}$/;
+          regex = /^[0-9]*\.?[0-9]*$/;
         }
 
-        const formatValue = value.replace(/,/g, "");
-
-        if (regex.test(formatValue)) {
-          onChange(Number(formatValue));
-          setLabel(Number(formatValue).toLocaleString("en-US"));
-        } else {
-          onChange(0);
-
-          setLabel("");
+        if (inputVal === "" || regex.test(inputVal)) {
+          // Chuyển thành số hoặc 0 nếu rỗng
+          const num = inputVal === "" ? 0 : Number(inputVal);
+          setInternalValue(num);
+          onChange(num);
+          setLabel(inputVal);
         }
       } else {
-        onChange(value);
-        setLabel(value);
+        onChange(inputVal);
+        setLabel(inputVal);
       }
     };
 
+    // Đồng bộ label hiển thị với giá trị số
     useEffect(() => {
-      const inputValue = defaultValue || value;
-
-      if (type === "number") {
-        if (label === undefined) {
-          setLabel(inputValue?.toLocaleString("en-US"));
-          return;
-        }
-
-        const formatValue = label?.replace(/,/g, "");
-
-        if (Number(formatValue) !== inputValue) {
-          setLabel(inputValue?.toLocaleString("en-US"));
-        }
-      } else if (inputValue !== label) {
-        setLabel(inputValue);
+      if (withStepper) {
+        setLabel(internalValue.toString());
+      } else {
+        setLabel(value ?? "");
       }
-    }, [value, defaultValue]);
+    }, [internalValue, value, withStepper]);
 
     const onClickInput = () => {
       if (blurAfterClick && ref && typeof ref === "object" && ref.current) {
         ref.current.blur();
       }
-
       if (onClick) {
         onClick();
       }
     };
 
     return (
-      <InputStyled className={`${wrapClassName} flex items-center gap-x-2`}>
-        {/* {hasMinus && (
-          <div className="flex items-center">
-            <Image
-              src={MinusIcon}
-              alt=""
-              className="w-4 cursor-pointer"
-              onClick={() => {
-                if (onMinus) {
-                  onMinus(value - 1 >= 0 ? value - 1 : value);
-                  if (ref && typeof ref === "object" && ref.current) {
-                    ref.current.focus();
-                  }
-                }
-              }}
-            />
+      <div className={`${wrapClassName ?? ""} flex items-center gap-2`}>
+        {withStepper && (
+          <div
+            className="flex items-center justify-center cursor-pointer select-none p-1 w-14 h-12 bg-[#fdc101] text-black rounded hover:bg-[#e6b800]"
+            onClick={handleMinus}
+            aria-label="Decrease value"
+          >
+            <MinusOutlined style={{ fontSize: 16 }} />
           </div>
-        )} */}
+        )}
 
         <Input
-          className={cx("text-[#666666]  leading-normal focus:shadow-none focus-within:shadow-none", className, {
-            "border-b border-t-0 border-l-0 border-r-0 border-[#B2B2B2] rounded-none ": !bordered,
+          className={cx("text-[#666666] leading-normal focus:shadow-none focus-within:shadow-none", className, {
+            "border-b border-t-0 border-l-0 border-r-0 border-[#B2B2B2] rounded-none": !bordered,
             "hide-arrow": hideArrow,
           })}
-          type={type === "number" ? "text" : type}
+          type={type === "number" || withStepper ? "text" : type}
           placeholder={placeholder}
           prefix={prefixIcon}
           suffix={suffixIcon}
@@ -148,29 +144,21 @@ export const CustomInput = forwardRef<
           value={forceValue ?? label}
           {...rest}
         />
-        {/* {hasPlus && (
-          <div className="flex items-center">
-            <Image
-              src={PlusIcon}
-              alt=""
-              className="w-4 cursor-pointer"
-              onClick={() => {
-                if (onPlus) {
-                  onPlus(value + 1);
-                  if (ref && typeof ref === "object" && ref.current) {
-                    ref.current.focus();
-                  }
-                }
-              }}
-            />
+
+        {withStepper && (
+          <div
+            className="flex items-center justify-center cursor-pointer select-none p-1 w-14 h-12 bg-[#fdc101] text-black rounded hover:bg-[#e6b800]"
+            onClick={handlePlus}
+            aria-label="Increase value"
+          >
+            <PlusOutlined style={{ fontSize: 16 }} />
           </div>
-        )} */}
-      </InputStyled>
+        )}
+      </div>
     );
   },
 );
 
-// Ensure that forwardRef name is set for debugging
 CustomInput.displayName = "CustomInput";
 
 const { TextArea } = Input;
