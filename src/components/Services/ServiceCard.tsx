@@ -2,6 +2,7 @@
 import React from "react";
 import { useRouter } from "next/navigation";
 import Link from "next/link";
+import Image from "next/image";
 
 import { useMutation } from "@tanstack/react-query";
 import { generateOrderId } from "@/lib/api/order.api";
@@ -59,7 +60,13 @@ const ServiceCard: React.FC<CardProps> = ({
           {beforeUrl && afterUrl ? (
             <CompareSlider beforeImage={beforeUrl} afterImage={afterUrl} />
           ) : (
-            <img src={beforeUrl} alt="Before" className="w-full h-full object-cover" />
+            <Image
+              src={beforeUrl}
+              alt="Before"
+              fill
+              className="object-cover"
+              sizes="(max-width: 768px) 100vw, (max-width: 1200px) 50vw, 33vw"
+            />
           )}
         </div>
       </div>
