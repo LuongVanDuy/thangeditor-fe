@@ -4,7 +4,6 @@ import { useState, useEffect } from "react";
 import { usePathname } from "next/navigation";
 import { QueryClient, QueryClientProvider } from "@tanstack/react-query";
 import { InitGlobalData } from "@/components/Layout/InitGlobalData";
-import { PayPalScriptProvider } from "@paypal/react-paypal-js";
 import { RecoilRoot } from "recoil";
 import Sidebar from "@/components/Dashboard/Layout/Sidebar";
 import Header from "@/components/Dashboard/Layout/Header/Header";
@@ -82,29 +81,27 @@ export default function PagesLayout({
     <>
       <RecoilRoot>
         <QueryClientProvider client={queryClient}>
-          <PayPalScriptProvider options={initialOptions}>
-            <div className="overflow-hidden bg-[#212529] mx-auto min-h-screen w-full">
-              <div className="flex">
-                <div
-                  className={`sidebar transition-width duration-300 h-full fixed left-0 z-10 bg-[#212529] ${
-                    collapsed ? "w-[82px]" : "w-[280px]"
-                  } hidden md:block`}
-                >
-                  <Sidebar isOpen={!collapsed} activePage={activePage} />
-                </div>
+          <div className="overflow-hidden bg-[#212529] mx-auto min-h-screen w-full">
+            <div className="flex">
+              <div
+                className={`sidebar transition-width duration-300 h-full fixed left-0 z-10 bg-[#212529] ${
+                  collapsed ? "w-[82px]" : "w-[280px]"
+                } hidden md:block`}
+              >
+                <Sidebar isOpen={!collapsed} activePage={activePage} />
+              </div>
 
-                <div className={`flex grow flex-col ml-0 ${collapsed ? "md:ml-[82px]" : "ml-[280px]"}`}>
-                  <div className="block md:hidden">
-                    <Header activePage={activePage} isOpen={!collapsed} />
-                  </div>
-                  <div className="bg-[#fbfbfb] mt-0 md:mt-3 pt-0 md:pt-3 rounded-tl-none  md:rounded-tl-[24px] overflow-hidden">
-                    {children}
-                  </div>
+              <div className={`flex grow flex-col ml-0 ${collapsed ? "md:ml-[82px]" : "ml-[280px]"}`}>
+                <div className="block md:hidden">
+                  <Header activePage={activePage} isOpen={!collapsed} />
+                </div>
+                <div className="bg-[#fbfbfb] mt-0 md:mt-3 pt-0 md:pt-3 rounded-tl-none  md:rounded-tl-[24px] overflow-hidden">
+                  {children}
                 </div>
               </div>
-              <InitGlobalData />
             </div>
-          </PayPalScriptProvider>
+            <InitGlobalData />
+          </div>
         </QueryClientProvider>
       </RecoilRoot>
     </>

@@ -162,17 +162,20 @@ const HeroSection = () => {
 
         <div className="flex flex-col gap-6">
           <h2 className="text-[#212529] font-medium text-[20px] md:text-[32px] lg:text-[36px]">
-            What are Real Estate Video Editing services?
+            What are Video Editing services?
           </h2>
 
           <div className="flex flex-col gap-4 text-[#495057] text-[16px]">
-            <div className="flex gap-3">
+            <div className="flex flex-col gap-3">
               <p className="text-[#495057] text-[16px]">
-                Real estate businesses and agents use real estate videos to gain their prospects’ attention and sell
-                their listings faster. It is an essential marketing tool now. <br />
-                While marketing any real estate property, it’s important that your client gets a realistic feel of the
-                property before they decide to buy or rent a property. Therefore, real estate videos are perfect
-                marketing tools that give warmth and feel to a property.
+                In today&apos;s market, real estate videos have become a powerful tool for businesses and agents to
+                attract attention and drive sales.
+              </p>
+
+              <p className="text-[#495057] text-[16px]">
+                They allow potential buyers or renters to experience a property in an authentic and engaging way before
+                making a decision. By presenting a space with warmth, real estate videos create a natural emotional
+                connection that still photos simply cannot match.
               </p>
             </div>
           </div>

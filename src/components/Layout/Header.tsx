@@ -1,12 +1,9 @@
 "use client";
-import React, { useEffect, useState, useCallback, useMemo } from "react";
+import React, { useEffect, useState } from "react";
 import Image from "next/image";
 import Link from "next/link";
 import { usePathname, useRouter } from "next/navigation";
 import { Dropdown, MenuProps, Drawer } from "antd";
-import { useRecoilState } from "recoil";
-import { destroyCookie } from "nookies";
-
 import DrawerContent from "./Drawer/DrawerContent";
 import MenuContent from "./Drawer/MenuContent";
 
@@ -22,40 +19,36 @@ import avatar from "@/assets/Avatar.svg";
 import down from "@/assets/chevron-down.svg";
 import close from "@/assets/x.svg";
 
-// Constants
-const NAVIGATION_ITEMS = [
-  { href: "/", label: "Home" },
-  { href: "/services", label: "Services", hasDropdown: true },
-  { href: "/blog", label: "Blog" },
-  { href: "/contact", label: "Contact" },
-] as const;
+import { useRecoilState } from "recoil";
+import { destroyCookie } from "nookies";
+import { clearToken, getToken, setRefreshToken, setToken } from "@/lib/helpers";
+import { profileState } from "@/lib/store/state";
 
-const STATIC_PATHS = ["/blog", "/mobile", "/contact", "/services", "/"] as const;
-const BREAKPOINT_MD = 768;
-
-// Types
-interface NavigationItem {
-  href: string;
-  label: string;
-  hasDropdown?: boolean;
-}
-
-interface HeaderProps {}
-
-const Header: React.FC<HeaderProps> = () => {
+const Header = () => {
   const router = useRouter();
   const pathName = usePathname();
   const [profile, setProfile] = useRecoilState(profileState);
   const [activePage, setActivePage] = useState("");
-  const [isServicesDrawerOpen, setIsServicesDrawerOpen] = useState(false);
-  const [isMobileMenuOpen, setIsMobileMenuOpen] = useState(false);
+  const [open, setOpen] = useState(false);
+  const [openMenu, setOpenMenu] = useState(false);
+  const profileAvatar = profile?.data?.avatar;
 
-  // Memoized values
-  const profileAvatar = useMemo(() => profile?.data?.avatar || avatar, [profile?.data?.avatar]);
-  const isAuthenticated = useMemo(() => !!profile, [profile]);
+  useEffect(() => {
+    const handleResize = () => {
+      if (window.innerWidth < 768) {
+        setOpen(false);
+      } else {
+        setOpenMenu(false);
+      }
+    };
 
-  // Handlers
-  const handleLogout = useCallback(() => {
+    handleResize();
+    window.addEventListener("resize", handleResize);
+
+    return () => window.removeEventListener("resize", handleResize);
+  }, []);
+
+  const logout = () => {
     clearToken();
     setToken("");
     setRefreshToken("");
@@ -207,15 +200,68 @@ const Header: React.FC<HeaderProps> = () => {
           <Image src={logo} alt="logo" height={32} width={178} layout="intrinsic" className="!h-7 !md:h-8 w-auto" />
         </Link>
 
-        {/* Desktop Navigation */}
-        <nav className="hidden md:block">
-          <ul className="flex gap-6">{NAVIGATION_ITEMS.map(renderNavigationItem)}</ul>
-        </nav>
+        <div className="hidden md:block">
+          <ul className="flex gap-6">
+            <Link
+              href="/"
+              className={`${activePage === "/" ? "text-primary" : "text-secondary"} cursor-pointer hover:opacity-80`}
+            >
+              Home
+            </Link>
+            <li className="flex gap-1 items-center">
+              <Link
+                href="/services"
+                className={`${
+                  activePage === "/services" ? "text-primary" : "text-secondary"
+                } cursor-pointer hover:opacity-80`}
+              >
+                Services
+              </Link>
+              <div onClick={() => setOpen(!open)}>
+                <Image src={down} alt="" className="cursor-pointer" />
+              </div>
+            </li>
+            <Link
+              href="/blog"
+              className={`${
+                activePage === "/blog" ? "text-primary" : "text-secondary"
+              } cursor-pointer hover:opacity-80`}
+            >
+              Blog
+            </Link>
+            <Link
+              href="/contact"
+              className={`${
+                activePage === "/contact" ? "text-primary" : "text-secondary"
+              } cursor-pointer hover:opacity-80`}
+            >
+              Contact
+            </Link>
+          </ul>
+        </div>
 
-        {/* Desktop User Section */}
-        {renderUserSection()}
+        {profile ? (
+          <Dropdown menu={{ items }} trigger={["click"]} placement="bottomRight" arrow>
+            <div className="sm:hidden md:flex items-center gap-2 cursor-pointer">
+              <Image
+                src={profileAvatar ? profileAvatar : avatar}
+                alt="avatar"
+                height={48}
+                width={48}
+                className="h-12 w-12 rounded-full"
+              />
+              <h1 className="text-primary font-medium text-[18px]">{profile?.data?.name}</h1>
+            </div>
+          </Dropdown>
+        ) : (
+          <div className="btn-primary h-[48px] w-[124px] sm:hidden md:flex" onClick={() => router.push("/auth/login")}>
+            <div>
+              <Image src={userIcon} alt="icon" className="mr-2" />
+            </div>{" "}
+            Login
+          </div>
+        )}
 
-        {/* Mobile Controls */}
         <div className="flex md:hidden gap-2 items-center">
           {renderMobileUserSection()}
 
@@ -227,20 +273,19 @@ const Header: React.FC<HeaderProps> = () => {
             <Image src={menu} alt="menu" />
           </button>
         </div>
-      </header>
+      </div>
 
-      {/* Services Dropdown Drawer */}
       <Drawer
         placement="top"
         closable={false}
-        onClose={() => setIsServicesDrawerOpen(false)}
-        open={isServicesDrawerOpen}
+        onClose={() => setOpen(false)}
+        open={open}
         key="top"
         mask={true}
         zIndex={9}
         className="header-drawer mt-[80px] shadow-md"
       >
-        <DrawerContent onClose={() => setIsServicesDrawerOpen(false)} />
+        <DrawerContent onClose={() => setOpen(false)} />
       </Drawer>
 
       {/* Mobile Menu Drawer */}

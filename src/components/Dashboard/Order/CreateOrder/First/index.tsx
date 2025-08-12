@@ -2,27 +2,26 @@ import React, { useState, useEffect } from "react";
 import { CustomInput } from "@/components/Form/CustomInput";
 import { LinkOutlined } from "@ant-design/icons";
 import { Radio } from "antd";
-
-const services = [
-  { value: "Virtual Staging", label: "Virtual Staging" },
-  { value: "Photo editing", label: "Photo editing" },
-  { value: "Property Videos", label: "Property Videos" },
-];
+import { jsonServiceData } from "@/lib/constants"; // import dữ liệu thật
 
 interface FirstProps {
   setData: React.Dispatch<React.SetStateAction<any>>;
   data: any;
-  serviceList: any[];
   setServiceData: React.Dispatch<React.SetStateAction<any>>;
   serviceData: any;
 }
 
-const First: React.FC<FirstProps> = ({ setData, data, serviceList, setServiceData, serviceData }) => {
+const First: React.FC<FirstProps> = ({ setData, data, setServiceData, serviceData }) => {
   const quantity = data.quantity;
   const url = data.uploadImage;
 
-  const [service, setService] = useState(null);
-  const [subServiceData, setSubServiceData] = useState(null);
+  // Dùng jsonServiceData trực tiếp cho danh sách dịch vụ
+  const services = jsonServiceData.map((service) => ({
+    value: service.title,
+    label: service.title,
+  }));
+
+  const [service, setService] = useState<string | null>(null);
 
   const subService = serviceData?.subServices ?? [];
 
@@ -30,29 +29,33 @@ const First: React.FC<FirstProps> = ({ setData, data, serviceList, setServiceDat
     if (data && data.service) {
       setService(data.service);
     }
-
-    if (data && data.subService) {
-      setSubServiceData(data.subService);
-    }
   }, [data]);
+
+  useEffect(() => {
+    if (!serviceData?.subServices?.length) {
+      setData((prev: any) => ({
+        ...prev,
+        subService: "",
+      }));
+    }
+  }, [serviceData, setData]);
 
   const handleChange = (e: any) => {
     const value = e.target.value;
     setService(value);
+
+    const matchedService = jsonServiceData.find((s) => s.title === value);
+
+    setServiceData(matchedService);
+
     setData((prev: any) => ({
       ...prev,
       service: value || null,
-      subService: "",
+      subService: matchedService?.subServices?.length ? "" : "", // reset subService khi chuyển service mới
       addOnService: "",
       servicePrice: matchedService?.subServices?.length ? null : matchedService?.price || null,
       additionalServicePrice: 0,
     }));
-
-    const matchedService = serviceList.find((service: any) => service.title === value);
-
-    if (matchedService) {
-      setServiceData(matchedService);
-    }
   };
 
   const handleSubServiceChange = (e: any) => {
@@ -115,7 +118,9 @@ const First: React.FC<FirstProps> = ({ setData, data, serviceList, setServiceDat
                 <div
                   key={index}
                   className={`p-4 rounded-lg ${
-                    subServiceData === serviceOption.title ? "border-primary border-[2px] bg-[#FFFEEA]" : "bg-[#fbfbfb]"
+                    data.subService === serviceOption.title
+                      ? "border-primary border-[2px] bg-[#FFFEEA]"
+                      : "bg-[#fbfbfb]"
                   }`}
                 >
                   <label className="flex items-center gap-2 cursor-pointer">

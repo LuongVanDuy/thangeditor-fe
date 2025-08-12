@@ -87,42 +87,33 @@ const ServiceCard: React.FC<CardProps> = ({
           <p className="text-[#0000008F]">{desc}</p>
         </div>
 
-        <div>
-          <p className="text-[#000000CC] text-[14px] block md:hidden mb-4">
+        <div className="flex flex-wrap gap-4 items-center">
+          <button
+            onClick={() => handleNewOrder(title)}
+            className={`px-4 md:px-6 py-2 md:py-3 rounded-lg border border-primary font-medium text-primary cursor-pointer hover:opacity-80 ${
+              small ? "text-sm md:text-base" : ""
+            }`}
+            aria-label={`Place an order for ${title}`}
+          >
+            Place an order
+          </button>
+
+          <Link
+            href={serviceUrl}
+            title={`Learn more about ${title}`}
+            className={`px-4 md:px-6 py-2 md:py-3 rounded-lg border border-[#DEE2E6] font-medium text-[#343A40] cursor-pointer hover:opacity-80 ${
+              small ? "text-sm md:text-base" : ""
+            }`}
+          >
+            Learn more
+          </Link>
+
+          <p className="text-[#000000CC] text-[14px]">
             Starting from{" "}
             <span className="text-primary" itemProp="price">
               $16
             </span>
           </p>
-
-          <div className="flex gap-4 items-center">
-            <button
-              onClick={() => handleNewOrder(title)}
-              className={`px-4 md:px-6 py-2 md:py-3 rounded-lg border border-primary font-medium text-primary cursor-pointer hover:opacity-80 ${
-                small ? "text-sm md:text-base" : ""
-              }`}
-              aria-label={`Place an order for ${title}`}
-            >
-              Place an order
-            </button>
-
-            <Link
-              href={serviceUrl}
-              title={`Learn more about ${title}`}
-              className={`px-4 md:px-6 py-2 md:py-3 rounded-lg border border-[#DEE2E6] font-medium text-[#343A40] cursor-pointer hover:opacity-80 ${
-                small ? "text-sm md:text-base" : ""
-              }`}
-            >
-              Learn more
-            </Link>
-
-            <p className="text-[#000000CC] text-[14px] hidden md:block">
-              Starting from{" "}
-              <span className="text-primary" itemProp="price">
-                $16
-              </span>
-            </p>
-          </div>
         </div>
       </div>
     </div>

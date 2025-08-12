@@ -14,23 +14,23 @@ import Image from "next/image";
 const cardData = [
   {
     img: icon1,
-    title: "Enhance the visibility of the listing in less time",
-    desc: "With our professional staging services see your listings attract more buyers and fetch higher selling prices",
+    title: "Drive Sales Faster",
+    desc: "Increase sales with our professional real estate video editing services and position your property for a higher selling price.",
   },
   {
     img: icon2,
-    title: "Build a strong personal brand",
-    desc: "It is statistically proven that home buyers tend to choose listings with professional photos and they sell faster.",
+    title: "Grab Powerful Attention",
+    desc: "Research shows that dynamic videos outperform still images in attracting and retaining homebuyers.",
   },
   {
     img: icon3,
-    title: "Generate top-quality leads",
-    desc: "Go online. Go virtual. Let your imaging and our staging do the rest. Go and grab the attention of your buyers.",
+    title: "Generate High-Quality Leads",
+    desc: "Don't be shy about posting your real estate videos online. We'll create engaging edits that will attract potential buyers online.",
   },
   {
     img: icon4,
-    title: "Attract a young audience",
-    desc: "Transform your ordinary listing, into a property that your potential buyers can envision as their dream home.",
+    title: "Make an Emotional Connection",
+    desc: "Showcase your property in a warm and authentic way, bringing viewers to life and immersing them in the property.",
   },
 ];
 
@@ -58,7 +58,7 @@ const BenefitSection = () => {
     <section className="bg-[#FFFEEA]">
       <div className="sm:px-4 lg:px-[64px] xl:px-[108px] py-12 md:py-[64px] flex flex-col gap-9 md:gap-12 ">
         <h2 className="text-[24px] xs:text-[30px] lg:text-[36px] font-medium text-center">
-          Benefits of using real estate videos?
+          Why choose Video Editing Services?
         </h2>
 
         <div className="grid grid-cols-2 lg:grid-cols-4 gap-8">

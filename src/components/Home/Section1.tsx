@@ -2,8 +2,8 @@
 import React from "react";
 import { useRouter } from "next/navigation";
 import Link from "next/link";
-import beforeImg from "@/assets/before2.jpg";
-import afterImg from "@/assets/after2.jpg";
+import beforeImg from "@/assets/home/DSC_1810.jpg";
+import afterImg from "@/assets/home/DSC_1810_final.jpg";
 import { CompareSlider } from "@/components/Form/Compare/CompareSlider";
 import { getToken } from "@/lib/helpers";
 
@@ -36,7 +36,8 @@ const HomeSection1 = () => {
 
         <div className="flex-1">
           <div className="text-[#495057] mb-4">
-            Try to incorporate about all the services that Styldod provides with this content
+            Try to incorporate about all the services that Styldod provides Explore our services and see how we can make
+            your wishes come true
           </div>
 
           <div className="flex gap-4">
@@ -52,11 +53,12 @@ const HomeSection1 = () => {
       </div>
 
       <div className="flex flex-col md:hidden px-4 py-6">
-        <h1 className="text-[32px] mb-4">Make your ideal space right before your eye</h1>
+        <h1 className="text-[32px] mb-4">Bring your dream space to life right before your eyes</h1>
 
         <div>
           <div className="text-[#495057] mb-4">
-            Try to incorporate about all the services that Styldod provides with this content
+            Try to incorporate about all the services that Styldod provides Explore our services and see how we can make
+            your wishes come true
           </div>
 
           <div className="flex gap-4">

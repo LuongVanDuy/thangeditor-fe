@@ -16,33 +16,33 @@ import Image from "next/image";
 const features = [
   {
     img: icon1,
-    title: "Sell properties faster",
-    desc: "Accelerate sales by helping buyers visualize their future property, reducing time on the market for a vacant home.",
+    title: "Sell Your Property Faster",
+    desc: "Help buyers visualize their dream home before they even walk in. Our virtual staging service helps make your space more appealing.",
   },
   {
     img: icon2,
-    title: "Get a higher sales price",
-    desc: "Make properties appear more valuable, enabling sellers to justify higher asking prices and attract discerning home buyers.",
+    title: "Get a Higher Selling Price",
+    desc: "Showcase your property's full potential, help you command a higher price, and attract serious buyers.",
   },
   {
     img: icon3,
-    title: "Better listing appeal",
-    desc: "Transform empty spaces into captivating homes, making listings stand out and captivating potential buyers online.",
+    title: "Increase Listing Appeal",
+    desc: "Turn empty rooms into cozy, inviting spaces that attract attention online and inspire in-person visits.",
   },
   {
     img: icon4,
-    title: "Cost-effective",
-    desc: "Eliminate the expenses of physical staging, providing the same visual impact without the added costs.",
+    title: "Cost-Effective Staging",
+    desc: "Skip the expensive costs of traditional staging. Get the same great results at a fraction of the price.",
   },
   {
     img: icon5,
-    title: "Get a competitive edge",
-    desc: "Virtually staged photos give listings a modern advantage, helping them shine in competitive market & leave a memorable impression.",
+    title: "Create a Competitive Edge",
+    desc: "Stand out in a crowded marketplace with modern, authentic imagery that leaves a lasting impression.",
   },
   {
     img: icon6,
-    title: "Variety of design options",
-    desc: "With virtual staging software, sellers can explore diverse design options, tailoring each presentation to different buyer preferences.",
+    title: "Endless Design Possibilities",
+    desc: "From modern luxury to classic elegance, customize each space to suit your ideal buyer's taste.",
   },
 ];
 

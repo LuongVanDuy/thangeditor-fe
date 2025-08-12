@@ -9,7 +9,7 @@ const beVietnamPro = Be_Vietnam_Pro({
 });
 
 export const metadata: Metadata = {
-  title: "VA Media",
+  title: "Fixelphoto – The Best Real Estate Photo Editing Service",
   icons: {
     icon: "/favicon.png",
   },

@@ -7,42 +7,50 @@ const FactSection = () => {
   return (
     <section className="sm:px-4 lg:px-[64px] xl:px-[108px] py-12 md:py-[64px] flex flex-col gap-9 md:gap-12">
       <div>
-        <h1 className="text-[24px] xs:text-[30px] lg:text-[36px] font-medium mb-4 md:mb-5 ">Interesting Facts</h1>
-        <h2 className="text-[#495057] text-[16px] md:text-[18px]">
+        <h2 className="text-[24px] xs:text-[30px] lg:text-[36px] font-medium mb-4 md:mb-5">Interesting Facts</h2>
+        <p className="text-[#495057] text-[16px] md:text-[18px]">
           We&apos;ve done all the heavy lifting so you don&apos;t have to — get all the data you need to launch and grow
           your business faster.
-        </h2>
+        </p>
       </div>
 
       <div className="grid grid-cols-1 lg:grid-cols-2 gap-9 md:gap-12 lg:gap-[96px] items-center">
         <div className="grid grid-cols-2 gap-9 md:gap-12 lg:gap-[64px]">
           <div>
-            <h1 className="text-primary text-[32px] md:text-[40px] lg:text-[48px] font-medium">4,000+</h1>
-            <h2 className="text-[#212529] text-[18px] font-medium">Trusted customers globally</h2>
-            <h3 className="text-[#495057] text-[16px]">We have helped over 4,000 amazing global clients.</h3>
+            <h3 className="text-primary text-[32px] md:text-[40px] lg:text-[48px] font-medium">2,000+</h3>
+            <h4 className="text-[#212529] text-[18px] font-medium">Completed projects</h4>
+            <p className="text-[#495057] text-[16px]">
+              We have successfully completed over 2,000 projects of all sizes, from small to high-end.
+            </p>
           </div>
 
           <div>
-            <h1 className="text-primary text-[32px] md:text-[40px] lg:text-[48px] font-medium">150,000+</h1>
-            <h2 className="text-[#212529] text-[18px] font-medium">Images delivered</h2>
-            <h3 className="text-[#495057] text-[16px]">Over 150,000 images delivered to customers.</h3>
+            <h3 className="text-primary text-[32px] md:text-[40px] lg:text-[48px] font-medium">100,000+</h3>
+            <h4 className="text-[#212529] text-[18px] font-medium">Delivered images</h4>
+            <p className="text-[#495057] text-[16px]">
+              Over 100,000 high-quality images have been delivered to customers worldwide.
+            </p>
           </div>
 
           <div>
-            <h1 className="text-primary text-[32px] md:text-[40px] lg:text-[48px] font-medium">06+</h1>
-            <h2 className="text-[#212529] text-[18px] font-medium">Countries served</h2>
-            <h3 className="text-[#495057] text-[16px]">We serve customers from more than 6 countries</h3>
+            <h3 className="text-primary text-[32px] md:text-[40px] lg:text-[48px] font-medium">95%+</h3>
+            <h4 className="text-[#212529] text-[18px] font-medium">Returning customers</h4>
+            <p className="text-[#495057] text-[16px]">
+              An impressive rate of returning customers and recommending our services to others.
+            </p>
           </div>
 
           <div>
-            <h1 className="text-primary text-[32px] md:text-[40px] lg:text-[48px] font-medium">200+</h1>
-            <h2 className="text-[#212529] text-[18px] font-medium">5-star reviews</h2>
-            <h3 className="text-[#495057] text-[16px]">We&apos;re proud of our 5-star rating with over 200 reviews.</h3>
+            <h3 className="text-primary text-[32px] md:text-[40px] lg:text-[48px] font-medium">100+</h3>
+            <h4 className="text-[#212529] text-[18px] font-medium">5-Star reviews</h4>
+            <p className="text-[#495057] text-[16px]">
+              Proud to have over 100 5-star reviews from satisfied customers.
+            </p>
           </div>
         </div>
 
         <div>
-          <Image src={img} alt="" />
+          <Image src={img} alt="Interesting Facts" />
         </div>
       </div>
     </section>
