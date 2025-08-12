@@ -15,11 +15,11 @@ interface BlogCardProps {
 
 const BlogCard: React.FC<BlogCardProps> = ({ img = blog, title, subject, desc, slug, key }) => {
   return (
-    <div className="flex flex-col flex-shrink-0 w-full xs:w-[387px] gap-6" key={key}>
+    <div className="flex flex-col flex-shrink-0 w-full xs:w-[387px] gap-4" key={key}>
       <div>
         <Image src={img} alt="icon" className="w-full xs:w-[387px] h-auto" />
       </div>
-      <div className="flex flex-col gap-6 justify-center">
+      <div className="flex flex-col gap-2 justify-center">
         <h2 className="text-primary text-[12px] uppercase font-medium">{subject}</h2>
         <div className="flex items-start justify-between">
           <Link href={`/blog/${slug}`}>
