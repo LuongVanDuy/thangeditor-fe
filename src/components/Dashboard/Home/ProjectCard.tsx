@@ -30,6 +30,10 @@ const ProjectCard: React.FC<ProjectCardProps> = ({ name, service, id, status }) 
   const router = useRouter();
   const statusColor = getStatusColor(status);
   const isDone = status === "DONE" || status === "READY";
+  let displayStatus = status;
+  if (status === "PENDING_PAYMENT") {
+    displayStatus = "AWAITING";
+  }
 
   return (
     <div className="card-2 flex flex-wrap justify-between gap-6">
@@ -49,7 +53,7 @@ const ProjectCard: React.FC<ProjectCardProps> = ({ name, service, id, status }) 
         <div>
           <h1 className="uppercase text-[12px]">Status</h1>
           <h2 className="font-medium" style={{ color: statusColor }}>
-            {status}
+            {displayStatus}
           </h2>
         </div>
       </div>
