@@ -60,7 +60,7 @@ const HeroSection = () => {
           <div className="relative aspect-[580/415] rounded-xl overflow-hidden">
             <video
               ref={videoRef1}
-              src="/videos/Cinematic.mp4"
+              src="https://firebasestorage.googleapis.com/v0/b/video-cdn-518f9.appspot.com/o/Cinematic.mp4?alt=media&token=323a35f7-bb2d-42fc-9ca3-cb8fa29fa415"
               poster={poster1.src}
               className="w-full h-full object-cover"
             />
@@ -99,7 +99,7 @@ const HeroSection = () => {
           <div className="relative aspect-[580/415] rounded-xl overflow-hidden">
             <video
               ref={videoRef1}
-              src="/videos/Cinematic.mp4"
+              src="https://firebasestorage.googleapis.com/v0/b/video-cdn-518f9.appspot.com/o/Cinematic.mp4?alt=media&token=323a35f7-bb2d-42fc-9ca3-cb8fa29fa415"
               poster={poster1.src}
               className="w-full h-full object-cover"
             />
@@ -124,7 +124,7 @@ const HeroSection = () => {
           <div className="relative aspect-[580/415] rounded-xl overflow-hidden">
             <video
               ref={videoRef2}
-              src="/videos/2038DaturaSt.mp4"
+              src="https://firebasestorage.googleapis.com/v0/b/video-cdn-518f9.appspot.com/o/2038DaturaSt.mp4?alt=media&token=4bc6c98f-85a5-44bb-ade5-0e6df1fdcc3f"
               poster={poster2.src}
               className="w-full h-full object-cover"
             />
@@ -147,7 +147,7 @@ const HeroSection = () => {
           <div className="relative aspect-[580/415] rounded-xl overflow-hidden">
             <video
               ref={videoRef2}
-              src="/videos/2038DaturaSt.mp4"
+              src="https://firebasestorage.googleapis.com/v0/b/video-cdn-518f9.appspot.com/o/2038DaturaSt.mp4?alt=media&token=4bc6c98f-85a5-44bb-ade5-0e6df1fdcc3f"
               poster={poster2.src}
               className="w-full h-full object-cover"
             />
