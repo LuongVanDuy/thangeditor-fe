@@ -83,10 +83,7 @@ const ProcessSection = () => {
           <div className="flex flex-col gap-2 text-center">
             <h1 className="text-primary font-medium text-[14px]">Step 3</h1>
             <h2 className="font-medium text-[24px]">Deliver</h2>
-            <p className="text-[#495057] text-[16px]">
-              Turnaround Time: 2 Business days Rush delivery within 24 hours available at additional cost of $12 per
-              image
-            </p>
+            <p className="text-[#495057] text-[16px]">Turnaround Time: 1 Business days</p>
           </div>
         </div>
       </div>

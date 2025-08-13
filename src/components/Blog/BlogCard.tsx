@@ -11,9 +11,10 @@ interface BlogCardProps {
   subject?: string | any;
   desc: string;
   slug: string;
+  thumbnail?: string;
 }
 
-const BlogCard: React.FC<BlogCardProps> = ({ img = blog, title, subject, desc, slug, key }) => {
+const BlogCard: React.FC<BlogCardProps> = ({ img = blog, title, subject, desc, slug, key, thumbnail }) => {
   return (
     <div className="flex flex-col flex-shrink-0 w-full xs:w-[387px] gap-4" key={key}>
       <div>
@@ -25,9 +26,9 @@ const BlogCard: React.FC<BlogCardProps> = ({ img = blog, title, subject, desc, s
           <Link href={`/blog/${slug}`}>
             <h1 className="text-[24px] font-medium text-[#212529] hover:opacity-80 cursor-pointer">{title}</h1>
           </Link>
-          <Image src={icon} alt="" />
+          <Image src={thumbnail || icon} alt="" />
         </div>
-        <h2 className="text-[#495057]">{desc}</h2>
+        <div className="text-[#495057]" dangerouslySetInnerHTML={{ __html: desc }} />
       </div>
     </div>
   );

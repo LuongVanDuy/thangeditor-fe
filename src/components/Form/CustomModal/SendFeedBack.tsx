@@ -62,10 +62,13 @@ const SendFeedBack = ({
   });
 
   const handleUpdate = () => {
+    const { user, ...rest } = data?.data || {};
+
     const submitData = {
-      ...data?.data,
+      ...rest,
       status: "REWORK",
     };
+
     updateMutation(submitData);
   };
 

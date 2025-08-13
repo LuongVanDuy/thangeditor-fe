@@ -1,7 +1,6 @@
 "use client";
 
 import React, { useState } from "react";
-import Script from "next/script";
 import { CustomSelect } from "@/components/Form/CustomSelect";
 import CustomTabs from "@/components/Form/CustomTabs";
 import CustomPagination from "@/components/Form/CustomPagination";

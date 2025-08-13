@@ -58,7 +58,13 @@ const DetaiBlog = () => {
         <div className="flex flex-wrap gap-8 justify-center">
           {list?.data?.list.map((item: any, index: number) => (
             <div key={index}>
-              <BlogCard key={item.id} slug={item.slug} title={item.title} desc={item.content} />
+              <BlogCard
+                key={item.id}
+                slug={item.slug}
+                title={item.title}
+                desc={item.content}
+                thumbnail={item.thumbnail}
+              />
             </div>
           ))}
         </div>

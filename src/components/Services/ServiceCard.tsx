@@ -18,6 +18,7 @@ interface CardProps {
   beforeUrl?: any;
   afterUrl?: any;
   small?: boolean;
+  price?: number;
 }
 
 const ServiceCard: React.FC<CardProps> = ({
@@ -29,6 +30,7 @@ const ServiceCard: React.FC<CardProps> = ({
   style,
   beforeUrl,
   afterUrl,
+  price,
   small = false,
 }) => {
   const router = useRouter();
@@ -111,7 +113,7 @@ const ServiceCard: React.FC<CardProps> = ({
           <p className="text-[#000000CC] text-[14px]">
             Starting from{" "}
             <span className="text-primary" itemProp="price">
-              $16
+              ${price}
             </span>
           </p>
         </div>

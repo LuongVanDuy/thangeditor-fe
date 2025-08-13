@@ -11,8 +11,8 @@ import CompareImg from "@/components/Form/Compare";
 import { CompareSlider } from "@/components/Form/Compare/CompareSlider";
 import hdr1 from "@/assets/hdr-1.jpg";
 import hdr2 from "@/assets/hdr-2.jpg";
-import hdr3 from "@/assets/hdr-3.jpg";
-import hdr4 from "@/assets/hdr-4.jpg";
+import hdr3 from "@/assets/4.jpg";
+import hdr4 from "@/assets/4-after.jpg";
 
 const DifferenceSection = () => {
   const router = useRouter();
@@ -76,7 +76,7 @@ const DifferenceSection = () => {
         <div className="">
           <div className="rounded-2xl relative max-w-[1540px]">
             <div className="relative w-full aspect-[510/382] overflow-hidden no-swipe rounded-2xl">
-              <CompareSlider beforeImage={hdr1.src} afterImage={hdr2.src} />;
+              <CompareSlider beforeImage={hdr3.src} afterImage={hdr4.src} />;
             </div>
           </div>
         </div>

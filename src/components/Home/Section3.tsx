@@ -33,8 +33,8 @@ const cards = [
   },
   {
     img: icon5,
-    title: "Money back guarantee",
-    desc: "Not satisfied? Let us know and we’ll refund your money.",
+    title: "Easy payment",
+    desc: "Pay quickly and securely with our simple payment methods, making transactions effortless for you.",
   },
   {
     img: icon6,

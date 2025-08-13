@@ -69,9 +69,9 @@ const Footer = () => {
         <div className="border-t-[1px] border-[#495057] flex flex-col md:flex-row gap-4 justify-between pt-4 md:pt-8">
           <div className="text-[#dee2e6]">© 2024 Fixelphoto. All rights reserved.</div>
           <div className="text-[#dee2e6] flex gap-4">
-            <h1>Terms</h1>
-            <h1>Privacy</h1>
-            <h1>Cookies</h1>
+            <Link href="/terms-and-conditions">Terms &amp; Conditions</Link>
+            <Link href="/cookie-policy">Cookie Policy</Link>
+            <Link href="/privacy-policy">Privacy Policy</Link>
           </div>
         </div>
       </div>

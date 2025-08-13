@@ -1,10 +1,14 @@
 import React, { useState } from "react";
 import Image from "next/image";
-import img from "@/assets/style-select.png";
+import natural from "@/assets/natural.jpg";
+import whitebight from "@/assets/whitebight.jpg";
 import eye from "@/assets/order-eye.svg";
 import { CustomTextarea } from "@/components/Form/CustomInput";
 
-const styles = ["Natural", "Bright white"];
+const styles = [
+  { name: "Natural", img: natural },
+  { name: "Bright white", img: whitebight },
+];
 
 const Second = ({ data, setData }: { data: any; setData: any }) => {
   const [selectedStyle, setSelectedStyle] = useState(data?.designStyle || "Natural");
@@ -26,26 +30,26 @@ const Second = ({ data, setData }: { data: any; setData: any }) => {
       <div className="order-card">
         <h1 className="text-[#212529] text-[18px] font-medium mb-4">Select a style*</h1>
         <div className="grid grid-cols-2 md:grid-cols-3 gap-4 md:gap-6">
-          {styles.map((styleName) => (
+          {styles.map((style) => (
             <div
-              key={styleName}
-              onClick={() => handleStyleSelect(styleName)}
+              key={style.name}
+              onClick={() => handleStyleSelect(style.name)}
               className={`rounded-2xl bg-cover bg-center overflow-hidden relative cursor-pointer h-auto lg:h-[180px] xl:h-auto xl:max-h-[280px] ${
-                selectedStyle === styleName ? "border-primary border-4" : ""
+                selectedStyle === style.name ? "border-primary border-4" : ""
               }`}
             >
-              <Image src={img} alt="img" className="object-cover object-center h-full w-full" />
+              <Image src={style.img} alt={style.name} className="object-cover object-center h-full w-full" />
               <div className="absolute bottom-4 left-4 flex gap-2">
                 <div
                   className={`uppercase rounded-2xl px-3 py-1 text-white ${
-                    selectedStyle === styleName ? "bg-primary  border-primary" : "bg-[#00000066] border-[#FFFFFF4D]"
+                    selectedStyle === style.name ? "bg-primary border-primary" : "bg-[#00000066] border-[#FFFFFF4D]"
                   } border-[1px] backdrop-blur-md font-medium text-[12px]`}
                 >
-                  {styleName}
+                  {style.name}
                 </div>
                 <div
                   className={`h-[28px] w-[28px] rounded-full flex items-center justify-center ${
-                    selectedStyle === styleName ? "bg-primary border-primary" : "bg-[#00000066] border-[#FFFFFF4D]"
+                    selectedStyle === style.name ? "bg-primary border-primary" : "bg-[#00000066] border-[#FFFFFF4D]"
                   } border-[1px] backdrop-blur-md`}
                 >
                   <Image src={eye} alt="icon" />

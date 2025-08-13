@@ -6,6 +6,7 @@ import Header from "@/components/Layout/Header";
 import Footer from "@/components/Layout/Footer";
 import { InitGlobalData } from "@/components/Layout/InitGlobalData";
 import { RecoilRoot } from "recoil";
+import FloatingContacts from "@/components/Layout/Contacts";
 
 export default function PagesLayout({
   children,
@@ -30,6 +31,8 @@ export default function PagesLayout({
           <Header />
           <div className="bg-[#fff]">{children}</div>
           <InitGlobalData />
+          <FloatingContacts />
+
           <Footer />
         </QueryClientProvider>
       </RecoilRoot>

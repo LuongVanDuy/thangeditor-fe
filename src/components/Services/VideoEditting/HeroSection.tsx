@@ -27,18 +27,24 @@ const HeroSection = () => {
     genOIDMutation();
   };
 
-  const videoRef = useRef<any>(null);
-  const [isPlaying, setIsPlaying] = useState(false);
+  const videoRef1 = useRef<HTMLVideoElement>(null);
+  const videoRef2 = useRef<HTMLVideoElement>(null);
 
-  const handlePlayPause = () => {
-    if (!videoRef.current) return;
+  const [isPlaying1, setIsPlaying1] = useState(false);
+  const [isPlaying2, setIsPlaying2] = useState(false);
 
-    if (isPlaying) {
-      videoRef.current.pause();
-    } else {
-      videoRef.current.play();
-    }
-    setIsPlaying(!isPlaying);
+  const handlePlayPause1 = () => {
+    if (!videoRef1.current) return;
+    if (isPlaying1) videoRef1.current.pause();
+    else videoRef1.current.play();
+    setIsPlaying1(!isPlaying1);
+  };
+
+  const handlePlayPause2 = () => {
+    if (!videoRef2.current) return;
+    if (isPlaying2) videoRef2.current.pause();
+    else videoRef2.current.play();
+    setIsPlaying2(!isPlaying2);
   };
 
   const service = jsonServiceData.find((item) => item.id === 3);
@@ -53,13 +59,13 @@ const HeroSection = () => {
         <div className="block md:hidden">
           <div className="relative aspect-[580/415] rounded-xl overflow-hidden">
             <video
-              ref={videoRef}
-              src="/videos/video-editor_hero.mp4"
+              ref={videoRef1}
+              src="/videos/Cinematic.mp4"
               poster={poster1.src}
               className="w-full h-full object-cover"
             />
-            <button className="absolute inset-0 flex items-center justify-center transition" onClick={handlePlayPause}>
-              {!isPlaying && (
+            <button className="absolute inset-0 flex items-center justify-center transition" onClick={handlePlayPause1}>
+              {!isPlaying1 && (
                 <div className="border border-white/40 bg-white/30 p-[10px] rounded-full backdrop-blur-[3px] shadow-[0px_4px_4px_0px_rgba(0,0,0,0.25)]">
                   <svg width="24" height="24" fill="none" stroke="white" strokeWidth="2">
                     <path d="M5 3L19 12L5 21V3Z" strokeLinecap="round" strokeLinejoin="round" />
@@ -92,13 +98,13 @@ const HeroSection = () => {
         <div className="hidden md:block">
           <div className="relative aspect-[580/415] rounded-xl overflow-hidden">
             <video
-              ref={videoRef}
-              src="/videos/video-editor_hero.mp4"
+              ref={videoRef1}
+              src="/videos/Cinematic.mp4"
               poster={poster1.src}
               className="w-full h-full object-cover"
             />
-            <button className="absolute inset-0 flex items-center justify-center transition" onClick={handlePlayPause}>
-              {!isPlaying && (
+            <button className="absolute inset-0 flex items-center justify-center transition" onClick={handlePlayPause1}>
+              {!isPlaying1 && (
                 <div className="border border-white/40 bg-white/30 p-[10px] rounded-full backdrop-blur-[3px] shadow-[0px_4px_4px_0px_rgba(0,0,0,0.25)]">
                   <svg width="24" height="24" fill="none" stroke="white" strokeWidth="2">
                     <path d="M5 3L19 12L5 21V3Z" strokeLinecap="round" strokeLinejoin="round" />
@@ -117,13 +123,13 @@ const HeroSection = () => {
         <div className="block md:hidden">
           <div className="relative aspect-[580/415] rounded-xl overflow-hidden">
             <video
-              ref={videoRef}
-              src="/videos/video-editor_hero.mp4"
+              ref={videoRef2}
+              src="/videos/2038DaturaSt.mp4"
               poster={poster2.src}
               className="w-full h-full object-cover"
             />
-            <button className="absolute inset-0 flex items-center justify-center transition" onClick={handlePlayPause}>
-              {!isPlaying && (
+            <button className="absolute inset-0 flex items-center justify-center transition" onClick={handlePlayPause2}>
+              {!isPlaying2 && (
                 <div className="border border-white/40 bg-white/30 p-[10px] rounded-full backdrop-blur-[3px] shadow-[0px_4px_4px_0px_rgba(0,0,0,0.25)]">
                   <svg width="24" height="24" fill="none" stroke="white" strokeWidth="2">
                     <path d="M5 3L19 12L5 21V3Z" strokeLinecap="round" strokeLinejoin="round" />
@@ -140,13 +146,13 @@ const HeroSection = () => {
         <div className="hidden md:block">
           <div className="relative aspect-[580/415] rounded-xl overflow-hidden">
             <video
-              ref={videoRef}
-              src="/videos/video-editor_hero.mp4"
+              ref={videoRef2}
+              src="/videos/2038DaturaSt.mp4"
               poster={poster2.src}
               className="w-full h-full object-cover"
             />
-            <button className="absolute inset-0 flex items-center justify-center transition" onClick={handlePlayPause}>
-              {!isPlaying && (
+            <button className="absolute inset-0 flex items-center justify-center transition" onClick={handlePlayPause2}>
+              {!isPlaying2 && (
                 <div className="border border-white/40 bg-white/30 p-[10px] rounded-full backdrop-blur-[3px] shadow-[0px_4px_4px_0px_rgba(0,0,0,0.25)]">
                   <svg width="24" height="24" fill="none" stroke="white" strokeWidth="2">
                     <path d="M5 3L19 12L5 21V3Z" strokeLinecap="round" strokeLinejoin="round" />

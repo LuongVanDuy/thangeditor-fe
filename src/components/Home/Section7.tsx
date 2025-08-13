@@ -23,7 +23,7 @@ const data = [
   },
   {
     title: "Their prices are very reasonable for the level of workmanship.",
-    desc: "I have worked at many places and paid many different prices. But the 'object removal' results have never been as satisfying as they are here. They remove them but leave no smudges or distortions of other objects.",
+    desc: "I have worked at many places and paid many different prices. But the 'object removal' results have never been as satisfying as they are here. ",
     name: "Anthony Smith",
     role: "Photographer",
     img: cus3,

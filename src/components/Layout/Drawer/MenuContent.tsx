@@ -2,45 +2,37 @@
 import React, { useState } from "react";
 import { useRouter } from "next/navigation";
 import Image from "next/image";
-import Link from "next/link";
 
 import { Collapse } from "antd";
 const { Panel } = Collapse;
-import { Swiper, SwiperSlide } from "swiper/react";
 import "swiper/css";
 import "./styles.css";
 
 import down from "@/assets/chevron-down.svg";
 import up from "@/assets/chevron-up.svg";
-import sofa from "@/assets/sofa.svg";
-import store from "@/assets/store.svg";
-import img3d from "@/assets/move-3d.svg";
-import building from "@/assets/building.svg";
-import box from "@/assets/haze.svg";
-import sun from "@/assets/haze.svg";
-import eraser from "@/assets/eraser.svg";
-import wand from "@/assets/wand-sparkles.svg";
-import cut from "@/assets/haze.svg";
 import { jsonServiceData } from "@/lib/constants";
 
-const MenuContent = ({ activePage, onClose }: { activePage: any; onClose: () => void }) => {
+interface MenuContentProps {
+  activePage: string;
+  onClose: () => void;
+}
+
+const MenuContent = ({ activePage, onClose }: MenuContentProps) => {
   const router = useRouter();
 
-  const handleLinkClick = (path: string) => {
-    setTimeout(() => {
-      router.push(path);
-      onClose();
-    }, 500);
+  const handleNavigate = (path: string) => {
+    router.push(path);
+    onClose();
   };
 
   return (
     <div>
-      <div className="border-[1px]  border-[#f4f4f4] p-4">
-        <Link href={"/"} className={`${activePage === "/" ? "text-primary" : "text-[#6C757D]"}`}>
-          Home
-        </Link>
+      {/* Home */}
+      <div className="border-[1px] border-[#f4f4f4] p-4 cursor-pointer" onClick={() => handleNavigate("/")}>
+        <span className={activePage === "/" ? "text-primary" : "text-[#6C757D]"}>Home</span>
       </div>
 
+      {/* Services */}
       <Collapse
         expandIconPosition="end"
         ghost
@@ -48,10 +40,11 @@ const MenuContent = ({ activePage, onClose }: { activePage: any; onClose: () => 
       >
         <Panel
           header={
-            <div className="flex justify-between items-center">
-              <Link href="/services" className={`${activePage === "/services" ? "text-primary" : "text-[#6C757D]"}`}>
-                Services
-              </Link>
+            <div
+              className="flex justify-between items-center cursor-pointer"
+              onClick={() => handleNavigate("/services")}
+            >
+              <span className={activePage === "/services" ? "text-primary" : "text-[#6C757D]"}>Services</span>
             </div>
           }
           key="1"
@@ -59,13 +52,12 @@ const MenuContent = ({ activePage, onClose }: { activePage: any; onClose: () => 
           <div className="bg-[#FBFBFB]">
             <ul>
               {jsonServiceData.map((service) => (
-                <li key={service.id}>
-                  <Link
-                    href={`/services/${service.slug}`}
-                    className="block px-4 py-2 text-secondary hover:bg-gray-100 hover:text-primary"
-                  >
-                    {service.title}
-                  </Link>
+                <li
+                  key={service.id}
+                  className="px-4 py-2 text-secondary hover:bg-gray-100 hover:text-primary cursor-pointer"
+                  onClick={() => handleNavigate(`/services/${service.slug}`)}
+                >
+                  {service.title}
                 </li>
               ))}
             </ul>
@@ -73,16 +65,14 @@ const MenuContent = ({ activePage, onClose }: { activePage: any; onClose: () => 
         </Panel>
       </Collapse>
 
-      <div className="border-[1px] border-b-0 border-[#f4f4f4] p-4">
-        <Link href={"/blog"} className={`${activePage === "/blog" ? "text-primary" : "text-[#6C757D]"}`}>
-          Blog
-        </Link>
+      {/* Blog */}
+      <div className="border-[1px] border-[#f4f4f4] p-4 cursor-pointer" onClick={() => handleNavigate("/blog")}>
+        <span className={activePage === "/blog" ? "text-primary" : "text-[#6C757D]"}>Blog</span>
       </div>
 
-      <div className="border-[1px] border-[#f4f4f4] p-4">
-        <Link href={"/contact"} className={`${activePage === "/contact" ? "text-primary" : "text-[#6C757D]"}`}>
-          Contact
-        </Link>
+      {/* Contact */}
+      <div className="border-[1px] border-[#f4f4f4] p-4 cursor-pointer" onClick={() => handleNavigate("/contact")}>
+        <span className={activePage === "/contact" ? "text-primary" : "text-[#6C757D]"}>Contact</span>
       </div>
     </div>
   );

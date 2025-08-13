@@ -30,7 +30,7 @@ import { formatCurrency } from "@/lib/helpers";
 import { profileState } from "@/lib/store/state";
 import { jsonServiceData } from "@/lib/constants";
 import DisableWrapper from "@/components/Form/DisableWrapper";
-import { sendOrderMail } from "@/lib/api/auth.api";
+import { removeNewPerson, sendOrderMail } from "@/lib/api/auth.api";
 
 // Types
 interface OrderData {
@@ -122,8 +122,8 @@ const DetailOrder = () => {
   const [serviceData, setServiceData] = useState<any | null>(null);
 
   // Computed values
-  const isDiscount = useMemo(() => profile?.data?.newPerson === 1, [profile]);
-  const isVideoService = useMemo(() => serviceData?.id === 10, [serviceData]);
+  const isDiscount = useMemo(() => profile?.data?.newPerson === 1, [profile?.data?.newPerson]);
+  const isVideoService = useMemo(() => serviceData?.id === 10, [serviceData?.id]);
 
   // API queries
   const { data, refetch } = useQuery({
@@ -152,12 +152,13 @@ const DetailOrder = () => {
     const servicePriceTotal = parsedServicePrice * parsedQuantity;
     const subTotal = deliveryPrice + servicePriceTotal;
 
-    const discount = isDiscount ? 10 : 0;
+    const discount = isDiscount && current === 100 ? 10 : 0;
+
     let finalPrice = Math.max(subTotal - discount, 0);
-    finalPrice = Math.max(finalPrice, 1);
+    finalPrice = Math.max(finalPrice);
 
     return finalPrice;
-  }, [order.quantity, order.servicePrice, order.additionalServicePrice, isDiscount]);
+  }, [order.quantity, order.servicePrice, order.additionalServicePrice, isDiscount, current]);
 
   // Change detection utility
   const hasChanged = useCallback((prev: any, current: any): boolean => {
@@ -196,7 +197,7 @@ const DetailOrder = () => {
         status: orderData.status,
       });
 
-      setIsDisabled(orderData.status === "DONE");
+      setIsDisabled(orderData.status === "DONE" || orderData.status === "REWORK");
     }
   }, [data, oid]);
 
@@ -284,7 +285,7 @@ const DetailOrder = () => {
         prevOrderRef.current = order;
       }
     },
-    [order, hasChanged, updateMutation],
+    [order, current, hasChanged, updateMutation],
   );
 
   useEffect(() => {
@@ -329,10 +330,10 @@ const DetailOrder = () => {
         }
       },
     };
-
+    console.log(isDiscount);
     stepActions[current as keyof typeof stepActions]?.();
     setCurrent((prev) => prev + 1);
-  }, [current, order, handleUpdate, validateStep, updateMutation, isDisabled]);
+  }, [current, order, handleUpdate, validateStep, updateMutation, isDisabled, isDiscount]);
 
   const prev = useCallback(() => {
     setCurrent((prev) => prev - 1);
@@ -358,6 +359,15 @@ const DetailOrder = () => {
         onSuccess: async () => {
           message.success("Your order has been submitted.");
 
+          if (isDiscount) {
+            try {
+              await removeNewPerson();
+              console.log("removeNewPerson called successfully");
+            } catch (error) {
+              console.error("Failed to call removeNewPerson:", error);
+            }
+          }
+
           await sendOrderMail({
             orderId: order.id,
             service: order.service,
@@ -366,13 +376,18 @@ const DetailOrder = () => {
             orderTotal: order.orderTotal,
             createdTime: new Date().toISOString(),
             email: profile?.data?.email ?? "",
+            user: {
+              name: profile?.data?.name ?? "",
+              email: profile?.data?.email ?? "",
+              phone: profile?.data?.phone ?? "",
+            },
           });
 
           router.push("/dashboard/order");
         },
       },
     );
-  }, [order, updateMutation, router, profile]);
+  }, [order, updateMutation, router, profile, isDiscount]);
 
   // Step configuration
   const steps = useMemo(
@@ -467,7 +482,9 @@ const DetailOrder = () => {
       ))}
       <div>
         <h1 className="text-primary text-[12px] uppercase">Order total</h1>
-        <h2 className="text-primary mt-1">{order.orderTotal !== 0 ? formatCurrency(order.orderTotal) : "---"}</h2>
+        <h2 className="text-primary mt-1">
+          {order.orderTotal !== 0 || current === 3 ? formatCurrency(order.orderTotal) : "---"}
+        </h2>
       </div>
     </div>
   );

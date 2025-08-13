@@ -48,6 +48,7 @@ const Services = () => {
                   slug={item.slug}
                   beforeUrl={beforeSrc}
                   afterUrl={afterSrc}
+                  price={item.price}
                   small={true}
                 />
               </div>

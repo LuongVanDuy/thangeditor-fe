@@ -5,14 +5,26 @@
     "title": "Virtual Staging",
     "category": "Virtual Staging & Renovation",
     "desc": "Help buyers fall in love with your listings by turning vacant rooms into stylish spaces.",
-    "tagline": "Enhance Your Real Estate Property Listing, Starting at $16!",
+    "tagline": "Enhance Your Real Estate Property Listing, Starting at $14!",
     "description": "Make your listings stand out from the competition with our affordable, photo-realistic Virtual Staging services. Transform empty rooms into digitally furnished spaces to sell properties faster.",
-    "startingPrice": 16,
-    "price": 16,
+    "startingPrice": 14,
+    "price": 14,
     "images": [
       {
         "beforeUrl": "/assets/virtual-staging-bf.jpg",
         "afterUrl": "/assets/virtual-staging-at.jpg"
+      },
+      {
+        "beforeUrl": "/assets/1.jpg",
+        "afterUrl": "/assets/1-after.jpg"
+      },
+      {
+        "beforeUrl": "/assets/2.jpg",
+        "afterUrl": "/assets/2-after.jpg"
+      },
+      {
+        "beforeUrl": "/assets/3.jpg",
+        "afterUrl": "/assets/3-after.jpg"
       }
     ],
     "subServices": [
@@ -37,10 +49,10 @@
     "slug": "photo-editing",
     "title": "HDR & Flambient",
     "category": "Photo Editing",
-    "desc": "Combine multiple images to create the most perfect result.",
+    "desc": "Make your real estate photos stand out with stunning HDR & Flambient editing.",
     "tagline": "",
-    "description": "Remove Unwanted Items From Your Real Estate Photos",
-    "price": 8,
+    "description": "We combine multiple exposure photos  or flash photos to make your real estate photos more beautiful.",
+    "price": 1,
     "images": [
       {
         "beforeUrl": "/assets/photo-editing-1.jpg",
@@ -50,7 +62,7 @@
     "subServices": [
       {
         "title": "Single Exposure (Basic image enhancement)",
-        "price": 0.8
+        "price": 1
       },
       {
         "title": "Blended Brackets (HDR) Hand-blended exposures",
@@ -95,10 +107,10 @@
     "desc": "Create a real estate video to gain prospects' attention and sell their listings faster.",
     "tagline": "",
     "description": "Leverage real estate video editing as a cost-effective marketing tool, giving clients an immersive and realistic view of the property.",
-    "price": 60,
+    "price": 30,
     "images": [
       {
-        "beforeUrl": "video-editting.png",
+        "beforeUrl": "/assets/DSC07636.jpg",
         "afterUrl": ""
       }
     ],

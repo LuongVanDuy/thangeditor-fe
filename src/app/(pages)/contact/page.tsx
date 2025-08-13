@@ -6,7 +6,7 @@ import Label from "@/components/Form/CustomLabel";
 import { CustomInput } from "@/components/Form/CustomInput";
 import { CustomTextarea } from "@/components/Form/CustomInput";
 import { message } from "antd";
-import blog from "@/assets/blog.png";
+import contact from "@/assets/contact.jpg";
 import { yupResolver } from "@hookform/resolvers/yup";
 import { useMutation } from "@tanstack/react-query";
 import { Controller, useForm } from "react-hook-form";
@@ -52,7 +52,7 @@ const Contact = () => {
   return (
     <div className="grid grid-cols-1 lg:grid-cols-2">
       <div className="hidden lg:block">
-        <Image src={blog} alt="" className="object-cover object-center h-full w-full" />
+        <Image src={contact} alt="" className="object-cover object-center h-full w-full" />
       </div>
       <div className="flex justify-center py-12 md:py-[56px] lg:py-[64px]">
         <div>

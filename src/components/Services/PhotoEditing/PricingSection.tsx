@@ -11,14 +11,8 @@ import zap from "@/assets/zap.svg";
 const pricingPlans = [
   {
     title: "Basic Sale",
-    price: "$0.5",
-    features: [
-      "Turnaround time: 24-48 hours",
-      "Unlimited Free Revisions",
-      "100% money back guarantee if not satisfied",
-      "Stripe/Paypal secure checkout",
-      "24/7 customer support",
-    ],
+    price: "$1",
+    features: ["Turnaround time: 24-48 hours", "Unlimited Free Revisions", "24/7 customer support"],
   },
 ];
 

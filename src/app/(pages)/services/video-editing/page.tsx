@@ -11,7 +11,7 @@ const Service = () => {
     <>
       <HeroSection />
       <BenefitSection />
-      <WorkSection />
+      {/* <WorkSection /> */}
       <PricingSection />
       <WhatDoSection />
       <FAQSection />

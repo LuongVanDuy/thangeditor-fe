@@ -144,9 +144,9 @@ const CreateOrder = () => {
     const servicePriceTotal = parsedServicePrice * parsedQuantity;
     const subTotal = deliveryPrice + servicePriceTotal;
 
-    const discount = isDiscount ? 10 : 0;
+    const discount = isDiscount && current === 3 ? 10 : 0;
     let finalPrice = Math.max(subTotal - discount, 0);
-    finalPrice = Math.max(finalPrice, 1);
+    finalPrice = Math.max(finalPrice);
 
     return finalPrice;
   }, [order.quantity, order.servicePrice, order.additionalServicePrice, isDiscount]);
@@ -205,14 +205,13 @@ const CreateOrder = () => {
       id: oid,
       projectName: order.projectName,
       service: order.service,
-      subService: order.subService,
+      subService: order.subService || "Video",
       uploadImage: order.uploadImage,
       quantity: order.quantity,
       servicePrice: order.servicePrice,
-      designStyle: "Natural",
-      additionalService: "Normal Delivery",
       orderTotal: order.orderTotal,
     };
+    console.log("Creating order with data:", data);
     createOrderMutation(data);
   }, [order, oid, createOrderMutation]);
 

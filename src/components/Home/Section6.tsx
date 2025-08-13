@@ -4,7 +4,7 @@ import React from "react";
 import { useRouter } from "next/navigation";
 import Image from "next/image";
 import Link from "next/link";
-import banner from "@/assets/banner2.png";
+import banner from "@/assets/DSC00857.jpg";
 import check from "@/assets/checkIcon.svg";
 import { getToken } from "@/lib/helpers";
 
@@ -21,7 +21,7 @@ const HomeSection6 = () => {
   };
 
   return (
-    <div className="sm:px-4 lg:px-[64px] xl:px-[108px] py-12 md:py-[64px] grid grid-col-1 md:grid-cols-2 gap-9 lg:gap-[80px] xl:gap-[96px]">
+    <div className="sm:px-4 lg:px-[64px] xl:px-[108px] py-12 md:py-[64px] grid grid-col-1 md:grid-cols-2 gap-9 lg:gap-[80px] xl:gap-[96px] items-center">
       <div className="overflow-hidden rounded-xl bg-cover bg-center hidden md:block">
         <Image src={banner} alt="icon" className="rounded-xl !w-full" />
       </div>

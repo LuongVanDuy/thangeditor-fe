@@ -11,42 +11,10 @@ import zap from "@/assets/zap.svg";
 const pricingPlans = [
   {
     title: "Basic Sale",
-    price: "$16",
-    condition: "If you order 8 or more images",
+    price: "$14",
     features: [
       "Turnaround time: 24-48 hours",
       "Unlimited Free Revisions",
-      "Rapid Delivery: Within 24 hours (additional cost of $6 per image)",
-      "Super Rapid Delivery: Within 12 hours (additional cost of $12 per image)",
-      "100% money back guarantee if not satisfied",
-      "Stripe/Paypal secure checkout",
-      "24/7 customer support",
-    ],
-  },
-  {
-    title: "Basic Package",
-    price: "$23",
-    condition: "If you order less than 8 images",
-    features: [
-      "Turnaround time: 24-48 hours",
-      "Unlimited Free Revisions",
-      "Rapid Delivery: Within 24 hours (additional cost of $6 per image)",
-      "Super Rapid Delivery: Within 12 hours (additional cost of $12 per image)",
-      "100% money back guarantee if not satisfied",
-      "Stripe/Paypal secure checkout",
-      "24/7 customer support",
-    ],
-  },
-  {
-    title: "Business Package",
-    price: "$18",
-    condition: "If you order 16 or more images",
-    features: [
-      "Turnaround time: 24-48 hours",
-      "Unlimited Free Revisions",
-      "Rapid Delivery: Within 24 hours (additional cost of $6 per image)",
-      "Super Rapid Delivery: Within 12 hours (additional cost of $12 per image)",
-      "100% money back guarantee if not satisfied",
       "Stripe/Paypal secure checkout",
       "24/7 customer support",
     ],
@@ -96,8 +64,6 @@ const PricingSection = () => {
                   <div className="text-[#6C757D] text-[18px] text-start xs:text-center">
                     <span className="text-[#212529] font-medium text-[36px]">{plan.price}</span> per image
                   </div>
-
-                  <div className="text-[#6C757D] text-[18px] text-start xs:text-center">{plan.condition}</div>
                 </div>
 
                 {/* Features */}
