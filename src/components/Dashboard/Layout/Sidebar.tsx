@@ -6,7 +6,7 @@ import { useRouter } from "next/navigation";
 import { destroyCookie } from "nookies";
 import Menu from "./Menu";
 
-import logo from "@/assets/dashboard-logo.svg";
+import logo from "@/assets/darklogo.svg";
 import smallLogo from "@/assets/dashboard-logo-sm.svg";
 import avatar from "@/assets/Avatar.svg";
 import logoutIcon from "@/assets/logout.svg";
