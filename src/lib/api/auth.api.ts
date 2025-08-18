@@ -28,6 +28,10 @@ export function forgetPassword(payload: { email: string }) {
   return axiosClient.post("forgot-password", payload);
 }
 
+export function resetPassword(payload: { token: string; newPassword: string }) {
+  return axiosClient.post("reset-password", payload);
+}
+
 export function changePassword(payload: { password: string; newPassword: string; confirmNewPassword: string }) {
   return axiosClient.post("change-password", payload);
 }

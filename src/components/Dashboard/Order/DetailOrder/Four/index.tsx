@@ -82,12 +82,12 @@ const Four = ({
           <h2 className="text-[#343A40]">{formatCurrency(data?.servicePrice * data?.quantity)}</h2>
         </div>
 
-        {isDiscount && (
+        {/* {isDiscount && (
           <div className="flex justify-between items-center">
             <h1 className="text-[#495057] text-[14px] md:text-[16px]">First order discount</h1>
             <h2 className="text-[#343A40]">{formatCurrency(-10)}</h2>
           </div>
-        )}
+        )} */}
 
         <div className="border-t border-[#DEE2E6]"></div>
 

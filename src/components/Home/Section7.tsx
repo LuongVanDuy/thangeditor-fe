@@ -54,7 +54,7 @@ const HomeSection7 = () => {
                 </div>
 
                 <div className="flex gap-4">
-                  <div>
+                  {/* <div>
                     <Image
                       src={item.img}
                       alt="avatar"
@@ -62,7 +62,7 @@ const HomeSection7 = () => {
                       height={48}
                       className="rounded-full w-12 h-12 bg-cover bg-center"
                     />
-                  </div>
+                  </div> */}
                   <div>
                     <h3 className="font-medium text-primary text-[18px]">{item.name}</h3>
                     <p className="text-[#6C757D] text-[14px]">{item.role}</p>

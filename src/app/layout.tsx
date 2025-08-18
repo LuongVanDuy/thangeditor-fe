@@ -10,7 +10,7 @@ const beVietnamPro = Be_Vietnam_Pro({
 });
 
 export const metadata: Metadata = {
-  title: "Fixelsphoto – The Best Real Estate Photo Editing Service",
+  title: "Fixelsphoto – Real Estate Photo Editing Service",
   icons: [{ rel: "icon", url: "/favicon.png", type: "image/png" }],
 };
 

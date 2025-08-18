@@ -6,11 +6,7 @@ import { useMutation } from "@tanstack/react-query";
 import { generateOrderId } from "@/lib/api/order.api";
 
 import zap from "@/assets/zap.svg";
-import img1 from "@/assets/Video1.png";
-import img2 from "@/assets/Video2.png";
-import img3 from "@/assets/Video3.png";
-
-import poster1 from "@/assets/poster-1.png";
+import img1 from "@/assets/anhnen.jpg";
 
 const videoEditingPackages = [
   {
@@ -19,7 +15,7 @@ const videoEditingPackages = [
     price: 30,
     unit: "per video",
     desc: "Share your property video footages and allow us to stitch them together to create a high-quality real estate video that can help your clients virtually walk through the property.",
-    img: img2,
+    img: img1,
   },
 ];
 
@@ -87,7 +83,9 @@ const PricingSection = () => {
                     <span className="text-[#212529] font-medium text-[36px]">${pkg.price}</span> {pkg.unit}
                   </h3>
 
-                  <p className="text-[#6c757d] text-[16px]">{pkg.desc}</p>
+                  <p className="text-[#6c757d] text-[16px] mb-5">{pkg.desc}</p>
+
+                  <Image src={pkg.img} alt="video" className="w-full h-auto object-cover rounded-lg" />
                 </div>
               </div>
 

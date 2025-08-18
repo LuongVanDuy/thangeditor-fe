@@ -25,6 +25,18 @@ const data = [
     img: style3,
     style: "Coastal",
   },
+  {
+    img: style1,
+    style: "Industrial",
+  },
+  {
+    img: style2,
+    style: "Japandi",
+  },
+  {
+    img: style3,
+    style: "Coastal",
+  },
 ];
 
 const StylesSection = () => {

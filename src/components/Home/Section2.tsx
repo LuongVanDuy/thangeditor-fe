@@ -135,7 +135,7 @@ const HomeSection2 = () => {
 
                 <div>
                   <h3 className="text-[#000000CC] text-[14px] block md:hidden mb-4">
-                    Starting from <span className="text-primary">$16</span>
+                    Starting from <span className="text-primary">${item.price}</span>
                   </h3>
 
                   <div className="flex gap-4 items-center">

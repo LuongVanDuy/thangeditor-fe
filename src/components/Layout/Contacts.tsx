@@ -37,17 +37,14 @@ const FloatingContacts = () => {
   ];
 
   return (
-    <div
-      className="fixed bottom-20 right-0 w-full flex flex-row justify-evenly items-center gap-4 px-4 bg-white z-50
-           md:bottom-20 md:w-auto md:flex-col md:justify-end md:bg-transparent"
-    >
+    <div className="fixed bottom-20 right-4 flex flex-col gap-4 z-50">
       {contacts.map((contact, index) => (
         <a
           key={index}
           href={contact.link}
           target="_blank"
           rel="noopener noreferrer"
-          className={`${contact.bgColor} text-white p-3 rounded-full hover:scale-110 transition-transform duration-200 shadow-lg`}
+          className={` flex items-center justify-center w-12 h-12 ${contact.bgColor} text-white p-3 rounded-full hover:scale-110 transition-transform duration-200 shadow-lg`}
           title={contact.name}
         >
           {contact.icon}
