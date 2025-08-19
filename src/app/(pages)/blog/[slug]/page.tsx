@@ -31,7 +31,7 @@ const DetaiBlog = () => {
   return (
     <div className="sm:px-4 lg:px-[64px] xl:px-[108px] py-12 md:py-[64px] flex flex-col gap-9 md:gap-12">
       <div className="text-start md:text-center">
-        <h1 className="text-primary font-medium text-[14px] mb-3">{data?.data?.categories ?? "Categories"}</h1>
+        <h1 className="text-brand font-medium text-[14px] mb-3">{data?.data?.categories ?? "Categories"}</h1>
         <h2 className="font-medium text-[24px] md:text-[30px] lg:text-[36px] mb-6 lg:mb-[40px]">
           {data?.data?.title ?? "Title"}
         </h2>

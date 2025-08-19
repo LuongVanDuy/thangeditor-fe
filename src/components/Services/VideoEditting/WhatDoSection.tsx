@@ -2,7 +2,7 @@ import React from "react";
 import Image from "next/image";
 
 import img from "@/assets/style-10.png";
-import check from "@/assets/Checked .svg";
+import check from "@/assets/Checked.svg";
 
 const WhatDoSection = () => {
   return (

@@ -81,7 +81,7 @@ const HeroSection = () => {
 
         <div className="flex flex-col gap-6">
           <div>
-            <p className="text-primary text-[14px] font-medium">{service?.category}</p>
+            <p className="text-brand text-[14px] font-medium">{service?.category}</p>
             <h1 className="text-[#212529] fonr-medium text-[32px] md:text-[40px] lg:text-[48px]">{service?.title}</h1>
           </div>
 

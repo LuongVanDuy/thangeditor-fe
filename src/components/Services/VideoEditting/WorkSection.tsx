@@ -35,7 +35,7 @@ const WorkSection = () => {
         {/* 1 */}
         <div className="flex-1 border-[1px] border-[#FFF046] bg-[#FFFEEA] px-4 pt-6 md:pt-12 md:px-9 sm:rounded-t-2xl lg:rounded-bl-2xl lg:rounded-t-none gap-12 flex flex-col justify-between">
           <div className="flex flex-col gap-4">
-            <h1 className="uppercase text-primary font-medium text-[14px]">Step 1</h1>
+            <h1 className="uppercase text-brand font-medium text-[14px]">Step 1</h1>
             <h2 className="text-[#212529] font-medium text-[20px] md:text-[24px]">Submit your photo</h2>
             <h3 className="text-[#343A40] text-[14px] md:text-[16px]">
               Please submit your image link and select style from the order screen

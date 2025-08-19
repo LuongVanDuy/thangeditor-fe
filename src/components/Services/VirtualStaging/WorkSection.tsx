@@ -36,9 +36,9 @@ const WorkSection = () => {
       </h2>
 
       <div className="flex flex-col lg:flex-row justify-center items-stretch">
-        <div className="flex-1 border-[1px] border-[#FFF046] bg-[#FFFEEA] px-4 pt-6 md:pt-12 md:px-9 sm:rounded-t-2xl lg:rounded-bl-2xl lg:rounded-t-none gap-12 flex flex-col justify-between">
+        <div className="flex-1 border-[1px] border-brand bg-brandSoft px-4 pt-6 md:pt-12 md:px-9 sm:rounded-t-2xl lg:rounded-bl-2xl lg:rounded-t-none gap-12 flex flex-col justify-between">
           <div className="flex flex-col gap-4">
-            <p className="uppercase text-primary font-medium text-[14px]">Step 1</p>
+            <p className="uppercase text-brand font-medium text-[14px]">Step 1</p>
             <h3 className="text-[#212529] font-medium text-[20px] md:text-[24px]">Choose a style</h3>
             <p className="text-[#343A40] text-[14px] md:text-[16px]">
               Different homes need different styling: choose from multiple options to find the best fit for your
@@ -50,11 +50,11 @@ const WorkSection = () => {
           </div>
         </div>
 
-        <div className="flex-1 border-[1px] border-primary bg-primary px-4 pt-6 md:pt-12 md:px-9 gap-12 flex flex-col justify-between">
+        <div className="flex-1 border-[1px] border-brand bg-brand px-4 pt-6 md:pt-12 md:px-9 gap-12 flex flex-col justify-between">
           <div className="flex flex-col gap-4">
-            <p className="uppercase text-[#000] font-medium text-[14px]">Step 2</p>
-            <h3 className="text-[#000] font-medium text-[20px] md:text-[24px]">Upload photos</h3>
-            <p className="text-[#000] text-[14px] md:text-[16px]">
+            <p className="uppercase text-white font-medium text-[14px]">Step 2</p>
+            <h3 className="text-white font-medium text-[20px] md:text-[24px]">Upload photos</h3>
+            <p className="text-white text-[14px] md:text-[16px]">
               Whether adding professional photos or images you took yourself, use the easy upload feature to submit.
             </p>
           </div>
@@ -63,9 +63,9 @@ const WorkSection = () => {
           </div>
         </div>
 
-        <div className="flex-1 border-[1px] border-[#FFF046] bg-[#FFFEEA] px-4 pt-6 md:pt-12 md:px-9 sm:rounded-b-2xl lg:rounded-tr-2xl lg:rounded-b-none gap-12 flex flex-col justify-between">
+        <div className="flex-1 border-[1px] border-brand bg-brandSoft px-4 pt-6 md:pt-12 md:px-9 sm:rounded-b-2xl lg:rounded-tr-2xl lg:rounded-b-none gap-12 flex flex-col justify-between">
           <div className="flex flex-col gap-4">
-            <p className="uppercase text-primary font-medium text-[14px]">Step 3</p>
+            <p className="uppercase text-brand font-medium text-[14px]">Step 3</p>
             <h3 className="text-[#212529] font-medium text-[20px] md:text-[24px]">Get them delivered!</h3>
             <p className="text-[#343A40] text-[14px] md:text-[16px]">
               Within 24–48 hours, your images will arrive in both your inbox and your Fixelphoto dashboard.

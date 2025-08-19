@@ -123,7 +123,7 @@ const HomeSection2 = () => {
 
               <div className="p-4 md:p-6 lg:p-9 gap-9 md:gap-10 lg:gap-12 flex flex-col">
                 <div>
-                  <p className="text-primary text-[12px] uppercase">{item.category}</p>
+                  <p className="text-brand text-[12px] uppercase">{item.category}</p>
                   <Link
                     href={`/services/${item.slug}`}
                     className="font-medium text-[24px] md:text-[28px] lg:text-[32px] mt-2 mb-4"
@@ -135,13 +135,13 @@ const HomeSection2 = () => {
 
                 <div>
                   <h3 className="text-[#000000CC] text-[14px] block md:hidden mb-4">
-                    Starting from <span className="text-primary">${item.price}</span>
+                    Starting from <span className="text-brand">${item.price}</span>
                   </h3>
 
                   <div className="flex gap-4 items-center">
                     <button
                       onClick={() => handleNewOrder(item.title)}
-                      className="px-4 md:px-6 py-2 md:py-3 rounded-lg font-medium text-primary cursor-pointer hover:opacity-80  border-[1px] border-solid border-primary"
+                      className="px-4 md:px-6 py-2 md:py-3 rounded-lg font-medium text-brand cursor-pointer hover:opacity-80  border-[1.5px] border-solid border-brand"
                     >
                       Place an order
                     </button>
@@ -152,7 +152,7 @@ const HomeSection2 = () => {
                       Learn more
                     </Link>
                     <div className="text-[#000000CC] text-[14px] hidden md:block">
-                      Starting from <span className="text-primary">${item.price}</span>
+                      Starting from <span className="text-brand">${item.price}</span>
                     </div>
                   </div>
                 </div>

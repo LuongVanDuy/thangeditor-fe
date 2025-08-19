@@ -23,7 +23,7 @@ const ForgotPassword = () => {
 
       <div className="text-center text-[#495057] text-[14px]">
         Already registered?{" "}
-        <Link href="/auth/login" className="text-primary font-medium text-[14px]">
+        <Link href="/auth/login" className="text-brand font-medium text-[14px]">
           Sign in
         </Link>
       </div>

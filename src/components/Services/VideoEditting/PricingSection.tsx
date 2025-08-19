@@ -59,9 +59,9 @@ const PricingSection = () => {
   };
 
   return (
-    <section className="bg-[#FDC101]">
+    <section className="bg-brand">
       <div className="sm:px-4 xs:px-[64px] xl:px-[108px] py-12 md:py-[64px] flex flex-col gap-9 md:gap-12">
-        <h2 className="text-[24px] xs:text-[30px] lg:text-[36px] font-medium text-center">
+        <h2 className="text-[24px] text-white xs:text-[30px] lg:text-[36px] font-medium text-center">
           Real Estate Video Editing Services at the Best Prices
         </h2>
 
@@ -71,12 +71,12 @@ const PricingSection = () => {
               <div className="w-auto xs:w-[386px] border border-b-0 border-[#f4f4f4] bg-white p-6 md:p-8 rounded-t-2xl gap-6 flex flex-col flex-1">
                 <div className="flex flex-col gap-2">
                   <div className="flex flex-col">
-                    <div className="h-[40px] w-[40px] border-[4px] border-third rounded-full flex justify-center items-center mb-5">
-                      <div className="h-full w-full bg-primary rounded-full flex justify-center items-center">
+                    <div className="h-[40px] w-[40px] border-[4px] border-green-200 rounded-full flex justify-center items-center mb-5">
+                      <div className="h-full w-full bg-brand rounded-full flex justify-center items-center">
                         <Image src={pkg.icon} alt="icon" height={20} width={20} />
                       </div>
                     </div>
-                    <h2 className="text-primary uppercase text-[12px] font-medium">{pkg.title}</h2>
+                    <h2 className="text-brand uppercase text-[12px] font-medium">{pkg.title}</h2>
                   </div>
 
                   <h3 className="text-[#6C757D] text-[18px]">

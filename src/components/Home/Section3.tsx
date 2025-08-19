@@ -45,16 +45,18 @@ const cards = [
 
 const HomeSection3 = () => {
   return (
-    <div className="bg-[#FFFEEA]">
+    <div className="bg-brand">
       <div className="sm:px-4 lg:px-[64px] xl:px-[108px] py-12 md:py-[64px] flex flex-col gap-9 md:gap-12 ">
-        <h2 className="text-[24px] mđ:text-[30px] lg:text-[36px] font-medium text-center">Why choose my service?</h2>
+        <h2 className="text-[24px] text-white mđ:text-[30px] lg:text-[36px] font-medium text-center">
+          Why choose my service?
+        </h2>
 
         <div className="grid sm:grid-cols-2 md:grid-cols-3 gap-8">
           {cards.map((card, index) => (
-            <div key={index}>
-              <div className="flex justify-start md:justify-center items-center">
-                <div className="h-[48px] w-[48px] border-[4px] border-third rounded-full flex justify-center items-center">
-                  <div className="h-full w-full bg-primary rounded-full flex justify-center items-center">
+            <div key={index} className="bg-white rounded-lg p-10">
+              <div className="flex justify-start  md:justify-center items-center">
+                <div className="h-[48px] w-[48px] border-[4px] border-green-200 rounded-full flex justify-center items-center">
+                  <div className="h-full w-full bg-brand rounded-full flex justify-center items-center">
                     <Image src={card.img} alt="icon" height={24} width={24} />
                   </div>
                 </div>

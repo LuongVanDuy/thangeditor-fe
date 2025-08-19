@@ -43,7 +43,7 @@ const HeroSection = () => {
     <section className="sm:px-4 lg:px-[64px] xl:px-[108px] py-12 md:py-[64px] flex flex-col gap-9 md:gap-12">
       <div className="text-center">
         <div className="mb-4">
-          <p className="text-primary font-medium text-[14px] mb-2 uppercase">{service?.category}</p>
+          <p className="text-brand font-medium text-[14px] mb-2 uppercase">{service?.category}</p>
           <h1 className="text-[32px] md:text-[40px] lg:text-[48px] font-medium">{service?.title}</h1>
         </div>
 

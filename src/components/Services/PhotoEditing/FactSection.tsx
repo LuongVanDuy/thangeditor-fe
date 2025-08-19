@@ -17,7 +17,7 @@ const FactSection = () => {
       <div className="grid grid-cols-1 lg:grid-cols-2 gap-9 md:gap-12 lg:gap-[96px] items-center">
         <div className="grid grid-cols-2 gap-9 md:gap-12 lg:gap-[64px]">
           <div>
-            <h3 className="text-primary text-[32px] md:text-[40px] lg:text-[48px] font-medium">2,000+</h3>
+            <h3 className="text-brand text-[32px] md:text-[40px] lg:text-[48px] font-medium">2,000+</h3>
             <h4 className="text-[#212529] text-[18px] font-medium">Completed projects</h4>
             <p className="text-[#495057] text-[16px]">
               We have successfully completed over 2,000 projects of all sizes, from small to high-end.
@@ -25,7 +25,7 @@ const FactSection = () => {
           </div>
 
           <div>
-            <h3 className="text-primary text-[32px] md:text-[40px] lg:text-[48px] font-medium">100,000+</h3>
+            <h3 className="text-brand text-[32px] md:text-[40px] lg:text-[48px] font-medium">100,000+</h3>
             <h4 className="text-[#212529] text-[18px] font-medium">Delivered images</h4>
             <p className="text-[#495057] text-[16px]">
               Over 100,000 high-quality images have been delivered to customers worldwide.
@@ -33,7 +33,7 @@ const FactSection = () => {
           </div>
 
           <div>
-            <h3 className="text-primary text-[32px] md:text-[40px] lg:text-[48px] font-medium">95%+</h3>
+            <h3 className="text-brand text-[32px] md:text-[40px] lg:text-[48px] font-medium">95%+</h3>
             <h4 className="text-[#212529] text-[18px] font-medium">Returning customers</h4>
             <p className="text-[#495057] text-[16px]">
               An impressive rate of returning customers and recommending our services to others.
@@ -41,7 +41,7 @@ const FactSection = () => {
           </div>
 
           <div>
-            <h3 className="text-primary text-[32px] md:text-[40px] lg:text-[48px] font-medium">100+</h3>
+            <h3 className="text-brand text-[32px] md:text-[40px] lg:text-[48px] font-medium">100+</h3>
             <h4 className="text-[#212529] text-[18px] font-medium">5-Star reviews</h4>
             <p className="text-[#495057] text-[16px]">
               Proud to have over 100 5-star reviews from satisfied customers.

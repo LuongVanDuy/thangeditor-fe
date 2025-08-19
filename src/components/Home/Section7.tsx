@@ -32,13 +32,13 @@ const data = [
 
 const HomeSection7 = () => {
   return (
-    <div className="bg-[#FDC101]">
+    <div className="bg-brand">
       <div className="sm:px-4 lg:px-[64px] xl:px-[108px] py-12 md:py-[64px] flex flex-col gap-12">
         <div className="text-center">
-          <h2 className="text-[#000000] text-[24px] md:text-[30px] lg:text-[36px] font-medium mb-4 md:mb-6">
+          <h2 className="text-white text-[24px] md:text-[30px] lg:text-[36px] font-medium mb-4 md:mb-6">
             Customer happiness is our priority
           </h2>
-          <p className="text-[#000] text-[18px]">
+          <p className="text-white text-[18px]">
             Hear feedback from our happy customers and learn how we helped them take their businesses to new heights.
           </p>
         </div>
@@ -54,17 +54,17 @@ const HomeSection7 = () => {
                 </div>
 
                 <div className="flex gap-4">
-                  {/* <div>
+                  <div>
                     <Image
-                      src={item.img}
+                      src={item?.img}
                       alt="avatar"
                       width={48}
                       height={48}
                       className="rounded-full w-12 h-12 bg-cover bg-center"
                     />
-                  </div> */}
+                  </div>
                   <div>
-                    <h3 className="font-medium text-primary text-[18px]">{item.name}</h3>
+                    <h3 className="font-medium text-brand text-[18px]">{item.name}</h3>
                     <p className="text-[#6C757D] text-[14px]">{item.role}</p>
                   </div>
                 </div>
@@ -93,7 +93,7 @@ const HomeSection7 = () => {
                   />
                 </div>
                 <div>
-                  <h3 className="font-medium text-primary text-[18px]">{item.name}</h3>
+                  <h3 className="font-medium text-brand text-[18px]">{item.name}</h3>
                   <p className="text-[#6C757D] text-[14px]">{item.role}</p>
                 </div>
               </div>

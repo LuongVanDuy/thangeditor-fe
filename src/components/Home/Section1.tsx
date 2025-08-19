@@ -2,9 +2,6 @@
 import React from "react";
 import { useRouter } from "next/navigation";
 import Link from "next/link";
-import beforeImg from "@/assets/home/DSC_1810.jpg";
-import afterImg from "@/assets/home/DSC_1810_final.jpg";
-import { CompareSlider } from "@/components/Form/Compare/CompareSlider";
 import { getToken } from "@/lib/helpers";
 
 const HomeSection1 = () => {
@@ -21,14 +18,6 @@ const HomeSection1 = () => {
 
   return (
     <section>
-      <div className="p-4 md:p-6">
-        <div className=" rounded-2xl overflow-hidden relative mx-0 xl:mx-auto">
-          <div className="relative w-full aspect-[600/345] md:aspect-[1440/534] rounded-xl overflow-hidden shadow-xl">
-            <CompareSlider beforeImage={beforeImg.src} afterImage={afterImg.src} />
-          </div>
-        </div>
-      </div>
-
       <div className="py-[64px] md:px-[48px] lg:px-[86px] xl:px-[108px] gap-x-16 hidden items-center md:flex lg:justify-between">
         <div className="md:text-[36px] lg:text-[48px] flex-1">
           Make your ideal space <br /> right before your eyes

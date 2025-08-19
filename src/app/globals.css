@@ -3,7 +3,7 @@
 @tailwind utilities;
 
 .btn-primary {
-  @apply bg-primary rounded-lg px-6 py-3 flex items-center justify-center text-[#1A1D20] font-medium cursor-pointer hover:opacity-80;
+  @apply bg-brand rounded-lg px-6 py-3 flex items-center justify-center text-[#fff] font-medium cursor-pointer hover:opacity-80;
 }
 
 .btn-secondary {
@@ -56,6 +56,14 @@
 
 .ready {
   @apply text-[#0dcaf0];
+}
+
+.bg-base-primary {
+  background: #00bc7d;
+}
+
+.text-base-primary {
+  color: #00bc7d;
 }
 
 .ant-checkbox-checked .ant-checkbox-inner {

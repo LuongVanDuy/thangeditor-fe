@@ -23,7 +23,7 @@ const Card: React.FC<CardProps> = ({ title, img = bg, categories, slug }) => {
         </div>
 
         <div className="p-4 md:p-6">
-          <h1 className="text-primary text-[12px] uppercase">{categories}</h1>
+          <h1 className="text-brand text-[12px] uppercase">{categories}</h1>
           <Link href={`/services/${slug}`} className="font-medium text-[18px] md:text-[20px] mt-4">
             {title}
           </Link>

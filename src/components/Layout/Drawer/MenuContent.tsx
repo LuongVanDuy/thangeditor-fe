@@ -29,7 +29,7 @@ const MenuContent = ({ activePage, onClose }: MenuContentProps) => {
     <div>
       {/* Home */}
       <div className="border-[1px] border-[#f4f4f4] p-4 cursor-pointer" onClick={() => handleNavigate("/")}>
-        <span className={activePage === "/" ? "text-primary" : "text-[#6C757D]"}>Home</span>
+        <span className={activePage === "/" ? "text-brand" : "text-[#6C757D]"}>Home</span>
       </div>
 
       {/* Services */}
@@ -44,7 +44,7 @@ const MenuContent = ({ activePage, onClose }: MenuContentProps) => {
               className="flex justify-between items-center cursor-pointer"
               onClick={() => handleNavigate("/services")}
             >
-              <span className={activePage === "/services" ? "text-primary" : "text-[#6C757D]"}>Services</span>
+              <span className={activePage === "/services" ? "text-brand" : "text-[#6C757D]"}>Services</span>
             </div>
           }
           key="1"
@@ -54,7 +54,7 @@ const MenuContent = ({ activePage, onClose }: MenuContentProps) => {
               {jsonServiceData.map((service) => (
                 <li
                   key={service.id}
-                  className="px-4 py-2 text-secondary hover:bg-gray-100 hover:text-primary cursor-pointer"
+                  className="px-4 py-2 text-secondary hover:bg-gray-100 hover:text-brand cursor-pointer"
                   onClick={() => handleNavigate(`/services/${service.slug}`)}
                 >
                   {service.title}
@@ -67,12 +67,12 @@ const MenuContent = ({ activePage, onClose }: MenuContentProps) => {
 
       {/* Blog */}
       <div className="border-[1px] border-[#f4f4f4] p-4 cursor-pointer" onClick={() => handleNavigate("/blog")}>
-        <span className={activePage === "/blog" ? "text-primary" : "text-[#6C757D]"}>Blog</span>
+        <span className={activePage === "/blog" ? "text-brand" : "text-[#6C757D]"}>Blog</span>
       </div>
 
       {/* Contact */}
       <div className="border-[1px] border-[#f4f4f4] p-4 cursor-pointer" onClick={() => handleNavigate("/contact")}>
-        <span className={activePage === "/contact" ? "text-primary" : "text-[#6C757D]"}>Contact</span>
+        <span className={activePage === "/contact" ? "text-brand" : "text-[#6C757D]"}>Contact</span>
       </div>
     </div>
   );

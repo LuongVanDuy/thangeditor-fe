@@ -32,7 +32,7 @@ const DrawerContent = ({ onClose }: { onClose: () => void }) => {
           <div>
             <h1
               onClick={() => handleLinkClick("/services/virtual-staging-renovation/virtual-staging")}
-              className="font-medium cursor-pointer hover:text-primary"
+              className="font-medium cursor-pointer hover:text-brand"
             >
               Virtual Staging
             </h1>
@@ -49,7 +49,7 @@ const DrawerContent = ({ onClose }: { onClose: () => void }) => {
           <div>
             <h1
               onClick={() => handleLinkClick("/services/virtual-staging-renovation/commercial-virtual-staging")}
-              className="font-medium cursor-pointer hover:text-primary"
+              className="font-medium cursor-pointer hover:text-brand"
             >
               Commercial Virtual Staging
             </h1>
@@ -66,7 +66,7 @@ const DrawerContent = ({ onClose }: { onClose: () => void }) => {
           <div>
             <h1
               onClick={() => handleLinkClick("/services/virtual-staging-renovation/matterport-virtual-staging")}
-              className="font-medium cursor-pointer hover:text-primary"
+              className="font-medium cursor-pointer hover:text-brand"
             >
               Matterport Virtual Staging
             </h1>
@@ -83,7 +83,7 @@ const DrawerContent = ({ onClose }: { onClose: () => void }) => {
           <div>
             <h1
               onClick={() => handleLinkClick("/services/virtual-staging-renovation/virtual-renovation")}
-              className="font-medium cursor-pointer hover:text-primary"
+              className="font-medium cursor-pointer hover:text-brand"
             >
               Virtual Renovation
             </h1>
@@ -103,7 +103,7 @@ const DrawerContent = ({ onClose }: { onClose: () => void }) => {
             <Image src={box} alt="" />
           </div>
           <div>
-            <h1 className="font-medium cursor-pointer hover:text-primary">Occupied to Vacant</h1>
+            <h1 className="font-medium cursor-pointer hover:text-brand">Occupied to Vacant</h1>
             <h2 className="text-[#495057] text-[14px]">
               Remove dated or cluttered furnishings from your listing images.
             </h2>
@@ -117,7 +117,7 @@ const DrawerContent = ({ onClose }: { onClose: () => void }) => {
           <div>
             <h1
               onClick={() => handleLinkClick("/services/photo-editing/day-to-dust")}
-              className="font-medium cursor-pointer hover:text-primary"
+              className="font-medium cursor-pointer hover:text-brand"
             >
               Day to Dusk
             </h1>
@@ -132,7 +132,7 @@ const DrawerContent = ({ onClose }: { onClose: () => void }) => {
           <div>
             <h1
               onClick={() => handleLinkClick("/services/photo-editing/object-removal")}
-              className="font-medium cursor-pointer hover:text-primary"
+              className="font-medium cursor-pointer hover:text-brand"
             >
               Object Removal
             </h1>
@@ -149,7 +149,7 @@ const DrawerContent = ({ onClose }: { onClose: () => void }) => {
           <div>
             <h1
               onClick={() => handleLinkClick("/services/photo-editing/image-enhancement")}
-              className="font-medium cursor-pointer hover:text-primary"
+              className="font-medium cursor-pointer hover:text-brand"
             >
               Image Enhancement
             </h1>
@@ -168,7 +168,7 @@ const DrawerContent = ({ onClose }: { onClose: () => void }) => {
           <div>
             <h1
               onClick={() => handleLinkClick("/services/lawn-replacement")}
-              className="font-medium cursor-pointer hover:text-primary"
+              className="font-medium cursor-pointer hover:text-brand"
             >
               Lawn Replacement
             </h1>
@@ -185,7 +185,7 @@ const DrawerContent = ({ onClose }: { onClose: () => void }) => {
           <div>
             <h1
               onClick={() => handleLinkClick("/services/video-editing/real-estate-video-editing")}
-              className="font-medium cursor-pointer hover:text-primary"
+              className="font-medium cursor-pointer hover:text-brand"
             >
               Property Videos
             </h1>

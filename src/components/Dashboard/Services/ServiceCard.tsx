@@ -52,21 +52,21 @@ const ServiceCard: React.FC<CardProps> = ({ title, img = bg, categories, slug, d
 
         <div className="p-4 md:p-6 lg:p-9 gap-6 flex flex-col">
           <div>
-            <h1 className="text-primary text-[12px] uppercase">{categories}</h1>
+            <h1 className="text-brand text-[12px] uppercase">{categories}</h1>
             <Link href={`/services/${slug}`} className="font-medium text-[24px] mt-2 mb-4">
               {title}
             </Link>
             <h3 className="text-[#0000008F] text-[14px]">{desc}</h3>
           </div>
           <h1 className="text-[#000000CC] text-[14px]">
-            Starting from <span className="text-primary">$16</span>
+            Starting from <span className="text-brand">$16</span>
           </h1>
 
           <div>
             <div className="flex gap-4 items-center">
               <div
                 onClick={() => handleNewOrder(title)}
-                className="h-9 w-[134px] flex justify-center items-center rounded-lg font-medium text-primary cursor-pointer hover:opacity-80 border-[1px] border-solid border-primary"
+                className="h-9 w-[134px] flex justify-center items-center rounded-lg font-medium text-brand cursor-pointer hover:opacity-80 border-[1px] border-solid border-primary"
               >
                 Place an order
               </div>

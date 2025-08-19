@@ -133,7 +133,9 @@ const Header = () => {
           <ul className="flex gap-6">
             <Link
               href="/"
-              className={`${activePage === "/" ? "text-primary" : "text-secondary"} cursor-pointer hover:opacity-80`}
+              className={`${
+                activePage === "/" ? "text-base-primary" : "text-secondary"
+              } cursor-pointer hover:opacity-80`}
             >
               Home
             </Link>
@@ -145,7 +147,7 @@ const Header = () => {
               <Link
                 href="/services"
                 className={`flex items-center gap-1 ${
-                  activePage === "/services" ? "text-primary" : "text-secondary"
+                  activePage === "/services" ? "text-base-primary" : "text-secondary"
                 } cursor-pointer hover:opacity-80`}
               >
                 Services
@@ -160,7 +162,7 @@ const Header = () => {
                   <li key={service.id}>
                     <Link
                       href={`/services/${service.slug}`}
-                      className="block px-4 py-2 text-secondary hover:bg-yellow-400 hover:text-white rounded-xl"
+                      className="block px-4 py-2 text-secondary hover:bg-brand hover:text-white rounded-xl"
                     >
                       {service.title}
                     </Link>
@@ -171,7 +173,7 @@ const Header = () => {
             <Link
               href="/blog"
               className={`${
-                activePage === "/blog" ? "text-primary" : "text-secondary"
+                activePage === "/blog" ? "text-base-primary" : "text-secondary"
               } cursor-pointer hover:opacity-80`}
             >
               Blog
@@ -179,7 +181,7 @@ const Header = () => {
             <Link
               href="/contact"
               className={`${
-                activePage === "/contact" ? "text-primary" : "text-secondary"
+                activePage === "/contact" ? "text-base-primary" : "text-secondary"
               } cursor-pointer hover:opacity-80`}
             >
               Contact
@@ -197,11 +199,14 @@ const Header = () => {
                 width={48}
                 className="h-12 w-12 rounded-full"
               />
-              <h1 className="text-primary font-medium text-[18px]">{profile?.data?.name}</h1>
+              <h1 className="text-base-primary font-medium text-[18px]">{profile?.data?.name}</h1>
             </div>
           </Dropdown>
         ) : (
-          <div className="btn-primary h-[48px] w-[124px] sm:hidden md:flex" onClick={() => router.push("/auth/login")}>
+          <div
+            className="btn-primary !bg-brand h-[48px] w-[124px] sm:hidden md:flex"
+            onClick={() => router.push("/auth/login")}
+          >
             <div>
               <Image src={userIcon} alt="icon" className="mr-2" />
             </div>{" "}

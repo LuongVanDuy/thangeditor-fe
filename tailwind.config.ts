@@ -8,6 +8,8 @@ const config: Config = {
         primary: "#FDC101",
         secondary: "#495057",
         third: "#FE9A004D",
+        brand: "#00bc7d",
+        brandSoft: "#ECFDF5",
       },
       height: {
         fill: "-webkit-fill-available",

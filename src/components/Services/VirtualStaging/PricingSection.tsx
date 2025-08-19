@@ -5,7 +5,7 @@ import { useRouter } from "next/navigation";
 import { useMutation } from "@tanstack/react-query";
 import { generateOrderId } from "@/lib/api/order.api";
 
-import checked from "@/assets/Checked .svg";
+import checked from "@/assets/Checked.svg";
 import zap from "@/assets/zap.svg";
 
 const pricingPlans = [
@@ -41,9 +41,9 @@ const PricingSection = () => {
     genOIDMutation();
   };
   return (
-    <section className="bg-[#FDC101]">
+    <section className="bg-brand">
       <div className="sm:px-4 xs:px-[64px] xl:px-[108px] py-12 md:py-[64px] flex flex-col gap-9 md:gap-12">
-        <h1 className="text-[24px] xs:text-[30px] lg:text-[36px] font-medium text-center">
+        <h1 className="text-[24px] text-white xs:text-[30px] lg:text-[36px] font-medium text-center">
           How Much Does Virtual Staging Cost
         </h1>
 
@@ -53,12 +53,12 @@ const PricingSection = () => {
               <div className="w-auto xs:w-[386px] border-[1px] border-b-0 border-[#f4f4f4] bg-[#fff] p-6 md:p-8 rounded-t-2xl gap-6 flex flex-col">
                 <div className="flex flex-col gap-2">
                   <div className="flex flex-col justify-center">
-                    <div className="h-[40px] w-[40px] border-[4px] border-third rounded-full flex justify-center items-center mb-5 mx-0 xs:mx-auto">
-                      <div className="h-full w-full bg-primary rounded-full flex justify-center items-center">
+                    <div className="h-[40px] w-[40px] border-[4px] border-green-200 rounded-full flex justify-center items-center mb-5 mx-0 xs:mx-auto">
+                      <div className="h-full w-full bg-brand rounded-full flex justify-center items-center">
                         <Image src={zap} alt="icon" height={20} width={20} />
                       </div>
                     </div>
-                    <h1 className="text-primary uppercase font-medium text-start xs:text-center">{plan.title}</h1>
+                    <h1 className="text-brand uppercase font-medium text-start xs:text-center">{plan.title}</h1>
                   </div>
 
                   <div className="text-[#6C757D] text-[18px] text-start xs:text-center">

@@ -100,7 +100,7 @@ const Four = ({
 
         <div className="flex justify-between items-center">
           <h1 className="text-[#495057] uppercase">Order total</h1>
-          <h2 className="text-primary text-[20px] font-medium">{formatCurrency(data?.orderTotal)}</h2>
+          <h2 className="text-brand text-[20px] font-medium">{formatCurrency(data?.orderTotal)}</h2>
         </div>
 
         <div className="btn-primary" onClick={handleMakePayment}>
@@ -217,7 +217,7 @@ const Four = ({
 
         <div className="flex justify-between items-center">
           <h1 className="text-[#495057] uppercase">Order total</h1>
-          <h2 className="text-primary text-[20px] font-medium">{formatCurrency(data?.orderTotal)}</h2>
+          <h2 className="text-brand text-[20px] font-medium">{formatCurrency(data?.orderTotal)}</h2>
         </div>
 
         <div className="btn-primary" onClick={handleMakePayment}>

@@ -21,7 +21,7 @@ const BlogCard: React.FC<BlogCardProps> = ({ img = blog, title, subject, desc, s
         <Image src={img} alt="icon" className="w-full xs:w-[387px] h-auto" />
       </div>
       <div className="flex flex-col gap-2 justify-center">
-        <h2 className="text-primary text-[12px] uppercase font-medium">{subject}</h2>
+        <h2 className="text-brand text-[12px] uppercase font-medium">{subject}</h2>
         <div className="flex items-start justify-between">
           <Link href={`/blog/${slug}`}>
             <h1 className="text-[24px] font-medium text-[#212529] hover:opacity-80 cursor-pointer">{title}</h1>

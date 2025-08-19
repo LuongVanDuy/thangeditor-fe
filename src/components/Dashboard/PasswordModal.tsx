@@ -85,7 +85,7 @@ const PasswordModal = ({ isOpen, onCancel }: { isOpen: boolean; onCancel: () => 
     <Modal
       open={isOpen}
       onCancel={handleCancel}
-      title={<div className="text-2xl text-primary font-medium">Change Password</div>}
+      title={<div className="text-2xl text-brand font-medium">Change Password</div>}
       centered
       width={700}
       footer={

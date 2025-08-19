@@ -75,7 +75,7 @@ const ServiceCard: React.FC<CardProps> = ({
 
       <div className={`gap-9 md:gap-10 lg:gap-12 flex flex-col ${small ? "p-2 md:p-3 lg:p-4" : "p-4 md:p-6 lg:p-9"}`}>
         <div>
-          <h3 className="text-primary text-[12px] uppercase tracking-wide">{category}</h3>
+          <h3 className="text-brand text-[12px] uppercase tracking-wide">{category}</h3>
           <Link
             href={serviceUrl}
             title={`${title} - ${category}`}
@@ -92,7 +92,7 @@ const ServiceCard: React.FC<CardProps> = ({
         <div className="flex flex-wrap gap-4 items-center">
           <button
             onClick={() => handleNewOrder(title)}
-            className={`px-4 md:px-6 py-2 md:py-3 rounded-lg border border-primary font-medium text-primary cursor-pointer hover:opacity-80 ${
+            className={`px-4 md:px-6 py-2 md:py-3 rounded-lg border border-primary font-medium text-brand cursor-pointer hover:opacity-80 ${
               small ? "text-sm md:text-base" : ""
             }`}
             aria-label={`Place an order for ${title}`}
@@ -112,7 +112,7 @@ const ServiceCard: React.FC<CardProps> = ({
 
           <p className="text-[#000000CC] text-[14px]">
             Starting from{" "}
-            <span className="text-primary" itemProp="price">
+            <span className="text-brand" itemProp="price">
               ${price}
             </span>
           </p>

@@ -184,7 +184,7 @@ const OrderCard: React.FC<CardProps> = ({
             </div>
           </div>
           <div className="flex justify-between items-center">
-            <div className="text-primary ">{price ? formatCurrency(price) : "----"}</div>
+            <div className="text-brand">{price ? formatCurrency(price) : "----"}</div>
 
             <div className="flex gap-2">
               <button

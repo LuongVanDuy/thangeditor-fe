@@ -51,7 +51,7 @@ export default function CustomPagination({
     <PaginationStyled
       className={`flex flex-col sm:flex-row items-center justify-between gap-3 rounded-b-xl bg-white pt-4`}
     >
-      <div className="flex items-center font-meidum text-primary gap-x-3">
+      <div className="flex items-center font-meidum text-brand gap-x-3">
         <div>Items per page</div>
 
         <CustomSelect

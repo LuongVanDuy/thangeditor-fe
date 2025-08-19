@@ -481,8 +481,8 @@ const DetailOrder = () => {
         </div>
       ))}
       <div>
-        <h1 className="text-primary text-[12px] uppercase">Order total</h1>
-        <h2 className="text-primary mt-1">
+        <h1 className="text-brand text-[12px] uppercase">Order total</h1>
+        <h2 className="text-brand mt-1">
           {order.orderTotal !== 0 || current === 3 ? formatCurrency(order.orderTotal) : "---"}
         </h2>
       </div>
@@ -531,7 +531,7 @@ const DetailOrder = () => {
 
       {current === 4 ? (
         <div className="flex gap-1 items-center">
-          <h1 className="text-primary text-[16px] font-medium">View order summary</h1>
+          <h1 className="text-brand text-[16px] font-medium">View order summary</h1>
           <div onClick={() => setOpen(!open)}>
             <Image src={open ? close : pinkEye} alt="icon" />
           </div>
@@ -569,8 +569,8 @@ const DetailOrder = () => {
             {renderMobileProjectHeader()}
 
             <div className="border-l-[1px] border-[#fbfbfb] pl-4">
-              <h1 className="text-primary text-[12px] uppercase">Order total</h1>
-              <h2 className="text-primary">{order.orderTotal !== 0 ? formatCurrency(order.orderTotal) : "---"}</h2>
+              <h1 className="text-brand text-[12px] uppercase">Order total</h1>
+              <h2 className="text-brand">{order.orderTotal !== 0 ? formatCurrency(order.orderTotal) : "---"}</h2>
             </div>
           </div>
 
@@ -650,7 +650,7 @@ const DetailOrder = () => {
             ))}
           </div>
 
-          <h1 className="text-primary font-medium text-[20px]">{formatCurrency(order.orderTotal)}</h1>
+          <h1 className="text-brand font-medium text-[20px]">{formatCurrency(order.orderTotal)}</h1>
         </div>
       </StyledDrawer>
 

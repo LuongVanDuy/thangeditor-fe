@@ -16,7 +16,7 @@ const Menu = ({ activePage, onClose }: { activePage: string; onClose: () => void
           href={"/dashboard"}
           onClick={handleLinkClick}
           className={`${
-            activePage === "/dashboard" ? "text-primary bg-[#FFFFFF1A]" : "text-[#CED4DA] bg-none hover:text-primary"
+            activePage === "/dashboard" ? "text-brand bg-[#FFFFFF1A]" : "text-[#CED4DA] bg-none hover:text-brand"
           } flex p-3 gap-3 rounded-xl`}
         >
           <svg width="24" height="24" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
@@ -35,9 +35,7 @@ const Menu = ({ activePage, onClose }: { activePage: string; onClose: () => void
           href={"/dashboard/order"}
           onClick={handleLinkClick}
           className={`${
-            activePage === "/dashboard/order"
-              ? "text-primary bg-[#FFFFFF1A]"
-              : "text-[#CED4DA] bg-none hover:text-primary"
+            activePage === "/dashboard/order" ? "text-brand bg-[#FFFFFF1A]" : "text-[#CED4DA] bg-none hover:text-brand"
           } flex p-3 gap-3 rounded-xl`}
         >
           <svg width="24" height="24" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
@@ -57,8 +55,8 @@ const Menu = ({ activePage, onClose }: { activePage: string; onClose: () => void
           onClick={handleLinkClick}
           className={`${
             activePage === "/dashboard/services"
-              ? "text-primary bg-[#FFFFFF1A]"
-              : "text-[#CED4DA] bg-none hover:text-primary"
+              ? "text-brand bg-[#FFFFFF1A]"
+              : "text-[#CED4DA] bg-none hover:text-brand"
           } flex p-3 gap-3 rounded-xl`}
         >
           <svg width="24" height="24" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
@@ -78,9 +76,7 @@ const Menu = ({ activePage, onClose }: { activePage: string; onClose: () => void
         href={"/dashboard/support"}
         onClick={handleLinkClick}
         className={`${
-          activePage === "/dashboard/support"
-            ? "text-primary bg-[#FFFFFF1A]"
-            : "text-[#CED4DA] bg-none hover:text-primary"
+          activePage === "/dashboard/support" ? "text-brand bg-[#FFFFFF1A]" : "text-[#CED4DA] bg-none hover:text-brand"
         } flex p-3 gap-3 rounded-xl`}
       >
         <svg width="24" height="24" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
@@ -99,4 +95,3 @@ const Menu = ({ activePage, onClose }: { activePage: string; onClose: () => void
 };
 
 export default Menu;
-

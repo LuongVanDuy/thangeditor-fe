@@ -159,8 +159,8 @@ const Signup = () => {
         <Checkbox checked={isChecked} onChange={(e) => setIsChecked(e.target.checked)} />
         <div className="text-[#343A40] text-[14px]">
           Creating an account means you’re okay with our 
-          <span className="text-primary underline text-[14px]">Terms of Service</span> and 
-          <span className="text-primary underline text-[14px]">Privacy Policy</span>.
+          <span className="text-brand underline text-[14px]">Terms of Service</span> and 
+          <span className="text-brand underline text-[14px]">Privacy Policy</span>.
         </div>
       </div>
 
@@ -193,7 +193,7 @@ const Signup = () => {
 
       <div className="text-center text-[#495057] text-[14px]">
         Already registered?{" "}
-        <Link href="/auth/login" className="text-primary font-medium text-[14px]">
+        <Link href="/auth/login" className="text-brand font-medium text-[14px]">
           Sign in
         </Link>
       </div>

@@ -52,7 +52,7 @@ const BenefitSection = () => {
   };
 
   return (
-    <section className="bg-[#FFFEEA]">
+    <section className="bg-brandSoft">
       <div className="sm:px-4 lg:px-[64px] xl:px-[108px] py-12 md:py-[64px] flex flex-col gap-9 md:gap-12 ">
         <h1 className="text-[24px] xs:text-[30px] lg:text-[36px] font-medium text-center">What are the Benefits?</h1>
 
@@ -60,8 +60,8 @@ const BenefitSection = () => {
           {cardData.map((item, index) => (
             <div key={index}>
               <div className="flex justify-start md:justify-center items-center">
-                <div className="h-[48px] w-[48px] border-[4px] border-third rounded-full flex justify-center items-center">
-                  <div className="h-full w-full bg-primary rounded-full flex justify-center items-center">
+                <div className="h-[48px] w-[48px] border-[4px] border-green-200 rounded-full flex justify-center items-center">
+                  <div className="h-full w-full bg-brand rounded-full flex justify-center items-center">
                     <Image src={item.img} alt="icon" height={24} width={24} />
                   </div>
                 </div>

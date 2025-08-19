@@ -5,7 +5,7 @@ import { useRouter } from "next/navigation";
 import { useMutation } from "@tanstack/react-query";
 import help from "@/assets/help-circle.svg";
 import star from "@/assets/star.svg";
-import checked from "@/assets/Checked .svg";
+import checked from "@/assets/Checked.svg";
 import { generateOrderId } from "@/lib/api/order.api";
 import CompareImg from "@/components/Form/Compare";
 import { CompareSlider } from "@/components/Form/Compare/CompareSlider";
@@ -48,8 +48,8 @@ const DifferenceSection = () => {
 
         <div className="flex flex-col gap-6">
           <div className="flex flex-row md:flex-col gap-6 items-center md:items-baseline">
-            <div className="h-[48px] w-[48px] border-[4px] border-third rounded-full flex flex-shrink-0 justify-center items-center">
-              <div className="h-full w-full bg-primary rounded-full flex justify-center items-center">
+            <div className="h-[48px] w-[48px] border-[4px] border-green-200 rounded-full flex flex-shrink-0 justify-center items-center">
+              <div className="h-full w-full bg-brand rounded-full flex justify-center items-center">
                 <Image src={help} alt="icon" height={24} width={24} />
               </div>
             </div>
@@ -83,8 +83,8 @@ const DifferenceSection = () => {
 
         <div className="flex flex-col gap-6">
           <div className="flex flex-row md:flex-col gap-6 items-center md:items-baseline">
-            <div className="h-[48px] w-[48px] border-[4px] border-third rounded-full flex flex-shrink-0 justify-center items-center">
-              <div className="h-full w-full bg-primary rounded-full flex justify-center items-center">
+            <div className="h-[48px] w-[48px] border-[4px] border-green-200 rounded-full flex flex-shrink-0 justify-center items-center">
+              <div className="h-full w-full bg-brand rounded-full flex justify-center items-center">
                 <Image src={star} alt="icon" height={24} width={24} />
               </div>
             </div>

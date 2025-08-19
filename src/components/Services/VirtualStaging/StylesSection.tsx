@@ -89,10 +89,10 @@ const StylesSection = () => {
                   </div>
 
                   <div className="absolute bottom-4 left-4 flex gap-2">
-                    <div className="uppercase rounded-2xl px-3 py-1 text-white bg-primary border-primary border-[1px] font-medium text-[12px]">
+                    <div className="uppercase rounded-2xl px-3 py-1 text-white bg-brand border-brand border-[1px] font-medium text-[12px]">
                       {item.style}
                     </div>
-                    <div className="h-[28px] w-[28px] rounded-full flex items-center justify-center bg-primary border-primary border-[1px]">
+                    <div className="h-[28px] w-[28px] rounded-full flex items-center justify-center bg-brand border-brand border-[1px]">
                       <Image src={eye} alt="icon" width={16} height={16} />
                     </div>
                   </div>

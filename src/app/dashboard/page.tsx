@@ -166,7 +166,7 @@ const Home = () => {
                     })()}{" "}
                 </div>
                 <div className="p-4 md:p-6">
-                  <h1 className="text-primary text-[12px] uppercase">{item.category}</h1>
+                  <h1 className="text-brand text-[12px] uppercase">{item.category}</h1>
                   <Link href={`/services/${item.slug}`} className="font-medium text-[18px] md:text-[20px] mt-4">
                     {item.title}
                   </Link>
