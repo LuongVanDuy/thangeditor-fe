@@ -3,7 +3,7 @@ import styled from "styled-components";
 
 export const CustomSwitch = styled(Switch)`
   &.ant-switch-checked {
-    background-color: #FDC101;
+    background-color: #00bc7d;
   }
   &.ant-switch:hover {
     background-color: #ff6c99 !important;
@@ -12,4 +12,3 @@ export const CustomSwitch = styled(Switch)`
     background-color: #ccc;
   }
 `;
-

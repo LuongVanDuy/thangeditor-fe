@@ -3,7 +3,7 @@ import React from "react";
 const PrivacyPolicy = () => {
   return (
     <div className="sm:pl-4 sm:pr-4 lg:pl-[64px] lg:pr-[64px] xl:pl-[108px] xl:pr-[108px] pb-[64px] py-12 flex flex-col privacy-page">
-      <h1 className="text-3xl font-bold mb-8 text-center">FIXELSPHOTO PRIVACY POLICY</h1>
+      <h1 className="text-3xl font-bold mb-8 text-center">THANGEDITOR PRIVACY POLICY</h1>
 
       <p className="mb-6">
         Welcome to Fiexlsphoto! Fiexlsphoto is an online platform dedicated to home improvement and design. We provide

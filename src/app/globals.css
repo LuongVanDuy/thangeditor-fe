@@ -19,11 +19,11 @@
 }
 
 .btn-five {
-  @apply h-12 sm:w-12 2xl:w-[246px] px-[10.5px] xs:w-auto flex flex-shrink-0 gap-2 items-center justify-center rounded-lg border-[1px] border-[#FDC101] text-primary font-medium cursor-pointer;
+  @apply h-12 sm:w-12 2xl:w-[246px] px-[10.5px] xs:w-auto flex flex-shrink-0 gap-2 items-center justify-center rounded-lg border-[1px] border-[#00BC7D] text-primary font-medium cursor-pointer;
 }
 
 .btn-six {
-  @apply h-12 sm:w-12 2xl:w-[246px] px-[10.5px] xs:w-auto flex-shrink-0 flex gap-2 items-center justify-center rounded-lg bg-[#FDC101] text-white font-medium cursor-pointer;
+  @apply h-12 sm:w-12 2xl:w-[246px] px-[10.5px] xs:w-auto flex-shrink-0 flex gap-2 items-center justify-center rounded-lg bg-[#00BC7D] text-white font-medium cursor-pointer;
 }
 
 .icon-primary {
@@ -67,7 +67,7 @@
 }
 
 .ant-checkbox-checked .ant-checkbox-inner {
-  background-color: #fdc101 !important;
+  background-color: #00bc7d !important;
 }
 
 .header-drawer .ant-drawer-body {
@@ -104,8 +104,8 @@
 } */
 
 .ant-radio-wrapper .ant-radio-checked .ant-radio-inner {
-  border-color: #fdc101 !important;
-  background-color: #fdc101 !important;
+  border-color: #00bc7d !important;
+  background-color: #00bc7d !important;
 }
 
 .ant-radio-wrapper {

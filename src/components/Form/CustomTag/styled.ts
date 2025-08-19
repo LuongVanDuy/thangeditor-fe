@@ -88,7 +88,7 @@ export const CustomTagWrapper = styled(Tag)`
   }
 
   &.ant-tag-volcano {
-    background: #FDC101;
+    background: #00bc7d;
     color: white;
     font-weight: 500;
     padding: 4px 12px;
@@ -98,4 +98,3 @@ export const CustomTagWrapper = styled(Tag)`
     margin-inline-end: 0px;
   }
 `;
-

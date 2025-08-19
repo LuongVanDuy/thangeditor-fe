@@ -6,27 +6,27 @@ const TermsAndConditions = () => {
       <h1 className="text-3xl font-bold mb-8 text-center">TERMS AND CONDITIONS</h1>
 
       <p className="mb-6">
-        Welcome to Fixelsphoto! Fixelsphoto is an online platform specializing in virtual staging and professional image
+        Welcome to Thangeditor! Thangeditor is an online platform specializing in virtual staging and professional image
         editing.
       </p>
 
       <p className="mb-6">
         These Terms and Conditions (&quot;Terms,&quot; &quot;Agreement&quot;) form a binding contract between
-        Fixelsphoto, Inc. (&quot;Fixelsphoto,&quot; &quot;we,&quot; &quot;us,&quot; or &quot;our&quot;) and you
+        Thangeditor, Inc. (&quot;Thangeditor,&quot; &quot;we,&quot; &quot;us,&quot; or &quot;our&quot;) and you
         (&quot;User,&quot; &quot;you,&quot; or &quot;your&quot;). This Agreement sets out the general rules and
-        conditions for using the Fixelsphoto.com website and any products or services we provide (collectively, the
+        conditions for using the Thangeditor.com website and any products or services we provide (collectively, the
         &quot;Website&quot; or &quot;Services&quot;).
       </p>
 
       <p className="mb-6">
-        By accessing or using the Fixelsphoto Platform, you agree to these Terms in full. If you do not agree, you must
+        By accessing or using the Thangeditor Platform, you agree to these Terms in full. If you do not agree, you must
         not use the Platform.
       </p>
 
       {/* 1. Description of Services */}
       <h2 className="text-xl font-semibold mt-10 mb-4">1. Description of Services</h2>
       <p className="mb-6">
-        Fixelsphoto offers a variety of virtual staging and image editing services designed to enhance property
+        Thangeditor offers a variety of virtual staging and image editing services designed to enhance property
         listings. Our clients include real estate agents, homeowners, interior designers, photographers, remodelers, and
         renters.
       </p>
@@ -44,7 +44,7 @@ const TermsAndConditions = () => {
       </ul>
 
       {/* 2. Using the Platform */}
-      <h2 className="text-xl font-semibold mt-10 mb-4">2. Using the Fixelsphoto Platform</h2>
+      <h2 className="text-xl font-semibold mt-10 mb-4">2. Using the Thangeditor Platform</h2>
 
       <h3 className="text-lg font-medium mb-2">Eligibility</h3>
       <p className="mb-6">
@@ -77,7 +77,7 @@ const TermsAndConditions = () => {
       <h2 className="text-xl font-semibold mt-10 mb-4">3. Your Content</h2>
       <p className="mb-6">
         &quot;Your Content&quot; includes any photos, videos, comments, or materials you upload to the Platform. By
-        posting content, you grant Fixelsphoto a worldwide, non-exclusive, royalty-free, perpetual license to use,
+        posting content, you grant Thangeditor a worldwide, non-exclusive, royalty-free, perpetual license to use,
         adapt, display, and distribute it in any format.
       </p>
       <p className="mb-6">
@@ -89,7 +89,7 @@ const TermsAndConditions = () => {
       {/* 4. Our Content */}
       <h2 className="text-xl font-semibold mt-10 mb-4">4. Our Content</h2>
       <p className="mb-6">
-        All intellectual property on the Platform, excluding Your Content, belongs to Fixelsphoto or its licensors. We
+        All intellectual property on the Platform, excluding Your Content, belongs to Thangeditor or its licensors. We
         grant you a limited, non-exclusive license to use our materials solely in connection with your use of the
         Services.
       </p>
@@ -102,7 +102,7 @@ const TermsAndConditions = () => {
       {/* 5. Trademarks */}
       <h2 className="text-xl font-semibold mt-10 mb-4">5. Trademarks</h2>
       <p className="mb-6">
-        The name Fixelsphoto and its logo are trademarks of Fixelsphoto, Inc. You may not use them without prior written
+        The name Thangeditor and its logo are trademarks of Thangeditor, Inc. You may not use them without prior written
         permission. Other trademarks belong to their respective owners.
       </p>
 
@@ -117,15 +117,15 @@ const TermsAndConditions = () => {
       <h2 className="text-xl font-semibold mt-10 mb-4">7. Disclaimers &amp; Limitations of Liability</h2>
       <p className="mb-6">
         We provide the Platform and Services &quot;as is&quot; without warranties of any kind, express or implied. To
-        the maximum extent permitted by law, Fixelsphoto is not liable for indirect, incidental, or consequential
-        damages, or for any amount exceeding USD $100 or the total you paid to Fixelsphoto in the previous 12 months,
+        the maximum extent permitted by law, Thangeditor is not liable for indirect, incidental, or consequential
+        damages, or for any amount exceeding USD $100 or the total you paid to Thangeditor in the previous 12 months,
         whichever is greater.
       </p>
 
       {/* 8. Indemnification */}
       <h2 className="text-xl font-semibold mt-10 mb-4">8. Indemnification</h2>
       <p className="mb-6">
-        You agree to defend and indemnify Fixelsphoto from and against any claims, damages or expenses arising from:
+        You agree to defend and indemnify Thangeditor from and against any claims, damages or expenses arising from:
       </p>
       <ul className="list-disc pl-6 mb-6 space-y-2">
         <li>Your violation of these Terms.</li>
@@ -171,7 +171,7 @@ const TermsAndConditions = () => {
 
       <h3 className="text-lg font-medium mt-8 mb-2">Acceptance of Terms</h3>
       <p className="mb-6">
-        By using Fixelsphoto&apos;s Website or Services, you confirm that you have read and agree to these Terms in
+        By using Thangeditor&apos;s Website or Services, you confirm that you have read and agree to these Terms in
         full.
       </p>
     </div>

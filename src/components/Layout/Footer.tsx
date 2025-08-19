@@ -35,7 +35,7 @@ const Footer = () => {
 
           <div className="flex gap-8 lg:gap-4 xl:gap-8">
             <ul className="flex flex-col gap-4 text-[#ced4da]">
-              <h1 className="text-white font-semibold">Fixelphoto</h1>
+              <h1 className="text-white font-semibold">thangeditor</h1>
               <Link href="/">Home</Link>
               <Link href="/services">Services</Link>
               <Link href="/blog">Blog</Link>
@@ -67,7 +67,7 @@ const Footer = () => {
         </div>
 
         <div className="border-t-[1px] border-[#495057] flex flex-col md:flex-row gap-4 justify-between pt-4 md:pt-8">
-          <div className="text-[#dee2e6]">© 2024 Fixelphoto. All rights reserved.</div>
+          <div className="text-[#dee2e6]">© 2024 Thangeditor. All rights reserved.</div>
           <div className="text-[#dee2e6] flex gap-4">
             <Link href="/terms-and-conditions">Terms &amp; Conditions</Link>
             <Link href="/cookie-policy">Cookie Policy</Link>

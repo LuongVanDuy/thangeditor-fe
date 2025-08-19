@@ -33,7 +33,7 @@ export const PaginationStyled = styled.div`
   }
 
   .ant-pagination-item-active {
-    background-color: #fdc101;
+    background-color: #00bc7d;
     border: unset;
 
     &:hover {

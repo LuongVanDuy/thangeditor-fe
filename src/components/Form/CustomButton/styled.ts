@@ -94,7 +94,7 @@ export const ButtonStyled = styled.div`
   }
 
   .primary {
-    background: #FDC101;
+    background: #00bc7d;
 
     span {
       font-size: inherit;
@@ -102,7 +102,7 @@ export const ButtonStyled = styled.div`
     }
 
     &:hover {
-      background: #FDC101 !important;
+      background: #00bc7d !important;
       opacity: 0.8;
     }
   }
@@ -344,11 +344,11 @@ export const ButtonStyled = styled.div`
 
     &:hover {
       background: white !important;
-      border: 1px solid #FDC101 !important;
+      border: 1px solid #00bc7d !important;
       opacity: 0.8;
       span {
         font-size: inherit;
-        color: #FDC101 !important;
+        color: #00bc7d !important;
       }
     }
   }
@@ -471,11 +471,11 @@ export const ButtonStyled = styled.div`
   }
 
   .view {
-    background: #FDC101;
+    background: #00bc7d;
     border-radius: 4px;
 
     &:hover {
-      background: #FDC101 !important;
+      background: #00bc7d !important;
       opacity: 0.8;
     }
   }
@@ -490,4 +490,3 @@ export const ButtonStyled = styled.div`
     border: 1px solid #0070f4;
   }
 `;
-

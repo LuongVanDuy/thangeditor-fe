@@ -6,9 +6,9 @@ const CookiePolicy = () => {
       <h1 className="text-3xl font-bold mb-8 text-center">COOKIE POLICY</h1>
 
       <p className="mb-6">
-        Your privacy is important to Fixelsphoto (collectively, &quot;Fixelsphoto,&quot; &quot;we,&quot; or
+        Your privacy is important to Thangeditor (collectively, &quot;Thangeditor,&quot; &quot;we,&quot; or
         &quot;us&quot;). This Cookie Policy explains what cookies (a term we use to include other tracking technologies
-        as well) are, and how they may be used on Fixelsphoto websites, products, and services (the &quot;Online
+        as well) are, and how they may be used on Thangeditor websites, products, and services (the &quot;Online
         Services&quot;).
       </p>
 
@@ -27,7 +27,7 @@ const CookiePolicy = () => {
 
       <h2 className="text-xl font-semibold mt-10 mb-4">What Are Cookies?</h2>
       <p className="mb-6">
-        Cookies are small data files placed on your computer or browser by Fixelsphoto (first-party cookies) or by our
+        Cookies are small data files placed on your computer or browser by Thangeditor (first-party cookies) or by our
         partners (third-party cookies) when you use our Online Services. They are widely used to enable website
         functionality, improve efficiency, personalize experiences, and provide analytical information.
       </p>
@@ -60,7 +60,7 @@ const CookiePolicy = () => {
         </li>
       </ul>
 
-      <h2 className="text-xl font-semibold mt-10 mb-4">Why Fixelsphoto uses Cookies</h2>
+      <h2 className="text-xl font-semibold mt-10 mb-4">Why Thangeditor uses Cookies</h2>
       <ul className="list-disc pl-6 mb-6 space-y-2">
         <li>Ensure technical operation and security of our Online Services.</li>
         <li>Help users log in and navigate our platform.</li>

@@ -63,7 +63,7 @@ const StylesSection = () => {
             <h2 className="text-[24px] xs:text-[30px] lg:text-[36px] font-medium">Design Styles</h2>
           </div>
           <div className="text-[#495057] text-[16px]">
-            Mix and match styles to appeal to any client or buyer with fixelsphoto massive furniture catalog of over
+            Mix and match styles to appeal to any client or buyer with thangeditor massive furniture catalog of over
             12,000 pieces
           </div>
         </div>

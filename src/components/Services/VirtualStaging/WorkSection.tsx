@@ -68,7 +68,7 @@ const WorkSection = () => {
             <p className="uppercase text-brand font-medium text-[14px]">Step 3</p>
             <h3 className="text-[#212529] font-medium text-[20px] md:text-[24px]">Get them delivered!</h3>
             <p className="text-[#343A40] text-[14px] md:text-[16px]">
-              Within 24–48 hours, your images will arrive in both your inbox and your Fixelphoto dashboard.
+              Within 24–48 hours, your images will arrive in both your inbox and your Thangeditor dashboard.
             </p>
           </div>
           <div className="mx-auto mt-auto w-[95%]">

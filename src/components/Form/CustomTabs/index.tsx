@@ -20,7 +20,7 @@ const CustomTabs: React.FC<TabsProps> = ({ tabs, activeKey, onChange }) => {
             key={tab.key}
             onClick={() => onChange(tab.key)}
             className={`py-1 px-4 font-medium rounded-md transition-all duration-200
-            ${activeKey === tab.key ? "text-[#FDC101] bg-white shadow-md" : "text-[#495057] bg-[#f4f4f4]"}      
+            ${activeKey === tab.key ? "text-#00BC7D] bg-white shadow-md" : "text-[#495057] bg-[#f4f4f4]"}      
           `}
           >
             {tab.label}
@@ -32,4 +32,3 @@ const CustomTabs: React.FC<TabsProps> = ({ tabs, activeKey, onChange }) => {
   );
 };
 export default CustomTabs;
-

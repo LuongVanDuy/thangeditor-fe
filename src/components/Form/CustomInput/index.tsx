@@ -121,7 +121,7 @@ export const CustomInput = forwardRef<
       <div className={`${wrapClassName ?? ""} flex items-center gap-2`}>
         {withStepper && (
           <div
-            className="flex items-center justify-center cursor-pointer select-none p-1 w-14 h-12 bg-[#fdc101] text-black rounded hover:bg-[#e6b800]"
+            className="flex items-center justify-center cursor-pointer select-none p-1 w-14 h-12 bg-[#00BC7D] text-black rounded hover:bg-[#e6b800]"
             onClick={handleMinus}
             aria-label="Decrease value"
           >
@@ -147,7 +147,7 @@ export const CustomInput = forwardRef<
 
         {withStepper && (
           <div
-            className="flex items-center justify-center cursor-pointer select-none p-1 w-14 h-12 bg-[#fdc101] text-black rounded hover:bg-[#e6b800]"
+            className="flex items-center justify-center cursor-pointer select-none p-1 w-14 h-12 bg-[#00BC7D] text-black rounded hover:bg-[#e6b800]"
             onClick={handlePlus}
             aria-label="Increase value"
           >
