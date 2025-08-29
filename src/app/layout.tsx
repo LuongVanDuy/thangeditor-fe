@@ -18,6 +18,7 @@ export default function RootLayout({ children }: { children: React.ReactNode }) 
   return (
     <html lang="en" suppressHydrationWarning={true}>
       <Script strategy="afterInteractive" src="https://www.googletagmanager.com/gtag/js?id=G-DFBZ5XRE3P" />
+      <Script strategy="afterInteractive" src="https://www.googletagmanager.com/gtag/js?id=G-HT8RC632D2" />
       <Script
         id="gtag-init"
         strategy="afterInteractive"
@@ -27,6 +28,7 @@ export default function RootLayout({ children }: { children: React.ReactNode }) 
             function gtag(){dataLayer.push(arguments);}
             gtag('js', new Date());
             gtag('config', 'G-DFBZ5XRE3P');
+            gtag('config', 'G-HT8RC632D2');
           `,
         }}
       />

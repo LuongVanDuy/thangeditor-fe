@@ -6,7 +6,7 @@ import Label from "@/components/Form/CustomLabel";
 import { CustomInput } from "@/components/Form/CustomInput";
 import { CustomTextarea } from "@/components/Form/CustomInput";
 import { message } from "antd";
-import contact from "@/assets/contact.jpg";
+import contact from "@/assets/contact1.jpg";
 import { yupResolver } from "@hookform/resolvers/yup";
 import { useMutation } from "@tanstack/react-query";
 import { Controller, useForm } from "react-hook-form";

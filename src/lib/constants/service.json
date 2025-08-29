@@ -4,27 +4,27 @@
     "slug": "virtual-staging",
     "title": "Virtual Staging",
     "category": "Virtual Staging & Renovation",
-    "desc": "Help buyers fall in love with your listings by turning vacant rooms into stylish spaces.",
+    "desc": "Help buyers fall in love with your apartment space with thaeditor's virtual staging.",
     "tagline": "Enhance Your Real Estate Property Listing, Starting at $14!",
-    "description": "Make your listings stand out from the competition with our affordable, photo-realistic Virtual Staging services. Transform empty rooms into digitally furnished spaces to sell properties faster.",
+    "description": "Set your property apart from the competition with thngeditor's virtual staging service. try it now!",
     "startingPrice": 14,
     "price": 14,
     "images": [
       {
-        "beforeUrl": "/assets/virtual-staging-bf.jpg",
-        "afterUrl": "/assets/virtual-staging-at.jpg"
+        "beforeUrl": "/assets/virtual-staging-home-1.jpg",
+        "afterUrl": "/assets/virtual-staging-home-2.jpg"
       },
       {
-        "beforeUrl": "/assets/1.jpg",
-        "afterUrl": "/assets/1-after.jpg"
+        "beforeUrl": "/assets/a1.jpg",
+        "afterUrl": "/assets/a1-after.jpg"
       },
       {
-        "beforeUrl": "/assets/2.jpg",
-        "afterUrl": "/assets/2-after.jpg"
+        "beforeUrl": "/assets/a2.jpg",
+        "afterUrl": "/assets/a2-after.jpg"
       },
       {
-        "beforeUrl": "/assets/3.jpg",
-        "afterUrl": "/assets/3-after.jpg"
+        "beforeUrl": "/assets/a3.jpg",
+        "afterUrl": "/assets/a3-after.jpg"
       }
     ],
     "subServices": [
@@ -47,16 +47,20 @@
   {
     "id": 2,
     "slug": "photo-editing",
-    "title": "HDR & Flambient",
+    "title": "Photo editing",
     "category": "Photo Editing",
-    "desc": "Make your real estate photos stand out with stunning HDR & Flambient editing.",
+    "desc": "Edit your hdr & flambient photos to become brighter, cleaner and more vibrant.",
     "tagline": "",
     "description": "We combine multiple exposure photos  or flash photos to make your real estate photos more beautiful.",
     "price": 1,
     "images": [
       {
-        "beforeUrl": "/assets/photo-editing-1.jpg",
-        "afterUrl": "/assets/photo-editing-2.jpg"
+        "beforeUrl": "/assets/photo-editing-5.jpg",
+        "afterUrl": "/assets/photo-editing-6.jpg"
+      },
+        {
+        "beforeUrl": "/assets/photo-editing-3.jpg",
+        "afterUrl": "/assets/photo-editing-4.jpg"
       }
     ],
     "subServices": [
@@ -104,13 +108,13 @@
     "slug": "video-editing",
     "title": "Video Editing",
     "category": "Video Editing",
-    "desc": "Create a real estate video to gain prospects' attention and sell their listings faster.",
+    "desc": "Touch your customers' emotions with our video editing services now",
     "tagline": "",
     "description": "Leverage real estate video editing as a cost-effective marketing tool, giving clients an immersive and realistic view of the property.",
     "price": 30,
     "images": [
       {
-        "beforeUrl": "/assets/DSC07636.jpg",
+        "beforeUrl": "/assets/video-editting-1.jpg",
         "afterUrl": ""
       }
     ],
