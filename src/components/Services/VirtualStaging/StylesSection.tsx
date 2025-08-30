@@ -103,7 +103,7 @@ const StylesSection = () => {
         </div>
         <div className="gap-4 flex justify-center mt-6">
           <div className="w-[44px] h-[44px] rounded-full flex justify-center items-center bg-[#FBFBFB] cursor-pointer shadow-sm">
-            <button className="w-full h-full flex justify-center items-center" onClick={handlePrev}>
+            <button type="button" aria-label="Previous" className="w-full h-full flex justify-center items-center" onClick={handlePrev}>
               <Image src={left} alt="Previous" width={24} height={24} />
             </button>
           </div>
@@ -121,7 +121,7 @@ const StylesSection = () => {
           </div>
 
           <div className="w-[44px] h-[44px] rounded-full flex justify-center items-center bg-[#FBFBFB] cursor-pointer shadow-sm">
-            <button className="w-full h-full flex justify-center items-center" onClick={handleNext}>
+            <button type="button" aria-label="Next" className="w-full h-full flex justify-center items-center" onClick={handleNext}>
               <Image src={right} alt="Next" width={24} height={24} />
             </button>
           </div>
