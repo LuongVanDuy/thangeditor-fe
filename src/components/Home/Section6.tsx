@@ -28,7 +28,7 @@ const HomeSection6 = () => {
 
       <div className="flex flex-col gap-6 md:gap-12">
         <div className="flex gap-6 flex-col">
-          <h2 className="font-medium text-[24px] xs:text-[30px] lg:text-[36px]">You need my services if you are a</h2>
+          <h2 className="font-medium text-[24px] xs:text-[30px] lg:text-[36px]">Who will need us?</h2>
           <div className="flex flex-col gap-4">
             <div className="flex gap-3 text-[#495057] ">
               <Image src={check} alt="icon" />

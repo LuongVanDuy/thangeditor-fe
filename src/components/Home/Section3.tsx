@@ -14,32 +14,32 @@ const cards = [
   {
     img: icon1,
     title: "Unbeatable prices",
-    desc: "Make your real estate marketing campaign shine without breaking the bank.",
+    desc: "Optimize your campaigns to make money for you.",
   },
   {
     img: icon2,
     title: "Fast turnaround",
-    desc: "Get your edited photos in just 24–48 hours, because time is of the essence in real estate.",
+    desc: "Editing time is only within 12-24 hours, time is of the essence in real estate",
   },
   {
     img: icon3,
     title: "No sign-up required",
-    desc: "Send us any project, any time, any size, with no monthly commitment.",
+    desc: "Send us any wishes and projects I will fulfill them all.",
   },
   {
     img: icon4,
     title: "24/7 Expert support",
-    desc: "Our friendly team is always available via live chat, phone or email.",
+    desc: "Our support team is available 24/7",
   },
   {
     img: icon5,
     title: "Easy payment",
-    desc: "Pay quickly and securely with our simple payment methods, making transactions effortless for you.",
+    desc: "You do not need to pay in advance until you receive your order.",
   },
   {
     img: icon6,
     title: "First photo free",
-    desc: "Try our service for free the first time and see the difference for yourself.",
+    desc: "Your first order is free. Contact us now.",
   },
 ];
 

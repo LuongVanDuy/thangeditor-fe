@@ -30,7 +30,7 @@ const HomeSection4 = () => {
           <div className="flex flex-col gap-2 text-center">
             <h1 className="text-brand font-medium text-[14px]">Step 1</h1>
             <h2 className="font-medium text-[24px]">Upload</h2>
-            <p className="text-[#495057] text-[16px]">Upload your Photo(s) and send us your requirements.</p>
+            <p className="text-[#495057] text-[16px]">Upload your Photo(s) or push your source link and send us your requirements.</p>
           </div>
         </div>
 
@@ -44,7 +44,7 @@ const HomeSection4 = () => {
             <h1 className="text-brand font-medium text-[14px]">Step 2</h1>
             <h2 className="font-medium text-[24px]">Editing</h2>
             <p className="text-[#495057] text-[16px]">
-              Our team of talented experts removes personal belongings and furniture to make the room look vacant.
+              Our talented team will make your photos the best they can be.
             </p>
           </div>
         </div>

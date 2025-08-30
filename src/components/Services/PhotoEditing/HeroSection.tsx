@@ -53,9 +53,9 @@ const HeroSection = () => {
       </div>
       <div className="sm:px-4 lg:px-[64px] xl:px-[108px] py-12 md:py-[24px] flex flex-col gap-9 md:gap-12 ">
         <div className="rounded-2xl overflow-hidden relative mx-0">
-          {service?.images?.[0] &&
+          {service?.images?.[1] &&
             (() => {
-              const firstImg = service.images[0]!;
+              const firstImg = service.images[1]!;
               const beforeSrc = require(`@/assets/${firstImg.beforeUrl.split("/").pop()}`).default.src;
               const afterSrc = require(`@/assets/${firstImg.afterUrl.split("/").pop()}`).default.src;
 

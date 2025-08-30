@@ -8,25 +8,25 @@ import icon from "@/assets/Heading.svg";
 
 const data = [
   {
-    title: "The quality of the images is outstanding!",
-    desc: "Every photo is sharp, vibrant and true to life. Your team clearly knows how to make my property shine, and the results always blow me away.",
+    title: "A great working experience!",
+    desc: "Working with thangeditor is always easy. He helps me get my project done quickly and professionally.",
     name: "Brandon Wang",
     role: "Sales Agent",
-    img: cus1,
+    // img: cus1,
   },
   {
-    title: "I am really impressed with your service.",
-    desc: "The workflow is smooth, communication is quick, and the edits are always on point. It feels like you really listen and understand what the client is asking for.",
+    title: "The service quality is awesome!",
+    desc: "His service is clear step by step and the output image quality is high quality nothing to complain about.",
     name: "John Williams",
     role: "Real Estate Agent",
-    img: cus2,
+    // img: cus2,
   },
   {
-    title: "Their prices are very reasonable for the level of workmanship.",
-    desc: "I have worked at many places and paid many different prices. But the 'object removal' results have never been as satisfying as they are here. ",
+    title: "The price is very affordable!",
+    desc: "I have worked with many editors but Thangeditor is the best in terms of price and value.",
     name: "Anthony Smith",
     role: "Photographer",
-    img: cus3,
+    // img: cus3,
   },
 ];
 
@@ -54,7 +54,7 @@ const HomeSection7 = () => {
                 </div>
 
                 <div className="flex gap-4">
-                  <div>
+                  {/* <div>
                     <Image
                       src={item?.img}
                       alt="avatar"
@@ -62,7 +62,7 @@ const HomeSection7 = () => {
                       height={48}
                       className="rounded-full w-12 h-12 bg-cover bg-center"
                     />
-                  </div>
+                  </div> */}
                   <div>
                     <h3 className="font-medium text-brand text-[18px]">{item.name}</h3>
                     <p className="text-[#6C757D] text-[14px]">{item.role}</p>

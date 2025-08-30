@@ -15,7 +15,7 @@ const Footer = () => {
           <div>
             <Image src={logo} alt="logo" />
 
-            <h1 className="text-gray-300 mt-8">Make your ideal space idea a reality.</h1>
+            <h1 className="text-gray-300 mt-8">Is a trusted partner in the field of real estate photo editing.</h1>
 
             <div className="mt-8 hidden md:flex lg:hidden flex-col">
               <h1 className="text-white font-semibold mb-4">NEWSLETTER</h1>

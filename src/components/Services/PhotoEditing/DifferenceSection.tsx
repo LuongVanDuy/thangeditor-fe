@@ -9,10 +9,10 @@ import checked from "@/assets/Checked.svg";
 import { generateOrderId } from "@/lib/api/order.api";
 import CompareImg from "@/components/Form/Compare";
 import { CompareSlider } from "@/components/Form/Compare/CompareSlider";
-import hdr1 from "@/assets/hdr-1.jpg";
-import hdr2 from "@/assets/hdr-2.jpg";
-import hdr3 from "@/assets/4.jpg";
-import hdr4 from "@/assets/4-after.jpg";
+import hdr1 from "@/assets/hdr-5.jpg";
+import hdr2 from "@/assets/hdr-6.jpg";
+import hdr3 from "@/assets/hdr-7.jpg";
+import hdr4 from "@/assets/hdr-8.jpg";
 
 const DifferenceSection = () => {
   const router = useRouter();

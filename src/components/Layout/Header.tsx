@@ -126,7 +126,7 @@ const Header = () => {
     <>
       <div className="header h-[80px] bg-[#fff] px-6 py-2 items-center justify-between flex shadow-sm relative z-[8] md:z-10">
         <Link href={"/"}>
-          <Image src={logo} alt="logo" height={48} width={126} layout="intrinsic" className="!h-12 !md:h-8 w-auto" />
+          <Image src={logo} alt="logo" height={20} width={195} layout="intrinsic" className="!h-6 !md:h-8 w-auto" />
         </Link>
 
         <div className="hidden md:block">

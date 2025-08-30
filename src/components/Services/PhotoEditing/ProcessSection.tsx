@@ -41,7 +41,7 @@ const ProcessSection = () => {
 
         <div className="block lg:hidden absolute left-[50%] top-[10%] h-[70%] border-l-[3px] border-dashed border-[#DEE2E6]"></div>
 
-        <div className="flex flex-col gap-5 relative z-[3] md:z-0 bg-white">
+        <div className="flex flex-col gap-5 relative z-[3] md:z-0 ">
           <div className="relative z-[2] h-[48px] w-[48px] border-[4px] border-green-200 rounded-full flex flex-shrink-0 justify-center items-center mx-auto">
             <div className="h-full w-full bg-brand rounded-full flex justify-center items-center">
               <Image src={upload} alt="icon" height={24} width={24} />
@@ -59,7 +59,7 @@ const ProcessSection = () => {
           </div>
         </div>
 
-        <div className="flex flex-col gap-5 relative z-[3] md:z-0  bg-white">
+        <div className="flex flex-col gap-5 relative z-[3] md:z-0 ">
           <div className="relative z-[2] h-[48px] w-[48px] border-[4px] border-green-200 rounded-full flex flex-shrink-0 justify-center items-center mx-auto">
             <div className="h-full w-full bg-brand rounded-full flex justify-center items-center">
               <Image src={pen} alt="icon" height={24} width={24} />
@@ -74,7 +74,7 @@ const ProcessSection = () => {
           </div>
         </div>
 
-        <div className="flex flex-col gap-5 relative z-[3] md:z-0  bg-white">
+        <div className="flex flex-col gap-5 relative z-[3] md:z-0 ">
           <div className="relative z-[2] h-[48px] w-[48px] border-[4px] border-green-200 rounded-full flex flex-shrink-0 justify-center items-center mx-auto">
             <div className="h-full w-full bg-brand rounded-full flex justify-center items-center">
               <Image src={mail} alt="icon" height={24} width={24} />
