@@ -73,7 +73,7 @@ const Support = () => {
               <h1 className="font-medium text-[24px] md:text-[30px] lg:text-[36px] mb-4">Contact us</h1>
               <h2 className="text-[#6C757D] text-[16px] md:text-[18px]">
                 You can reach us anytime via{" "}
-                <span className="text-brand text-[16px] md:text-[18px]">trangphotoediting@gmail.com</span>
+                <span className="text-brand text-[16px] md:text-[18px]">thangeditor.company@gmail.com</span>
               </h2>
             </div>
 
@@ -83,7 +83,7 @@ const Support = () => {
                 control={control}
                 render={({ field: { onChange, value } }) => (
                   <div>
-                    <Label label="Fullname" />
+                    <Label label="Full name" />
                     <CustomInput
                       className="!h-12  bg-[#FBFBFB]"
                       placeholder="Your name"

@@ -48,6 +48,30 @@ const data = [
     beforeImage: before6.src,
     afterImage: after6.src,
   },
+  {
+    beforeImage: before1.src,
+    afterImage: after1.src,
+  },
+  {
+    beforeImage: before2.src,
+    afterImage: after2.src,
+  },
+  {
+    beforeImage: before3.src,
+    afterImage: after3.src,
+  },
+  {
+    beforeImage: before4.src,
+    afterImage: after4.src,
+  },
+  {
+    beforeImage: before5.src,
+    afterImage: after5.src,
+  },
+  {
+    beforeImage: before6.src,
+    afterImage: after6.src,
+  },
 ];
 
 const HomeSection5 = () => {

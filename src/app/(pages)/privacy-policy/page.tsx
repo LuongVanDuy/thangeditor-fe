@@ -202,8 +202,8 @@ const PrivacyPolicy = () => {
       <h2 className="text-xl font-semibold mt-10 mb-4">9. OUR CONTACT INFORMATION</h2>
       <p className="mb-6">
         If you have any questions (or comments) regarding this Policy, please email our team at{" "}
-        <a href="mailto:trangphotoediting@gmail.com" className="text-blue-600 underline">
-          trangphotoediting@gmail.com
+        <a href="mailto:thangeditor.company@gmail.com" className="text-blue-600 underline">
+          thangeditor.company@gmail.com
         </a>{" "}
         and we will endeavour to respond as soon as possible.
       </p>
